@@ -1,7 +1,18 @@
 /* html, body { height: 100%;} */
+@font-face {
+    font-family: 'Circular Std Book';
+    src: url('../fonts/CircularStd-Book.eot');
+    src: url('../fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/CircularStd-Book.woff2') format('woff2'),
+        url('../fonts/CircularStd-Book.woff') format('woff'),
+        url('../fonts/CircularStd-Book.ttf') format('truetype'),
+        url('../fonts/CircularStd-Book.svg#CircularStd-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 body{
     /* font-family: 'Nunito Sans', sans-serif; */
-    font-family: 'Open Sans', sans-serif;   
+    font-family: 'Circular Std Book';
     font-weight: 300;
     font-size: 14px;
     /* color: #839bb3; */
@@ -382,6 +393,12 @@ select.form-control{
     box-shadow: none;
 }
 
+.font-size12{
+    font-size: 12px !important;
+}
+.font-size14{
+    font-size: 14px !important;
+}
 .font-size16{
     font-size: 16px !important;
 }
