@@ -88,7 +88,7 @@ body{
     font-weight: 300;
     margin: 0 25px;
     color: #bbc8d4;
-    font-size: 14px;
+    font-size: 15px;
 }
 /* .navbar-light .navbar-nav .nav-link .fa{
     font-size: 11px;
@@ -169,7 +169,7 @@ label em, .control-label em {
     border-radius: 2px;
 }
 input.form-control {
-    font-size: 13px;
+    font-size: 14px;
     padding-left: 6px;    
 }
 .form-control::placeholder{
@@ -212,7 +212,7 @@ select.form-control{
     color: #5c5b71;
 }
 .user-prof-box .dropdown-item{
-    font-size: 13px;
+    font-size: 14px;
     color: #787794;    
 }
 
@@ -369,7 +369,7 @@ select.form-control{
 .table thead th {
     border-bottom: 0px;
     font-weight: 500;
-    font-size: 13px;
+    font-size: 14px;
     color: #8684ab !important;
     border-top: 0px;    
 }
