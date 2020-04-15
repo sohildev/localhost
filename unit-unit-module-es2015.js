@@ -59,6 +59,7 @@ let UnitAddComponent = class UnitAddComponent {
         this.loadingState = false;
         this.showLoader = false;
         this.formErrors = {
+            unit_name: null,
             unit_code: null,
             apierror: null,
         };
@@ -145,6 +146,7 @@ let UnitAddComponent = class UnitAddComponent {
     }
     removeError() {
         this.formErrors = {
+            unit_name: null,
             unit_code: null,
             apierror: null,
         };

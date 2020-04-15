@@ -116,6 +116,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.loadingState = false;
         this.showLoader = false;
         this.formErrors = {
+          unit_name: null,
           unit_code: null,
           apierror: null
         };
@@ -213,6 +214,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "removeError",
         value: function removeError() {
           this.formErrors = {
+            unit_name: null,
             unit_code: null,
             apierror: null
           };
