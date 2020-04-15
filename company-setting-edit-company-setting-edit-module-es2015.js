@@ -159,7 +159,6 @@ let CompanySettingEditComponent = class CompanySettingEditComponent {
         else {
             this.removeFile();
             this.selectedFile = fileInput.target.files[0];
-            // this.editImageUrl = String(fileInput.target.value);
         }
     }
     removeFile() {

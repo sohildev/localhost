@@ -237,7 +237,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             return false;
           } else {
             this.removeFile();
-            this.selectedFile = fileInput.target.files[0]; // this.editImageUrl = String(fileInput.target.value);
+            this.selectedFile = fileInput.target.files[0];
           }
         }
       }, {

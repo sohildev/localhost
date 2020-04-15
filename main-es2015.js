@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\r\n  <a class=\"navbar-brand text-white\" routerLink=\"/\">{{brandTitle}}</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\"\r\n    aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\r\n    <ul class=\"navbar-nav mx-auto\">\r\n      <li class=\"nav-item\" routerLinkActive=\"active\" *ngFor=\"let navLink of navLink\"\r\n        [ngClass]=\"{'dropdown' : navLink?.subNav }\">\r\n        <a class=\"nav-link\" [routerLink]=\"navLink?.r_navUrl\" href=\"{{navLink?.navUrl}}\" class=\"nav-link\"\r\n          [ngClass]=\"{'dropdown-toggle' : navLink?.subNav}\" id=\"navbarDropdown_{{navLink?.navId}}\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n\r\n          {{navLink?.navText}}\r\n          <i *ngIf=\"navLink?.subNav\" class=\"la la-angle-down\" style=\"font-size: 12px;\"></i>\r\n        </a>\r\n        <div class=\"dropdown-menu\" attr.aria-label=\"attr.navbarDropdown_{{navLink?.navId}}\" *ngIf=\"navLink?.subNav\">\r\n          <a class=\"dropdown-item\" routerLink=\"{{sub.navUrl}}\" routerLinkActive=\"active\"\r\n            [routerLinkActiveOptions]=\"{exact: true}\" *ngFor=\"let sub of navLink?.subNav\">{{sub.navLink}}</a>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n\r\n    <ul class=\"navbar-nav nav-right0\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link text-primary p-0 btn-manage\" routerLink=\"/manage/brand\" title=\"Manage\">\r\n          <i class=\"la la-cog\"></i>\r\n        </a>\r\n\r\n      </li>\r\n      <li class=\"nav-item dropdown\">\r\n        <a class=\"nav-link text-primary dropdown-toggle p-0 btn-notification\" title=\"Notification\" href=\"#\"\r\n          id=\"notification\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <i class=\"la la-bell\" style=\"font-size: 26px; color: #f0f7fd !important;\"></i>\r\n          <!-- <fa name=\"bell\" style=\"font-size: 21px; color: #7c92a7 !important;\"></fa> -->\r\n        </a>\r\n        <!-- Notification Popup -->\r\n        <app-notifications class=\"dropdown-menu drop-menu-right\" aria-labelledby=\"notification\">\r\n        </app-notifications>\r\n      </li>\r\n      <li class=\"nav-item dropdown user-prof-box\">\r\n        <button role=\"button\" type=\"button\" class=\"btn dropdown shadow-none p-0\" id=\"profileDrop\" data-toggle=\"dropdown\">\r\n          <span class=\"bg-primary text-white rounded-circle p-2 font-weight-bold\"\r\n          style=\"width: 40px; height: 40px; line-height: 26px; display: block;\">\r\n            {{currentUserDetail?.first_name.charAt(0)}}{{currentUserDetail?.last_name.charAt(0)}}</span>\r\n          <!-- <img [src]=\"currentUserDetail?.image ? currentUserDetail?.image :'assets/no_image.png'\" alt=\"\"> -->\r\n\r\n        </button>\r\n        <!-- Profile Dropdown -->\r\n        <app-profile-drop class=\"dropdown-menu drop-menu-right\" aria-labelledby=\"profileDrop\">\r\n        </app-profile-drop>\r\n\r\n      </li>\r\n\r\n    </ul>\r\n  </div>\r\n</nav>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\">\r\n  <a class=\"navbar-brand text-white\" routerLink=\"/\">{{brandTitle}}</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\"\r\n    aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\r\n    <ul class=\"navbar-nav mx-auto\">\r\n      <li class=\"nav-item\" routerLinkActive=\"active\" *ngFor=\"let navLink of navLink\"\r\n        [ngClass]=\"{'dropdown' : navLink?.subNav }\">\r\n        <a class=\"nav-link\" [routerLink]=\"navLink?.r_navUrl\" href=\"{{navLink?.navUrl}}\" class=\"nav-link\"\r\n          [ngClass]=\"{'dropdown-toggle' : navLink?.subNav}\" id=\"navbarDropdown_{{navLink?.navId}}\" role=\"button\"\r\n          data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n\r\n          {{navLink?.navText}}\r\n          <i *ngIf=\"navLink?.subNav\" class=\"la la-angle-down\" style=\"font-size: 12px;\"></i>\r\n        </a>\r\n        <div class=\"dropdown-menu\" attr.aria-label=\"attr.navbarDropdown_{{navLink?.navId}}\" *ngIf=\"navLink?.subNav\">\r\n          <a class=\"dropdown-item\" routerLink=\"{{sub.navUrl}}\" routerLinkActive=\"active\"\r\n            [routerLinkActiveOptions]=\"{exact: true}\" *ngFor=\"let sub of navLink?.subNav\">{{sub.navLink}}</a>\r\n        </div>\r\n      </li>\r\n    </ul>\r\n\r\n    <ul class=\"navbar-nav nav-right0\">\r\n      <li *ngIf=\"isCompanySelected\" class=\"nav-item\">\r\n        <a class=\"nav-link text-primary p-0 btn-manage\" routerLink=\"/manage/brand\" title=\"Manage\">\r\n          <i class=\"la la-cog\"></i>\r\n        </a>\r\n      </li>\r\n      <li class=\"nav-item dropdown\">\r\n        <a class=\"nav-link text-primary dropdown-toggle p-0 btn-notification\" title=\"Notification\" href=\"#\"\r\n          id=\"notification\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <i class=\"la la-bell\" style=\"font-size: 26px; color: #f0f7fd !important;\"></i>\r\n          <!-- <fa name=\"bell\" style=\"font-size: 21px; color: #7c92a7 !important;\"></fa> -->\r\n        </a>\r\n        <!-- Notification Popup -->\r\n        <app-notifications class=\"dropdown-menu drop-menu-right\" aria-labelledby=\"notification\">\r\n        </app-notifications>\r\n      </li>\r\n      <li class=\"nav-item dropdown user-prof-box\">\r\n        <button role=\"button\" type=\"button\" class=\"btn dropdown shadow-none p-0\" id=\"profileDrop\" data-toggle=\"dropdown\">\r\n          <span class=\"bg-primary text-white rounded-circle p-2 font-weight-bold\"\r\n          style=\"width: 40px; height: 40px; line-height: 26px; display: block;\">\r\n            {{currentUserDetail?.first_name.charAt(0)}}{{currentUserDetail?.last_name.charAt(0)}}</span>\r\n          <!-- <img [src]=\"currentUserDetail?.image ? currentUserDetail?.image :'assets/no_image.png'\" alt=\"\"> -->\r\n\r\n        </button>\r\n        <!-- Profile Dropdown -->\r\n        <app-profile-drop class=\"dropdown-menu drop-menu-right\" aria-labelledby=\"profileDrop\">\r\n        </app-profile-drop>\r\n\r\n      </li>\r\n\r\n    </ul>\r\n  </div>\r\n</nav>\r\n");
 
 /***/ }),
 
@@ -362,7 +362,7 @@ const routes = [
     },
     {
         path: 'login',
-        loadChildren: () => Promise.all(/*! import() | auth-login-login-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~380db5d8"), __webpack_require__.e("common"), __webpack_require__.e("auth-login-login-module")]).then(__webpack_require__.bind(null, /*! ./auth/login/login.module */ "./src/app/auth/login/login.module.ts")).then(m => m.LoginModule),
+        loadChildren: () => Promise.all(/*! import() | auth-login-login-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("common"), __webpack_require__.e("auth-login-login-module")]).then(__webpack_require__.bind(null, /*! ./auth/login/login.module */ "./src/app/auth/login/login.module.ts")).then(m => m.LoginModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["LoginRedirect"]],
         data: { title: 'login' },
     },
@@ -374,13 +374,13 @@ const routes = [
     // },
     {
         path: 'forgot-password',
-        loadChildren: () => Promise.all(/*! import() | auth-forgot-password-forgot-password-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~380db5d8"), __webpack_require__.e("common"), __webpack_require__.e("auth-forgot-password-forgot-password-module")]).then(__webpack_require__.bind(null, /*! ./auth/forgot-password/forgot-password.module */ "./src/app/auth/forgot-password/forgot-password.module.ts")).then(m => m.ForgotPasswordModule),
+        loadChildren: () => Promise.all(/*! import() | auth-forgot-password-forgot-password-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("common"), __webpack_require__.e("auth-forgot-password-forgot-password-module")]).then(__webpack_require__.bind(null, /*! ./auth/forgot-password/forgot-password.module */ "./src/app/auth/forgot-password/forgot-password.module.ts")).then(m => m.ForgotPasswordModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["LoginRedirect"]],
         data: { title: 'forgot_password' },
     },
     {
         path: 'reset-password/:token',
-        loadChildren: () => Promise.all(/*! import() | auth-reset-password-reset-password-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~380db5d8"), __webpack_require__.e("common"), __webpack_require__.e("auth-reset-password-reset-password-module")]).then(__webpack_require__.bind(null, /*! ./auth/reset-password/reset-password.module */ "./src/app/auth/reset-password/reset-password.module.ts")).then(m => m.ResetPasswordModule),
+        loadChildren: () => Promise.all(/*! import() | auth-reset-password-reset-password-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("common"), __webpack_require__.e("auth-reset-password-reset-password-module")]).then(__webpack_require__.bind(null, /*! ./auth/reset-password/reset-password.module */ "./src/app/auth/reset-password/reset-password.module.ts")).then(m => m.ResetPasswordModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["LoginRedirect"]],
         data: { title: 'reset_password' },
     },
@@ -398,24 +398,24 @@ const routes = [
     },
     {
         path: 'company',
-        loadChildren: () => Promise.all(/*! import() | pages-company-company-list-company-list-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~380db5d8"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("common"), __webpack_require__.e("pages-company-company-list-company-list-module")]).then(__webpack_require__.bind(null, /*! ./pages/company/company-list/company-list.module */ "./src/app/pages/company/company-list/company-list.module.ts")).then(m => m.CompanyListModule),
+        loadChildren: () => Promise.all(/*! import() | pages-company-company-list-company-list-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("common"), __webpack_require__.e("pages-company-company-list-company-list-module")]).then(__webpack_require__.bind(null, /*! ./pages/company/company-list/company-list.module */ "./src/app/pages/company/company-list/company-list.module.ts")).then(m => m.CompanyListModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["EnsureAuthenticated"], _service_guards__WEBPACK_IMPORTED_MODULE_3__["CompanyRedirectService"]],
         data: { title: 'company_list', module: 'company', action: 'list' },
     },
     {
         path: 'manage',
-        loadChildren: () => Promise.all(/*! import() | pages-master-master-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~380db5d8"), __webpack_require__.e("default~add-order-add-order-module~add-put-away-add-put-away-module~add-registeration-add-registerat~d94f3084"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("common"), __webpack_require__.e("pages-master-master-module")]).then(__webpack_require__.bind(null, /*! ./pages/master/master.module */ "./src/app/pages/master/master.module.ts")).then(m => m.MasterModule),
+        loadChildren: () => Promise.all(/*! import() | pages-master-master-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("default~add-order-add-order-module~add-put-away-add-put-away-module~add-registeration-add-registerat~d94f3084"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("common"), __webpack_require__.e("pages-master-master-module")]).then(__webpack_require__.bind(null, /*! ./pages/master/master.module */ "./src/app/pages/master/master.module.ts")).then(m => m.MasterModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["EnsureAuthenticated"], _service_guards__WEBPACK_IMPORTED_MODULE_3__["IsCompanySelected"]],
     },
     {
         path: 'inbound',
-        loadChildren: () => Promise.all(/*! import() | pages-inbound-inbound-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~380db5d8"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("common"), __webpack_require__.e("pages-inbound-inbound-module")]).then(__webpack_require__.bind(null, /*! ./pages/inbound/inbound.module */ "./src/app/pages/inbound/inbound.module.ts")).then(m => m.InboundModule),
+        loadChildren: () => Promise.all(/*! import() | pages-inbound-inbound-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("common"), __webpack_require__.e("pages-inbound-inbound-module")]).then(__webpack_require__.bind(null, /*! ./pages/inbound/inbound.module */ "./src/app/pages/inbound/inbound.module.ts")).then(m => m.InboundModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["EnsureAuthenticated"], _service_guards__WEBPACK_IMPORTED_MODULE_3__["IsCompanySelected"]],
     },
     {
         path: 'profile',
-        loadChildren: () => __webpack_require__.e(/*! import() | pages-profile-profile-module */ "pages-profile-profile-module").then(__webpack_require__.bind(null, /*! ./pages/profile/profile.module */ "./src/app/pages/profile/profile.module.ts")).then(m => m.ProfileModule),
-        canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["EnsureAuthenticated"], _service_guards__WEBPACK_IMPORTED_MODULE_3__["IsCompanySelected"]],
+        loadChildren: () => Promise.all(/*! import() | pages-profile-profile-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("pages-profile-profile-module")]).then(__webpack_require__.bind(null, /*! ./pages/profile/profile.module */ "./src/app/pages/profile/profile.module.ts")).then(m => m.ProfileModule),
+        canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["EnsureAuthenticated"]],
     },
     {
         path: 'setting',
@@ -865,19 +865,6 @@ NotificationsModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 /***/ }),
 
-/***/ "./src/app/common-module/profile-drop/profile-drop.component.css":
-/*!***********************************************************************!*\
-  !*** ./src/app/common-module/profile-drop/profile-drop.component.css ***!
-  \***********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbW1vbi1tb2R1bGUvcHJvZmlsZS1kcm9wL3Byb2ZpbGUtZHJvcC5jb21wb25lbnQuY3NzIn0= */");
-
-/***/ }),
-
 /***/ "./src/app/common-module/profile-drop/profile-drop.component.ts":
 /*!**********************************************************************!*\
   !*** ./src/app/common-module/profile-drop/profile-drop.component.ts ***!
@@ -948,7 +935,6 @@ ProfileDropComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])(
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-profile-drop',
         template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./profile-drop.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/common-module/profile-drop/profile-drop.component.html")).default,
-        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./profile-drop.component.css */ "./src/app/common-module/profile-drop/profile-drop.component.css")).default]
     })
 ], ProfileDropComponent);
 
@@ -1240,19 +1226,6 @@ const WMS_CONFIG = {
 
 /***/ }),
 
-/***/ "./src/app/layout/header/header.component.css":
-/*!****************************************************!*\
-  !*** ./src/app/layout/header/header.component.css ***!
-  \****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xheW91dC9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5jc3MifQ== */");
-
-/***/ }),
-
 /***/ "./src/app/layout/header/header.component.ts":
 /*!***************************************************!*\
   !*** ./src/app/layout/header/header.component.ts ***!
@@ -1381,7 +1354,6 @@ HeaderComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-header',
         template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./header.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/layout/header/header.component.html")).default,
-        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./header.component.css */ "./src/app/layout/header/header.component.css")).default]
     })
 ], HeaderComponent);
 
@@ -1908,6 +1880,9 @@ let CommonService = class CommonService {
     getProfile() {
         return this.http.get(`${this.API_URL}/auth/profile`);
     }
+    editProfile(data) {
+        return this.http.post(`${this.API_URL}/auth/profile`, data);
+    }
     unSelectCompany() {
         return this.http.get(`${this.API_URL}/company/deselect`);
     }
@@ -2095,7 +2070,7 @@ let DataService = class DataService {
         this.saveToken(user.Token['token']);
         this.updateAuth(user.User);
         this.updatePermission(user.Permission);
-        if (user.Company) {
+        if (user.Company && user.Company.company_id) {
             this.updateCompany(user.Company);
         }
     }
