@@ -1688,6 +1688,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return m.ShippingAddressModule;
           });
         }
+      }, {
+        path: 'unit',
+        loadChildren: function loadChildren() {
+          return __webpack_require__.e(
+          /*! import() | unit-unit-module */
+          "unit-unit-module").then(__webpack_require__.bind(null,
+          /*! ./unit/unit.module */
+          "./src/app/pages/master/unit/unit.module.ts")).then(function (m) {
+            return m.UnitModule;
+          });
+        }
       }]
     }];
 
@@ -1844,6 +1855,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       asidText: 'Shipping Address',
       asidUrl: '/manage/shipping-address'
+    }, {
+      asidText: 'Unit',
+      asidUrl: '/manage/unit'
     }];
     NavLink.locationNav = [{
       asidText: 'Area',

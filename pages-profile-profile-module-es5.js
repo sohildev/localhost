@@ -813,13 +813,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var routes = [{
       path: '',
-      component: _profile_component__WEBPACK_IMPORTED_MODULE_3__["ProfileComponent"]
+      component: _profile_component__WEBPACK_IMPORTED_MODULE_3__["ProfileComponent"],
+      data: {
+        title: 'view_profile'
+      }
     }, {
       path: 'change-password',
-      component: _change_password_change_password_component__WEBPACK_IMPORTED_MODULE_5__["ChangePasswordComponent"]
+      component: _change_password_change_password_component__WEBPACK_IMPORTED_MODULE_5__["ChangePasswordComponent"],
+      data: {
+        title: 'change_password'
+      }
     }, {
       path: 'edit',
-      component: _edit_profile_edit_profile_component__WEBPACK_IMPORTED_MODULE_6__["EditProfileComponent"]
+      component: _edit_profile_edit_profile_component__WEBPACK_IMPORTED_MODULE_6__["EditProfileComponent"],
+      data: {
+        title: 'edit_profile'
+      }
     }];
 
     var ProfileModule = function ProfileModule() {

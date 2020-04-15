@@ -1070,7 +1070,11 @@ const routes = [
             {
                 path: 'shipping-address',
                 loadChildren: () => __webpack_require__.e(/*! import() | shipping-address-shipping-address-module */ "shipping-address-shipping-address-module").then(__webpack_require__.bind(null, /*! ./shipping-address/shipping-address.module */ "./src/app/pages/master/shipping-address/shipping-address.module.ts")).then(m => m.ShippingAddressModule)
-            }
+            },
+            {
+                path: 'unit',
+                loadChildren: () => __webpack_require__.e(/*! import() | unit-unit-module */ "unit-unit-module").then(__webpack_require__.bind(null, /*! ./unit/unit.module */ "./src/app/pages/master/unit/unit.module.ts")).then(m => m.UnitModule)
+            },
         ]
     }
 ];
@@ -1185,6 +1189,10 @@ NavLink.asideNav = [
     {
         asidText: 'Shipping Address',
         asidUrl: '/manage/shipping-address'
+    },
+    {
+        asidText: 'Unit',
+        asidUrl: '/manage/unit'
     }
 ];
 NavLink.locationNav = [

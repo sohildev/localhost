@@ -1478,6 +1478,9 @@ const pageTitles = {
     add_pick_list: `Add PickList | ${APP_NAME}`,
     edit_pick_list: `Edit PickList | ${APP_NAME}`,
     view_pick_list: `View PickList | ${APP_NAME}`,
+    unit_list: `Unit List | ${APP_NAME}`,
+    add_unit: `Add Unit | ${APP_NAME}`,
+    edit_unit: `Edit Unit | ${APP_NAME}`,
 };
 const errorMessage = {
     change_password_success: 'Your password changed Successfully',

@@ -2586,7 +2586,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       pick_list_list: "PickList List | ".concat(APP_NAME),
       add_pick_list: "Add PickList | ".concat(APP_NAME),
       edit_pick_list: "Edit PickList | ".concat(APP_NAME),
-      view_pick_list: "View PickList | ".concat(APP_NAME)
+      view_pick_list: "View PickList | ".concat(APP_NAME),
+      unit_list: "Unit List | ".concat(APP_NAME),
+      add_unit: "Add Unit | ".concat(APP_NAME),
+      edit_unit: "Edit Unit | ".concat(APP_NAME)
     };
     var errorMessage = {
       change_password_success: 'Your password changed Successfully',
