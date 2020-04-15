@@ -414,7 +414,7 @@ const routes = [
     },
     {
         path: 'profile',
-        loadChildren: () => Promise.all(/*! import() | pages-profile-profile-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("pages-profile-profile-module")]).then(__webpack_require__.bind(null, /*! ./pages/profile/profile.module */ "./src/app/pages/profile/profile.module.ts")).then(m => m.ProfileModule),
+        loadChildren: () => Promise.all(/*! import() | pages-profile-profile-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("common"), __webpack_require__.e("pages-profile-profile-module")]).then(__webpack_require__.bind(null, /*! ./pages/profile/profile.module */ "./src/app/pages/profile/profile.module.ts")).then(m => m.ProfileModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["EnsureAuthenticated"]],
     },
     {
@@ -1167,7 +1167,7 @@ function validateEmailFormControl(c) {
 class PasswordValidation {
     static passwordValidation() {
         return (AC) => {
-            let password = AC.get('password').value;
+            let password = AC.get('new_password').value;
             let confirmpassword = AC.get('confirm_password').value;
             if (password !== confirmpassword) {
                 return AC.get('confirm_password').setErrors({ validatePassword: true });
@@ -1480,6 +1480,7 @@ const pageTitles = {
     view_pick_list: `View PickList | ${APP_NAME}`,
 };
 const errorMessage = {
+    change_password_success: 'Your password changed Successfully',
     delete_dialogue_type: 'error',
     delete_header_text: 'Are you sure you want to delete?',
     delete_confirm_button: 'Yes, Delete it!',
@@ -1879,9 +1880,6 @@ let CommonService = class CommonService {
     }
     getProfile() {
         return this.http.get(`${this.API_URL}/auth/profile`);
-    }
-    editProfile(data) {
-        return this.http.post(`${this.API_URL}/auth/profile`, data);
     }
     unSelectCompany() {
         return this.http.get(`${this.API_URL}/company/deselect`);

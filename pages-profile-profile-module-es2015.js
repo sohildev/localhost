@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\r\n    <div class=\"page-header\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h2 class=\"mr-auto\">{{PageTitle}}</h2>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"card\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <div class=\"w-25 mx-auto\">\r\n                    <form class=\"form-horizontal\" role=\"form\">\r\n                        <div class=\"mt-3\">\r\n                            <div class=\"form-group\">\r\n                                <label class=\"control-label text-md-right\">Old Password <em>*</em></label>\r\n                                <div class=\"\">\r\n                                    <input type=\"text\" class=\"form-control\" placeholder=\"\">\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label class=\"control-label text-md-right\">New Password <em>*</em></label>\r\n                                <div class=\"\">\r\n                                    <input type=\"text\" class=\"form-control\" placeholder=\"\">\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label class=\"control-label text-md-right\">Retype New Password <em>*</em></label>\r\n                                <div class=\"\">\r\n                                    <input type=\"text\" class=\"form-control\" placeholder=\"\">\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"row\">\r\n                            <div class=\"col\">\r\n                                <div class=\"text-right border-top pt-4 mt-3 mb-3\">\r\n                                    <button type=\"button\" class=\"btn btn-light\" routerLink=\"/profile\">Cancel</button>\r\n                                    <button type=\"submit\" class=\"btn btn-secondary ml-2\">Save</button>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<style>\r\n    .w-25 {\r\n        width: 30% !important;\r\n    }\r\n</style>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\r\n    <div class=\"page-header\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h2 class=\"mr-auto\">{{PageTitle}}</h2>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"card\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <div class=\"w-25 mx-auto\">\r\n                    <form [formGroup]=\"addForm\" (ngSubmit)=\"submitForm()\" class=\"form-horizontal\" role=\"form\">\r\n                        <div class=\"mt-3\">\r\n                            <div class=\"form-group\" [ngClass]=\"{'has-error': formErrors.old_password}\">\r\n                                <label class=\"control-label text-md-right\">Old Password <em>*</em></label>\r\n                                <div class=\"\">\r\n                                    <input type=\"password\" class=\"form-control\" placeholder=\"Old password\"\r\n                                        [formControl]=\"addForm.controls['old_password']\">\r\n                                    <span *ngIf=\"formErrors.old_password\" class=\"help-block\"\r\n                                        [innerHTML]=\"formErrors.old_password\"> </span>\r\n                                </div>\r\n                            </div>\r\n\r\n\r\n\r\n                            <div class=\"form-group\" [ngClass]=\"{'has-error': formErrors.new_password}\">\r\n                                <label class=\"control-label text-md-right\">New Password <em>*</em></label>\r\n                                <div class=\"\">\r\n                                    <input type=\"password\" class=\"form-control\" placeholder=\"New password\"\r\n                                        [formControl]=\"addForm.controls['new_password']\">\r\n                                    <span *ngIf=\"formErrors.new_password\" class=\"help-block\"\r\n                                        [innerHTML]=\"formErrors.new_password\"> </span>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"form-group\" [ngClass]=\"{'has-error': formErrors.confirm_password}\">\r\n                                <label class=\"control-label text-md-right\">Retype New Password <em>*</em></label>\r\n                                <div class=\"\">\r\n                                    <input type=\"password\" class=\"form-control\" placeholder=\"Confirm password\"\r\n                                        [formControl]=\"addForm.controls['confirm_password']\">\r\n                                    <span *ngIf=\"formErrors.confirm_password\" class=\"help-block\"\r\n                                        [innerHTML]=\"formErrors.confirm_password\">\r\n                                    </span>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"row\">\r\n                            <div class=\"col\">\r\n                                <div class=\"text-right border-top pt-4 mt-3 mb-3\">\r\n                                    <button type=\"button\" class=\"btn btn-light\" routerLink=\"/profile\">Cancel</button>\r\n                                    <button type=\"submit\" [ngClass]=\"{'qt-loader qt-loader-mini qt-loader-left': showLoader}\" [disabled]=\"showLoader\" class=\"btn btn-secondary ml-2\">Save</button>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<style>\r\n    .w-25 {\r\n        width: 30% !important;\r\n    }\r\n</style>");
 
 /***/ }),
 
@@ -161,19 +161,6 @@ BtnAddModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 /***/ }),
 
-/***/ "./src/app/pages/profile/change-password/change-password.component.css":
-/*!*****************************************************************************!*\
-  !*** ./src/app/pages/profile/change-password/change-password.component.css ***!
-  \*****************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3Byb2ZpbGUvY2hhbmdlLXBhc3N3b3JkL2NoYW5nZS1wYXNzd29yZC5jb21wb25lbnQuY3NzIn0= */");
-
-/***/ }),
-
 /***/ "./src/app/pages/profile/change-password/change-password.component.ts":
 /*!****************************************************************************!*\
   !*** ./src/app/pages/profile/change-password/change-password.component.ts ***!
@@ -186,20 +173,89 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChangePasswordComponent", function() { return ChangePasswordComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/service/auth.service */ "./src/app/service/auth.service.ts");
+/* harmony import */ var src_app_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/common */ "./src/app/common.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
+/* harmony import */ var src_app_messages__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/messages */ "./src/app/messages.ts");
+
+
+
+
+
+
 
 
 let ChangePasswordComponent = class ChangePasswordComponent {
-    constructor() {
+    constructor(router, authService, fb, toastr) {
+        this.router = router;
+        this.authService = authService;
+        this.fb = fb;
+        this.toastr = toastr;
         this.PageTitle = "Change Password";
+        this.loadingState = true;
+        this.formErrors = {
+            old_password: '',
+            new_password: '',
+            confirm_password: '',
+            apierror: '',
+        };
+        this.submitAttempt = false;
+        this.showLoader = false;
+        this.addForm = fb.group({
+            old_password: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
+            new_password: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
+            confirm_password: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])]
+        }, {
+            validator: src_app_common__WEBPACK_IMPORTED_MODULE_5__["PasswordValidation"].passwordValidation()
+        });
     }
-    ngOnInit() {
+    ngOnInit() { }
+    submitForm() {
+        this.submitAttempt = true;
+        if (this.addForm.valid) {
+            this.showLoader = true;
+            const formData = this.addForm.value;
+            this.authService.changePassword(formData).subscribe((response) => {
+                this.showLoader = false;
+                this.submitAttempt = false;
+                if (response.success) {
+                    this.toastr.success('', src_app_messages__WEBPACK_IMPORTED_MODULE_7__["errorMessage"].change_password_success);
+                    this.formErrors.old_password = null;
+                    this.router.navigateByUrl('/profile');
+                }
+                else {
+                    response.error.map(obj => {
+                        if (obj.hasOwnProperty('old_password')) {
+                            this.formErrors.old_password = obj.old_password;
+                        }
+                        if (obj.hasOwnProperty('confirm_password')) {
+                            this.formErrors.confirm_password = obj.confirm_password;
+                        }
+                        if (!obj.hasOwnProperty('old_password') && !obj.hasOwnProperty('confirm_password')) {
+                            this.formErrors.apierror = `* ${response.error}`;
+                        }
+                    });
+                }
+            }, (error) => {
+                this.showLoader = false;
+                this.submitAttempt = false;
+                this.formErrors.apierror = `* Server Error`;
+            });
+        }
     }
 };
+ChangePasswordComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] },
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrService"] }
+];
 ChangePasswordComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-change-password',
-        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./change-password.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/profile/change-password/change-password.component.html")).default,
-        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./change-password.component.css */ "./src/app/pages/profile/change-password/change-password.component.css")).default]
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./change-password.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/profile/change-password/change-password.component.html")).default
     })
 ], ChangePasswordComponent);
 
@@ -223,6 +279,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var src_app_service_common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/service/common.service */ "./src/app/service/common.service.ts");
 /* harmony import */ var src_app_service_data_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/service/data.service */ "./src/app/service/data.service.ts");
+/* harmony import */ var src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/service/auth.service */ "./src/app/service/auth.service.ts");
+
 
 
 
@@ -230,11 +288,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let EditProfileComponent = class EditProfileComponent {
-    constructor(router, fb, dataservice, commonService) {
+    constructor(router, fb, dataservice, commonService, authservice) {
         this.router = router;
         this.fb = fb;
         this.dataservice = dataservice;
         this.commonService = commonService;
+        this.authservice = authservice;
         this.PageTitle = "Edit Profile";
         this.editImageUrl = null;
         this.loadingState = false;
@@ -302,7 +361,7 @@ let EditProfileComponent = class EditProfileComponent {
             if (this.selectedFile) {
                 data.append('file', this.selectedFile);
             }
-            this.commonService.editProfile(data).subscribe((response) => {
+            this.authservice.editProfile(data).subscribe((response) => {
                 this.showLoader = false;
                 if (response.success) {
                     this.commonService.getProfile().subscribe((response) => {
@@ -332,7 +391,8 @@ EditProfileComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
     { type: src_app_service_data_service__WEBPACK_IMPORTED_MODULE_5__["DataService"] },
-    { type: src_app_service_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"] }
+    { type: src_app_service_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"] },
+    { type: src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"] }
 ];
 EditProfileComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -409,6 +469,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_shared_form_validation_form_validation_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/shared/form-validation/form-validation.module */ "./src/app/shared/form-validation/form-validation.module.ts");
 /* harmony import */ var src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/app/shared/shared.module */ "./src/app/shared/shared.module.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/service/auth.service */ "./src/app/service/auth.service.ts");
+
 
 
 
@@ -447,6 +509,8 @@ ProfileModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_9__["SharedModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes),
             src_app_common_module_btn_add_btn_add_module__WEBPACK_IMPORTED_MODULE_7__["BtnAddModule"]
+        ], providers: [
+            src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_11__["AuthService"]
         ]
     })
 ], ProfileModule);

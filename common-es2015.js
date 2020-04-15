@@ -323,10 +323,10 @@ let AuthService = class AuthService {
         return this.http.post(`${this.API_URL}/reset-password/${token}`, data);
     }
     changePassword(data) {
-        return this.http.post(`${this.API_URL}/change-password`, data);
+        return this.http.post(`${this.API_URL}/auth/change-password`, data);
     }
     editProfile(data) {
-        return this.http.post(`${this.API_URL}/profile`, data);
+        return this.http.post(`${this.API_URL}/auth/profile`, data);
     }
 };
 AuthService.ctorParameters = () => [

@@ -1890,7 +1890,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             key: "client.label"
           }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
             label: "Supplier Name",
-            key: "supplier_id.label"
+            key: "supplier.label"
           }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["DateField"]({
             label: "Order Date",
             key: "order.po_date"

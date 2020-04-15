@@ -41,7 +41,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n    <div class=\"page-header\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h2 class=\"mr-auto\">{{PageTitle}}</h2>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"card\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <div class=\"w-25 mx-auto\">\r\n                    <form class=\"form-horizontal\" role=\"form\">\r\n                        <div class=\"mt-3\">\r\n                            <div class=\"form-group\">\r\n                                <label class=\"control-label text-md-right\">Old Password <em>*</em></label>\r\n                                <div class=\"\">\r\n                                    <input type=\"text\" class=\"form-control\" placeholder=\"\">\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label class=\"control-label text-md-right\">New Password <em>*</em></label>\r\n                                <div class=\"\">\r\n                                    <input type=\"text\" class=\"form-control\" placeholder=\"\">\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"form-group\">\r\n                                <label class=\"control-label text-md-right\">Retype New Password <em>*</em></label>\r\n                                <div class=\"\">\r\n                                    <input type=\"text\" class=\"form-control\" placeholder=\"\">\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"row\">\r\n                            <div class=\"col\">\r\n                                <div class=\"text-right border-top pt-4 mt-3 mb-3\">\r\n                                    <button type=\"button\" class=\"btn btn-light\" routerLink=\"/profile\">Cancel</button>\r\n                                    <button type=\"submit\" class=\"btn btn-secondary ml-2\">Save</button>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<style>\r\n    .w-25 {\r\n        width: 30% !important;\r\n    }\r\n</style>";
+    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n    <div class=\"page-header\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h2 class=\"mr-auto\">{{PageTitle}}</h2>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"card\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <div class=\"w-25 mx-auto\">\r\n                    <form [formGroup]=\"addForm\" (ngSubmit)=\"submitForm()\" class=\"form-horizontal\" role=\"form\">\r\n                        <div class=\"mt-3\">\r\n                            <div class=\"form-group\" [ngClass]=\"{'has-error': formErrors.old_password}\">\r\n                                <label class=\"control-label text-md-right\">Old Password <em>*</em></label>\r\n                                <div class=\"\">\r\n                                    <input type=\"password\" class=\"form-control\" placeholder=\"Old password\"\r\n                                        [formControl]=\"addForm.controls['old_password']\">\r\n                                    <span *ngIf=\"formErrors.old_password\" class=\"help-block\"\r\n                                        [innerHTML]=\"formErrors.old_password\"> </span>\r\n                                </div>\r\n                            </div>\r\n\r\n\r\n\r\n                            <div class=\"form-group\" [ngClass]=\"{'has-error': formErrors.new_password}\">\r\n                                <label class=\"control-label text-md-right\">New Password <em>*</em></label>\r\n                                <div class=\"\">\r\n                                    <input type=\"password\" class=\"form-control\" placeholder=\"New password\"\r\n                                        [formControl]=\"addForm.controls['new_password']\">\r\n                                    <span *ngIf=\"formErrors.new_password\" class=\"help-block\"\r\n                                        [innerHTML]=\"formErrors.new_password\"> </span>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"form-group\" [ngClass]=\"{'has-error': formErrors.confirm_password}\">\r\n                                <label class=\"control-label text-md-right\">Retype New Password <em>*</em></label>\r\n                                <div class=\"\">\r\n                                    <input type=\"password\" class=\"form-control\" placeholder=\"Confirm password\"\r\n                                        [formControl]=\"addForm.controls['confirm_password']\">\r\n                                    <span *ngIf=\"formErrors.confirm_password\" class=\"help-block\"\r\n                                        [innerHTML]=\"formErrors.confirm_password\">\r\n                                    </span>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"row\">\r\n                            <div class=\"col\">\r\n                                <div class=\"text-right border-top pt-4 mt-3 mb-3\">\r\n                                    <button type=\"button\" class=\"btn btn-light\" routerLink=\"/profile\">Cancel</button>\r\n                                    <button type=\"submit\" [ngClass]=\"{'qt-loader qt-loader-mini qt-loader-left': showLoader}\" [disabled]=\"showLoader\" class=\"btn btn-secondary ml-2\">Save</button>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<style>\r\n    .w-25 {\r\n        width: 30% !important;\r\n    }\r\n</style>";
     /***/
   },
 
@@ -262,26 +262,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./src/app/pages/profile/change-password/change-password.component.css":
-  /*!*****************************************************************************!*\
-    !*** ./src/app/pages/profile/change-password/change-password.component.css ***!
-    \*****************************************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function srcAppPagesProfileChangePasswordChangePasswordComponentCss(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3Byb2ZpbGUvY2hhbmdlLXBhc3N3b3JkL2NoYW5nZS1wYXNzd29yZC5jb21wb25lbnQuY3NzIn0= */";
-    /***/
-  },
-
-  /***/
   "./src/app/pages/profile/change-password/change-password.component.ts":
   /*!****************************************************************************!*\
     !*** ./src/app/pages/profile/change-password/change-password.component.ts ***!
@@ -312,32 +292,139 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! src/app/service/auth.service */
+    "./src/app/service/auth.service.ts");
+    /* harmony import */
+
+
+    var src_app_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! src/app/common */
+    "./src/app/common.ts");
+    /* harmony import */
+
+
+    var ngx_toastr__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ngx-toastr */
+    "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
+    /* harmony import */
+
+
+    var src_app_messages__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! src/app/messages */
+    "./src/app/messages.ts");
 
     var ChangePasswordComponent =
     /*#__PURE__*/
     function () {
-      function ChangePasswordComponent() {
+      function ChangePasswordComponent(router, authService, fb, toastr) {
         _classCallCheck(this, ChangePasswordComponent);
 
+        this.router = router;
+        this.authService = authService;
+        this.fb = fb;
+        this.toastr = toastr;
         this.PageTitle = "Change Password";
+        this.loadingState = true;
+        this.formErrors = {
+          old_password: '',
+          new_password: '',
+          confirm_password: '',
+          apierror: ''
+        };
+        this.submitAttempt = false;
+        this.showLoader = false;
+        this.addForm = fb.group({
+          old_password: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
+          new_password: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
+          confirm_password: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])]
+        }, {
+          validator: src_app_common__WEBPACK_IMPORTED_MODULE_5__["PasswordValidation"].passwordValidation()
+        });
       }
 
       _createClass(ChangePasswordComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
+      }, {
+        key: "submitForm",
+        value: function submitForm() {
+          var _this = this;
+
+          this.submitAttempt = true;
+
+          if (this.addForm.valid) {
+            this.showLoader = true;
+            var formData = this.addForm.value;
+            this.authService.changePassword(formData).subscribe(function (response) {
+              _this.showLoader = false;
+              _this.submitAttempt = false;
+
+              if (response.success) {
+                _this.toastr.success('', src_app_messages__WEBPACK_IMPORTED_MODULE_7__["errorMessage"].change_password_success);
+
+                _this.formErrors.old_password = null;
+
+                _this.router.navigateByUrl('/profile');
+              } else {
+                response.error.map(function (obj) {
+                  if (obj.hasOwnProperty('old_password')) {
+                    _this.formErrors.old_password = obj.old_password;
+                  }
+
+                  if (obj.hasOwnProperty('confirm_password')) {
+                    _this.formErrors.confirm_password = obj.confirm_password;
+                  }
+
+                  if (!obj.hasOwnProperty('old_password') && !obj.hasOwnProperty('confirm_password')) {
+                    _this.formErrors.apierror = "* ".concat(response.error);
+                  }
+                });
+              }
+            }, function (error) {
+              _this.showLoader = false;
+              _this.submitAttempt = false;
+              _this.formErrors.apierror = "* Server Error";
+            });
+          }
+        }
       }]);
 
       return ChangePasswordComponent;
     }();
 
+    ChangePasswordComponent.ctorParameters = function () {
+      return [{
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+      }, {
+        type: src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]
+      }, {
+        type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
+      }, {
+        type: ngx_toastr__WEBPACK_IMPORTED_MODULE_6__["ToastrService"]
+      }];
+    };
+
     ChangePasswordComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-change-password',
       template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
       /*! raw-loader!./change-password.component.html */
-      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/profile/change-password/change-password.component.html")).default,
-      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
-      /*! ./change-password.component.css */
-      "./src/app/pages/profile/change-password/change-password.component.css")).default]
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/profile/change-password/change-password.component.html")).default
     })], ChangePasswordComponent);
     /***/
   },
@@ -397,17 +484,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var src_app_service_data_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! src/app/service/data.service */
     "./src/app/service/data.service.ts");
+    /* harmony import */
+
+
+    var src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! src/app/service/auth.service */
+    "./src/app/service/auth.service.ts");
 
     var EditProfileComponent =
     /*#__PURE__*/
     function () {
-      function EditProfileComponent(router, fb, dataservice, commonService) {
+      function EditProfileComponent(router, fb, dataservice, commonService, authservice) {
         _classCallCheck(this, EditProfileComponent);
 
         this.router = router;
         this.fb = fb;
         this.dataservice = dataservice;
         this.commonService = commonService;
+        this.authservice = authservice;
         this.PageTitle = "Edit Profile";
         this.editImageUrl = null;
         this.loadingState = false;
@@ -429,11 +523,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(EditProfileComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this = this;
+          var _this2 = this;
 
           this.dataservice.currentUser.subscribe(function (responce) {
             if (responce) {
-              _this.currentUser = responce;
+              _this2.currentUser = responce;
             }
           });
           this.getEditObject();
@@ -441,12 +535,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getEditObject",
         value: function getEditObject() {
-          var _this2 = this;
+          var _this3 = this;
 
           this.dataservice.currentUser.subscribe(function (response) {
             if (response) {
-              _this2.editId = response.company_id;
-              _this2.editImageUrl = response.image, _this2.addForm.patchValue({
+              _this3.editId = response.company_id;
+              _this3.editImageUrl = response.image, _this3.addForm.patchValue({
                 first_name: response.first_name,
                 last_name: response.last_name,
                 dial_code: response.dial_code,
@@ -478,7 +572,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "submitForm",
         value: function submitForm(formData) {
-          var _this3 = this;
+          var _this4 = this;
 
           if (formData.valid) {
             this.showLoader = true;
@@ -493,28 +587,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               data.append('file', this.selectedFile);
             }
 
-            this.commonService.editProfile(data).subscribe(function (response) {
-              _this3.showLoader = false;
+            this.authservice.editProfile(data).subscribe(function (response) {
+              _this4.showLoader = false;
 
               if (response.success) {
-                _this3.commonService.getProfile().subscribe(function (response) {
+                _this4.commonService.getProfile().subscribe(function (response) {
                   if (response.success) {
-                    _this3.dataservice.setAuth(response.data);
+                    _this4.dataservice.setAuth(response.data);
 
-                    _this3.router.navigateByUrl('/profile');
+                    _this4.router.navigateByUrl('/profile');
                   }
                 });
               } else {
                 response.error.map(function (obj) {
                   if (obj.hasOwnProperty('email')) {
-                    _this3.formErrors['email'] = obj['email'];
+                    _this4.formErrors['email'] = obj['email'];
                   } else {
-                    _this3.formErrors['apierror'] = "* ".concat(response.error);
+                    _this4.formErrors['apierror'] = "* ".concat(response.error);
                   }
                 });
               }
             }, function (error) {
-              _this3.showLoader = false;
+              _this4.showLoader = false;
             });
           }
         }
@@ -532,6 +626,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: src_app_service_data_service__WEBPACK_IMPORTED_MODULE_5__["DataService"]
       }, {
         type: src_app_service_common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]
+      }, {
+        type: src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"]
       }];
     };
 
@@ -595,11 +691,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ProfileComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this4 = this;
+          var _this5 = this;
 
           this.dataservice.currentUser.subscribe(function (responce) {
             if (responce) {
-              _this4.currentUser = responce;
+              _this5.currentUser = responce;
             }
           });
         }
@@ -708,6 +804,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! @angular/forms */
     "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    /*! src/app/service/auth.service */
+    "./src/app/service/auth.service.ts");
 
     var routes = [{
       path: '',
@@ -726,7 +828,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     ProfileModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_profile_component__WEBPACK_IMPORTED_MODULE_3__["ProfileComponent"], _change_password_change_password_component__WEBPACK_IMPORTED_MODULE_5__["ChangePasswordComponent"], _edit_profile_edit_profile_component__WEBPACK_IMPORTED_MODULE_6__["EditProfileComponent"]],
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"], src_app_shared_form_validation_form_validation_module__WEBPACK_IMPORTED_MODULE_8__["FormValidationModule"], src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_9__["SharedModule"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes), src_app_common_module_btn_add_btn_add_module__WEBPACK_IMPORTED_MODULE_7__["BtnAddModule"]]
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_10__["FormsModule"], src_app_shared_form_validation_form_validation_module__WEBPACK_IMPORTED_MODULE_8__["FormValidationModule"], src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_9__["SharedModule"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes), src_app_common_module_btn_add_btn_add_module__WEBPACK_IMPORTED_MODULE_7__["BtnAddModule"]],
+      providers: [src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_11__["AuthService"]]
     })], ProfileModule);
     /***/
   },
@@ -1077,24 +1180,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ControlErrorsDirective, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this5 = this;
+          var _this6 = this;
 
           if (this.control && this.control.valueChanges) {
             Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["merge"])(this.control.valueChanges, this.submit$).subscribe(function (v) {
-              var controlErrors = _this5.control.errors;
+              var controlErrors = _this6.control.errors;
 
               if (controlErrors) {
-                var control_name = _this5.getFormControlName(_this5.control); // console.log(control_name, controlErrors);
+                var control_name = _this6.getFormControlName(_this6.control); // console.log(control_name, controlErrors);
 
 
                 var firstKey = Object.keys(controlErrors)[0];
                 var messages = _form_errors__WEBPACK_IMPORTED_MODULE_7__["VALIDATION_MESSAGES"][control_name];
 
                 if (messages !== undefined && messages !== null && messages !== '') {
-                  _this5.setError(messages[firstKey]);
+                  _this6.setError(messages[firstKey]);
                 }
-              } else if (_this5.ref) {
-                _this5.setError(null);
+              } else if (_this6.ref) {
+                _this6.setError(null);
               }
             });
           }
@@ -1207,14 +1310,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*#__PURE__*/
     function () {
       function FormSubmitDirective(host) {
-        var _this6 = this;
+        var _this7 = this;
 
         _classCallCheck(this, FormSubmitDirective);
 
         this.host = host;
         this.submit$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["fromEvent"])(this.element, 'submit').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function () {
-          if (_this6.element.classList.contains('submitted') === false) {
-            _this6.element.classList.add('submitted');
+          if (_this7.element.classList.contains('submitted') === false) {
+            _this7.element.classList.add('submitted');
           }
         }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["shareReplay"])(1));
       }

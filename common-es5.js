@@ -555,12 +555,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "changePassword",
         value: function changePassword(data) {
-          return this.http.post("".concat(this.API_URL, "/change-password"), data);
+          return this.http.post("".concat(this.API_URL, "/auth/change-password"), data);
         }
       }, {
         key: "editProfile",
         value: function editProfile(data) {
-          return this.http.post("".concat(this.API_URL, "/profile"), data);
+          return this.http.post("".concat(this.API_URL, "/auth/profile"), data);
         }
       }]);
 

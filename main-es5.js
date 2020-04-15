@@ -903,7 +903,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | pages-profile-profile-module */
-        [__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("pages-profile-profile-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("common"), __webpack_require__.e("pages-profile-profile-module")]).then(__webpack_require__.bind(null,
         /*! ./pages/profile/profile.module */
         "./src/app/pages/profile/profile.module.ts")).then(function (m) {
           return m.ProfileModule;
@@ -2185,7 +2185,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "passwordValidation",
         value: function passwordValidation() {
           return function (AC) {
-            var password = AC.get('password').value;
+            var password = AC.get('new_password').value;
             var confirmpassword = AC.get('confirm_password').value;
 
             if (password !== confirmpassword) {
@@ -2589,6 +2589,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       view_pick_list: "View PickList | ".concat(APP_NAME)
     };
     var errorMessage = {
+      change_password_success: 'Your password changed Successfully',
       delete_dialogue_type: 'error',
       delete_header_text: 'Are you sure you want to delete?',
       delete_confirm_button: 'Yes, Delete it!',
@@ -3301,11 +3302,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "getProfile",
         value: function getProfile() {
           return this.http.get("".concat(this.API_URL, "/auth/profile"));
-        }
-      }, {
-        key: "editProfile",
-        value: function editProfile(data) {
-          return this.http.post("".concat(this.API_URL, "/auth/profile"), data);
         }
       }, {
         key: "unSelectCompany",

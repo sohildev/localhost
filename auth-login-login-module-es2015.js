@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n  <div class=\"auth-box private-card\">\r\n    <div class=\"auth-logo\">\r\n      <h1 class=\"text-primary\">WMS</h1>\r\n    </div>\r\n    <div class=\"auth-heading\">\r\n      <h1 class=\"heading\">Let's Get Started</h1>\r\n      <p>Hi! Please enter your login information below to send submissions as contacts.</p>\r\n    </div>\r\n    <div *ngIf=\"formErrors.apierror\" class=\"alert alert-danger alert-dismissible\">\r\n      <a class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n      <span [innerHTML]=\"formErrors.apierror\"> </span>\r\n    </div>\r\n    <form *ngIf=\"loginType == 'email'\" class=\"form-signin\" [formGroup]=\"loginForm\" (ngSubmit)=\"submitForm()\">\r\n      <div class=\"form-group field-loginform-email required\">\r\n        <label class=\"control-label\">Email Address</label>\r\n        <input type=\"text\" [formControl]=\"loginForm.controls['email']\" class=\"form-control input-lg\"\r\n          placeholder=\"Email ID\">\r\n      </div>\r\n      <div class=\"form-group field-loginform-password required\">\r\n        <label class=\"control-label\">Password</label>\r\n        <input type=\"password\" [formControl]=\"loginForm.controls['password']\" class=\"form-control input-lg\"\r\n          placeholder=\"Password\">\r\n      </div>\r\n      <div class=\"\">\r\n        <div class=\"form-group\">\r\n          <div class=\"form-check form-check-inline mr-0\">\r\n            <div class=\"checkbox-container\">\r\n              <input class=\"form-check-input\" type=\"checkbox\" value=\"all\">\r\n              <span class=\"checkmark\"></span>\r\n            </div>\r\n            <label class=\"checkbox-set mb-0 ml-1\"> Remember Me</label>\r\n          </div>\r\n\r\n          <a routerLink=\"/forgot-password\" class=\"pull-right\"><small>Forgot\r\n              password?</small></a>\r\n        </div>\r\n      </div>\r\n      <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block mt-4\"\r\n        [ngClass]=\"{'qt-loader qt-loader-mini qt-loader-left': showLoader}\" [disabled]=\"showLoader\">\r\n        Log In\r\n      </button>\r\n      <p class=\"text-muted mt-4 m-bottom-0 text-center\">Don't have an account yet?<a routerLink=\"/\"> Sign\r\n          Up</a></p>\r\n    </form>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n  <div class=\"auth-box private-card\">\r\n    <div class=\"auth-logo\">\r\n      <h1 class=\"text-primary\">WMS</h1>\r\n    </div>\r\n    <div class=\"auth-heading\">\r\n      <h1 class=\"heading\">Let's Get Started</h1>\r\n      <p>Hi! Please enter your login information below to send submissions as contacts.</p>\r\n    </div>\r\n    <div *ngIf=\"formErrors.apierror\" class=\"alert alert-danger alert-dismissible\">\r\n      <a class=\"close\" (click)=\"removeError()\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n      <span [innerHTML]=\"formErrors.apierror\"> </span>\r\n    </div>\r\n    <form *ngIf=\"loginType == 'email'\" class=\"form-signin\" [formGroup]=\"loginForm\" (ngSubmit)=\"submitForm()\">\r\n      <div class=\"form-group field-loginform-email required\">\r\n        <label class=\"control-label\">Email Address</label>\r\n        <input type=\"text\" [formControl]=\"loginForm.controls['email']\" class=\"form-control input-lg\"\r\n          placeholder=\"Email ID\">\r\n      </div>\r\n      <div class=\"form-group field-loginform-password required\">\r\n        <label class=\"control-label\">Password</label>\r\n        <input type=\"password\" [formControl]=\"loginForm.controls['password']\" class=\"form-control input-lg\"\r\n          placeholder=\"Password\">\r\n      </div>\r\n      <div class=\"\">\r\n        <div class=\"form-group\">\r\n          <div class=\"form-check form-check-inline mr-0\">\r\n            <div class=\"checkbox-container\">\r\n              <input class=\"form-check-input\" type=\"checkbox\" value=\"all\">\r\n              <span class=\"checkmark\"></span>\r\n            </div>\r\n            <label class=\"checkbox-set mb-0 ml-1\"> Remember Me</label>\r\n          </div>\r\n\r\n          <a routerLink=\"/forgot-password\" class=\"pull-right\"><small>Forgot\r\n              password?</small></a>\r\n        </div>\r\n      </div>\r\n      <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block mt-4\"\r\n        [ngClass]=\"{'qt-loader qt-loader-mini qt-loader-left': showLoader}\" [disabled]=\"showLoader\">\r\n        Log In\r\n      </button>\r\n      <p class=\"text-muted mt-4 m-bottom-0 text-center\">Don't have an account yet?<a routerLink=\"/\"> Sign\r\n          Up</a></p>\r\n    </form>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -106,13 +106,17 @@ let LoginComponent = class LoginComponent {
                     this.router.navigateByUrl(nextURL);
                 }
                 else {
-                    this.formErrors.apierror = `* ${response.error}`;
+                    this.formErrors.apierror = `* ${response.error[0]}`;
                 }
             }, (error) => {
+                console.log(error.error);
                 this.formErrors.apierror = `* Server Error`;
                 this.showLoader = false;
             });
         }
+    }
+    removeError() {
+        this.formErrors.apierror = null;
     }
 };
 LoginComponent.ctorParameters = () => [
