@@ -81,7 +81,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <button class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add',viewId]\">\r\n      Generate Sorting List</button>\r\n  </div>\r\n</div>\r\n\r\n<app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list>\r\n";
+    __webpack_exports__["default"] = "<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <button  *ngIf=\"isSorting\" class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add',viewId]\">\r\n      Generate Sorting List</button>\r\n  </div>\r\n</div>\r\n\r\n<app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list>\r\n";
     /***/
   },
 
@@ -979,7 +979,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.orderProductListArray = [];
         this.headerData = [];
         this.loadingState = false;
-        this.isGenerate = false;
+        this.isSorting = false;
         this.currentPage = 1;
         this.activatedRoute.parent.params.subscribe(function (response) {
           _this7.viewId = response['id'];
@@ -1049,16 +1049,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
               _this8.setOrderId();
 
-              _this8.isGenerate = response.data.is_generate; // this.pagination = this.paginationService.getPager(response.data.pagination['total_page'], this.currentPage);
+              _this8.isSorting = response.data.is_sorting; // this.pagination = this.paginationService.getPager(response.data.pagination['total_page'], this.currentPage);
             } else {
               _this8.orderProductListArray = [];
               _this8.loadingState = false;
-              _this8.isGenerate = false;
+              _this8.isSorting = false;
               _this8.pagination = null;
             }
           }, function (error) {
             _this8.orderProductListArray = [];
-            _this8.isGenerate = false;
+            _this8.isSorting = false;
             _this8.loadingState = false;
             _this8.pagination = null;
           });

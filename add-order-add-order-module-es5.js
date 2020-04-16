@@ -118,7 +118,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.orderService = orderService;
         this.cdr = cdr;
         this.paginationService = paginationService;
-        this.PageTitle = "Add Order";
+        this.PageTitle = "Order";
         this.exampleOptions = {
           defaultDate: new Date(),
           dateFormat: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["DATEFORMAT"] //enableTime: true

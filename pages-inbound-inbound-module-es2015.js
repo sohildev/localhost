@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <button class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add',viewId]\">\r\n      Generate Sorting List</button>\r\n  </div>\r\n</div>\r\n\r\n<app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <button  *ngIf=\"isSorting\" class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add',viewId]\">\r\n      Generate Sorting List</button>\r\n  </div>\r\n</div>\r\n\r\n<app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list>\r\n");
 
 /***/ }),
 
@@ -574,7 +574,7 @@ let OrderSortingComponent = class OrderSortingComponent {
         this.orderProductListArray = [];
         this.headerData = [];
         this.loadingState = false;
-        this.isGenerate = false;
+        this.isSorting = false;
         this.currentPage = 1;
         this.activatedRoute.parent.params.subscribe((response) => {
             this.viewId = response['id'];
@@ -628,18 +628,18 @@ let OrderSortingComponent = class OrderSortingComponent {
             if (response.success && response.data) {
                 this.orderProductListArray = response.data.list ? response.data.list : [];
                 this.setOrderId();
-                this.isGenerate = response.data.is_generate;
+                this.isSorting = response.data.is_sorting;
                 // this.pagination = this.paginationService.getPager(response.data.pagination['total_page'], this.currentPage);
             }
             else {
                 this.orderProductListArray = [];
                 this.loadingState = false;
-                this.isGenerate = false;
+                this.isSorting = false;
                 this.pagination = null;
             }
         }, (error) => {
             this.orderProductListArray = [];
-            this.isGenerate = false;
+            this.isSorting = false;
             this.loadingState = false;
             this.pagination = null;
         });

@@ -52,7 +52,7 @@ let AddOrderComponent = class AddOrderComponent {
         this.orderService = orderService;
         this.cdr = cdr;
         this.paginationService = paginationService;
-        this.PageTitle = "Add Order";
+        this.PageTitle = "Order";
         this.exampleOptions = {
             defaultDate: new Date(),
             dateFormat: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["DATEFORMAT"]
