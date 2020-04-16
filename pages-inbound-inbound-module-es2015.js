@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <button  *ngIf=\"isSorting\" class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add',viewId]\">\r\n      Generate Sorting List</button>\r\n  </div>\r\n</div>\r\n\r\n<app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <button  *ngIf=\"isSorting\" class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add',viewId]\">\r\n      Generate Sorting List</button>\r\n  </div>\r\n</div>\r\n\r\n<!-- <app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list> -->\r\n\r\n<div class=\"table-responsive\">\r\n  <table class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th>SKU No</th>\r\n        <th>Product</th>\r\n        <th class=\"text-center\">Receive Qty</th>\r\n        <th class=\"text-center\">Pending Qty</th>\r\n        <th class=\"text-center\">Sorted Qty</th>\r\n        \r\n        <th class=\"text-right\">Action</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let item of orderProductListArray; let i=index\">\r\n    \r\n        <td>{{item?.product.sku_no}}</td>\r\n        <td>{{item?.product.label}}</td>\r\n        <td class=\"text-center\">{{item?.unload_detail?.received_qty |number}}</td>\r\n        <td class=\"text-center\">{{item?.pending_qty |number}}</td>\r\n        <td class=\"text-center\">{{item?.sorted_qty |number}}</td>\r\n        <td>\r\n          <div *ngIf=\"item?.is_edit\"  class=\"action-drop dropdown text-right\">\r\n            <a href=\"#\" data-toggle=\"dropdown\" class=\"btn shadow-none btn-default btn-sm btn-icon-only\" title=\"\">\r\n              <i class=\"fa fa-ellipsis-h\"></i>\r\n            </a>\r\n            <div class=\"dropdown-menu dropdown-icon-menu drop-menu-right action-dropdown\" style=\"width: 100px;\">\r\n              <a *ngIf=\"item?.is_edit\" class=\"dropdown-item\"\r\n              [routerLink]=\"['/inbound/registeration/edit/',item?.product_register_id]\">\r\n                <i class=\"fa fa-file-pdf-o fa-fw text-primary\">\r\n                </i> Register Product</a>\r\n            </div>\r\n          </div>\r\n        </td>\r\n      </tr>\r\n      <tr *ngIf=\"!loadingState && orderProductListArray.length == 0\">\r\n        <td colspan=\"6\">No records found</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>");
 
 /***/ }),
 
@@ -554,9 +554,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/service/pagination.service */ "./src/app/service/pagination.service.ts");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-/* harmony import */ var src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/common-module/table-list/list-field-type */ "./src/app/common-module/table-list/list-field-type.ts");
-/* harmony import */ var src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/service/product-registration.service */ "./src/app/service/product-registration.service.ts");
-
+/* harmony import */ var src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/service/product-registration.service */ "./src/app/service/product-registration.service.ts");
 
 
 
@@ -572,7 +570,7 @@ let OrderSortingComponent = class OrderSortingComponent {
         this.location = location;
         this.activatedRoute = activatedRoute;
         this.orderProductListArray = [];
-        this.headerData = [];
+        // headerData: Array<any> = [];
         this.loadingState = false;
         this.isSorting = false;
         this.currentPage = 1;
@@ -586,48 +584,56 @@ let OrderSortingComponent = class OrderSortingComponent {
         });
     }
     ngOnInit() {
-        this.setHeaderData();
+        // this.setHeaderData();
         this.getOrderProductList();
     }
     back() {
         this.location.back();
     }
-    setHeaderData() {
-        this.headerData.push(new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "SKU no",
-            key: 'sku_no',
-        }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Product Name",
-            key: 'product_name',
-        }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Receive Qty",
-            key: 'received_qty',
-        }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Pending Qty",
-            key: 'missing_qty',
-        }));
-        let canEdit = true;
-        let actions = {};
-        //
-        // View Details
-        if (canEdit) {
-            actions['view'] = {
-                path: '/inbound/registeration/add/',
-                id: 'order_id',
-                showText: 'Register Product',
-            };
-        }
-        let actionColom = new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["ActionField"](actions);
-        this.headerData.push(actionColom);
-    }
-    onReloadEvent() {
-        this.getOrderProductList();
-    }
+    // setHeaderData() {
+    //   this.headerData.push(
+    //     new TextField({
+    //       label: "SKU no",
+    //       key: 'product.sku_no',
+    //     }),
+    //     new TextField({
+    //       label: "Product Name",
+    //       key: 'product.label',
+    //     }),
+    //     new TextField({
+    //       label: "Receive Qty",
+    //       key: 'unload_detail.received_qty',
+    //     }),
+    //     new TextField({
+    //       label: "Pending Qty",
+    //       key: 'pending_qty',
+    //     }),
+    //   );
+    //   let canEdit = true;
+    //   let actions = {};
+    //   //
+    //   // View Details
+    //   if (canEdit) {
+    //     actions['view'] = {
+    //       path: '/inbound/registeration/edit/',
+    //       id: 'product_register_id',
+    //       showText: 'Register Product',
+    //       // class: 'fa-bell'
+    //     }
+    //   }
+    //   let actionColom = new ActionField(actions);
+    //   this.headerData.push(
+    //     actionColom
+    //   );
+    // }
+    // onReloadEvent() {
+    //   this.getOrderProductList();
+    // }
     getOrderProductList() {
         this.ProductRegistrationService.getSortingList(this.viewId).subscribe((response) => {
             if (response.success && response.data) {
                 this.orderProductListArray = response.data.list ? response.data.list : [];
-                this.setOrderId();
+                // this.setOrderId();
                 this.isSorting = response.data.is_sorting;
                 // this.pagination = this.paginationService.getPager(response.data.pagination['total_page'], this.currentPage);
             }
@@ -644,11 +650,11 @@ let OrderSortingComponent = class OrderSortingComponent {
             this.pagination = null;
         });
     }
-    setOrderId() {
-        this.orderProductListArray.filter((obj) => {
-            obj.order_id = this.viewId;
-        });
-    }
+    // setOrderId() {
+    //   this.orderProductListArray.filter((obj) => {
+    //     obj.order_id = this.viewId;
+    //   });
+    // }
     ngOnDestroy() {
         if (this.subscription) {
             this.subscription.unsubscribe();
@@ -658,7 +664,7 @@ let OrderSortingComponent = class OrderSortingComponent {
 OrderSortingComponent.ctorParameters = () => [
     { type: src_app_service_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"] },
     { type: src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_3__["PaginationService"] },
-    { type: src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_7__["ProductRegistrationService"] },
+    { type: src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_6__["ProductRegistrationService"] },
     { type: _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] }
 ];

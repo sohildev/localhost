@@ -136,7 +136,15 @@ let AddRegisterationComponent = class AddRegisterationComponent {
         this.productRegistrationService.getProductRegistrationById(this.editId).subscribe((response) => {
             if (response.success) {
                 this.addForm.patchValue(response.data);
-                this.getMasterData();
+                this.addForm.patchValue({
+                    received_qty: response.data.unload_detail.received_qty,
+                    unload_detail_id: response.data.unload_detail.unload_detail_id,
+                    product_id: response.data.product.value,
+                    order_id: response.data.order.value
+                });
+                this.orderListArray = [response.data.order];
+                this.productListArray = [response.data.product];
+                // this.getMasterData();
             }
             else {
                 // this.router.navigateByUrl('/inbound/registeration');

@@ -81,7 +81,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <button  *ngIf=\"isSorting\" class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add',viewId]\">\r\n      Generate Sorting List</button>\r\n  </div>\r\n</div>\r\n\r\n<app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list>\r\n";
+    __webpack_exports__["default"] = "<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <button  *ngIf=\"isSorting\" class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add',viewId]\">\r\n      Generate Sorting List</button>\r\n  </div>\r\n</div>\r\n\r\n<!-- <app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list> -->\r\n\r\n<div class=\"table-responsive\">\r\n  <table class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th>SKU No</th>\r\n        <th>Product</th>\r\n        <th class=\"text-center\">Receive Qty</th>\r\n        <th class=\"text-center\">Pending Qty</th>\r\n        <th class=\"text-center\">Sorted Qty</th>\r\n        \r\n        <th class=\"text-right\">Action</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let item of orderProductListArray; let i=index\">\r\n    \r\n        <td>{{item?.product.sku_no}}</td>\r\n        <td>{{item?.product.label}}</td>\r\n        <td class=\"text-center\">{{item?.unload_detail?.received_qty |number}}</td>\r\n        <td class=\"text-center\">{{item?.pending_qty |number}}</td>\r\n        <td class=\"text-center\">{{item?.sorted_qty |number}}</td>\r\n        <td>\r\n          <div *ngIf=\"item?.is_edit\"  class=\"action-drop dropdown text-right\">\r\n            <a href=\"#\" data-toggle=\"dropdown\" class=\"btn shadow-none btn-default btn-sm btn-icon-only\" title=\"\">\r\n              <i class=\"fa fa-ellipsis-h\"></i>\r\n            </a>\r\n            <div class=\"dropdown-menu dropdown-icon-menu drop-menu-right action-dropdown\" style=\"width: 100px;\">\r\n              <a *ngIf=\"item?.is_edit\" class=\"dropdown-item\"\r\n              [routerLink]=\"['/inbound/registeration/edit/',item?.product_register_id]\">\r\n                <i class=\"fa fa-file-pdf-o fa-fw text-primary\">\r\n                </i> Register Product</a>\r\n            </div>\r\n          </div>\r\n        </td>\r\n      </tr>\r\n      <tr *ngIf=\"!loadingState && orderProductListArray.length == 0\">\r\n        <td colspan=\"6\">No records found</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>";
     /***/
   },
 
@@ -953,13 +953,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! src/app/common-module/table-list/list-field-type */
-    "./src/app/common-module/table-list/list-field-type.ts");
-    /* harmony import */
-
-
-    var src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! src/app/service/product-registration.service */
     "./src/app/service/product-registration.service.ts");
 
@@ -976,8 +970,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.ProductRegistrationService = ProductRegistrationService;
         this.location = location;
         this.activatedRoute = activatedRoute;
-        this.orderProductListArray = [];
-        this.headerData = [];
+        this.orderProductListArray = []; // headerData: Array<any> = [];
+
         this.loadingState = false;
         this.isSorting = false;
         this.currentPage = 1;
@@ -994,50 +988,53 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(OrderSortingComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          this.setHeaderData();
+          // this.setHeaderData();
           this.getOrderProductList();
         }
       }, {
         key: "back",
         value: function back() {
           this.location.back();
-        }
-      }, {
-        key: "setHeaderData",
-        value: function setHeaderData() {
-          this.headerData.push(new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "SKU no",
-            key: 'sku_no'
-          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Product Name",
-            key: 'product_name'
-          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Receive Qty",
-            key: 'received_qty'
-          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Pending Qty",
-            key: 'missing_qty'
-          }));
-          var canEdit = true;
-          var actions = {}; //
-          // View Details
+        } // setHeaderData() {
+        //   this.headerData.push(
+        //     new TextField({
+        //       label: "SKU no",
+        //       key: 'product.sku_no',
+        //     }),
+        //     new TextField({
+        //       label: "Product Name",
+        //       key: 'product.label',
+        //     }),
+        //     new TextField({
+        //       label: "Receive Qty",
+        //       key: 'unload_detail.received_qty',
+        //     }),
+        //     new TextField({
+        //       label: "Pending Qty",
+        //       key: 'pending_qty',
+        //     }),
+        //   );
+        //   let canEdit = true;
+        //   let actions = {};
+        //   //
+        //   // View Details
+        //   if (canEdit) {
+        //     actions['view'] = {
+        //       path: '/inbound/registeration/edit/',
+        //       id: 'product_register_id',
+        //       showText: 'Register Product',
+        //       // class: 'fa-bell'
+        //     }
+        //   }
+        //   let actionColom = new ActionField(actions);
+        //   this.headerData.push(
+        //     actionColom
+        //   );
+        // }
+        // onReloadEvent() {
+        //   this.getOrderProductList();
+        // }
 
-          if (canEdit) {
-            actions['view'] = {
-              path: '/inbound/registeration/add/',
-              id: 'order_id',
-              showText: 'Register Product'
-            };
-          }
-
-          var actionColom = new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["ActionField"](actions);
-          this.headerData.push(actionColom);
-        }
-      }, {
-        key: "onReloadEvent",
-        value: function onReloadEvent() {
-          this.getOrderProductList();
-        }
       }, {
         key: "getOrderProductList",
         value: function getOrderProductList() {
@@ -1045,9 +1042,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.ProductRegistrationService.getSortingList(this.viewId).subscribe(function (response) {
             if (response.success && response.data) {
-              _this8.orderProductListArray = response.data.list ? response.data.list : [];
-
-              _this8.setOrderId();
+              _this8.orderProductListArray = response.data.list ? response.data.list : []; // this.setOrderId();
 
               _this8.isSorting = response.data.is_sorting; // this.pagination = this.paginationService.getPager(response.data.pagination['total_page'], this.currentPage);
             } else {
@@ -1062,16 +1057,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _this8.loadingState = false;
             _this8.pagination = null;
           });
-        }
-      }, {
-        key: "setOrderId",
-        value: function setOrderId() {
-          var _this9 = this;
+        } // setOrderId() {
+        //   this.orderProductListArray.filter((obj) => {
+        //     obj.order_id = this.viewId;
+        //   });
+        // }
 
-          this.orderProductListArray.filter(function (obj) {
-            obj.order_id = _this9.viewId;
-          });
-        }
       }, {
         key: "ngOnDestroy",
         value: function ngOnDestroy() {
@@ -1090,7 +1081,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         type: src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_3__["PaginationService"]
       }, {
-        type: src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_7__["ProductRegistrationService"]
+        type: src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_6__["ProductRegistrationService"]
       }, {
         type: _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"]
       }, {
@@ -1179,7 +1170,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function OrderUnlodingComponent(dataService, paginationService, unloadService, location, activatedRoute) {
-        var _this10 = this;
+        var _this9 = this;
 
         _classCallCheck(this, OrderUnlodingComponent);
 
@@ -1194,11 +1185,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.isGenerate = false;
         this.currentPage = 1;
         this.activatedRoute.parent.params.subscribe(function (response) {
-          _this10.viewId = response['id'];
+          _this9.viewId = response['id'];
         });
         this.subscription = this.dataService.OrderDetails.subscribe(function (data) {
           if (data) {
-            _this10.objectArray = data;
+            _this9.objectArray = data;
           }
         });
       }
@@ -1276,29 +1267,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getOrderProductList",
         value: function getOrderProductList() {
-          var _this11 = this;
+          var _this10 = this;
 
           this.unloadService.getUnloadGeneratedListById(this.viewId).subscribe(function (response) {
             if (response.success && response.data) {
-              _this11.orderProductListArray = response.data.list ? response.data.list : [];
-              _this11.isGenerate = response.data.is_generate; // this.pagination = this.paginationService.getPager(response.data.pagination['total_page'], this.currentPage);
+              _this10.orderProductListArray = response.data.list ? response.data.list : [];
+              _this10.isGenerate = response.data.is_generate; // this.pagination = this.paginationService.getPager(response.data.pagination['total_page'], this.currentPage);
             } else {
-              _this11.orderProductListArray = [];
-              _this11.loadingState = false;
-              _this11.isGenerate = false;
-              _this11.pagination = null;
+              _this10.orderProductListArray = [];
+              _this10.loadingState = false;
+              _this10.isGenerate = false;
+              _this10.pagination = null;
             }
           }, function (error) {
-            _this11.orderProductListArray = [];
-            _this11.isGenerate = false;
-            _this11.loadingState = false;
-            _this11.pagination = null;
+            _this10.orderProductListArray = [];
+            _this10.isGenerate = false;
+            _this10.loadingState = false;
+            _this10.pagination = null;
           });
         }
       }, {
         key: "deleteObject",
         value: function deleteObject(object) {
-          var _this12 = this;
+          var _this11 = this;
 
           swal.fire({
             title: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["errorMessage"].delete_header_text,
@@ -1313,9 +1304,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 unload_detail_id: object.unload_detail_id
               };
 
-              _this12.unloadService.deleteUnloadSubmitReports(object.unload_id, params).subscribe(function (response) {
+              _this11.unloadService.deleteUnloadSubmitReports(object.unload_id, params).subscribe(function (response) {
                 if (response.success) {
-                  _this12.getOrderProductList();
+                  _this11.getOrderProductList();
                 }
               });
             }
@@ -1551,14 +1542,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getOrderDetails",
         value: function getOrderDetails() {
-          var _this13 = this;
+          var _this12 = this;
 
           this.orderService.getOrderViewById(this.viewId).subscribe(function (res) {
             if (res.success && res.data) {
-              _this13.objectArray = res.data;
-              _this13.PageTitle = _this13.PageTitle + "".concat(_this13.objectArray.po_no);
+              _this12.objectArray = res.data;
+              _this12.PageTitle = _this12.PageTitle + "".concat(_this12.objectArray.po_no);
 
-              _this13.dataService.OrderDetailsSubject.next(_this13.objectArray);
+              _this12.dataService.OrderDetailsSubject.next(_this12.objectArray);
             }
           });
         }
@@ -1936,7 +1927,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getObjects",
         value: function getObjects() {
-          var _this14 = this;
+          var _this13 = this;
 
           var params = {
             page: this.currentPage
@@ -1947,20 +1938,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.UnloadService.getUnloadList(params).subscribe(function (response) {
-            _this14.loadingState = false;
+            _this13.loadingState = false;
 
             if (response.success) {
-              _this14.objectArray = response.data.list ? response.data.list : [];
-              _this14.showPagination = true;
-              _this14.pagination = _this14.paginationService.getPager(response.data.pagination['total_page'], _this14.currentPage);
+              _this13.objectArray = response.data.list ? response.data.list : [];
+              _this13.showPagination = true;
+              _this13.pagination = _this13.paginationService.getPager(response.data.pagination['total_page'], _this13.currentPage);
             } else {
-              _this14.objectArray = [];
-              _this14.pagination = null;
+              _this13.objectArray = [];
+              _this13.pagination = null;
             }
           }, function (error) {
-            _this14.loadingState = false;
-            _this14.objectArray = [];
-            _this14.pagination = null;
+            _this13.loadingState = false;
+            _this13.objectArray = [];
+            _this13.pagination = null;
           });
         }
       }, {

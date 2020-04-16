@@ -215,9 +215,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             if (response.success) {
               _this2.addForm.patchValue(response.data);
 
-              _this2.getMasterData();
+              _this2.addForm.patchValue({
+                received_qty: response.data.unload_detail.received_qty,
+                unload_detail_id: response.data.unload_detail.unload_detail_id,
+                product_id: response.data.product.value,
+                order_id: response.data.order.value
+              });
+
+              _this2.orderListArray = [response.data.order];
+              _this2.productListArray = [response.data.product]; // this.getMasterData();
             } else {// this.router.navigateByUrl('/inbound/registeration');
-            }
+              }
           });
         }
       }, {

@@ -197,7 +197,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 _this.formErrors.apierror = "* ".concat(response.error[0]);
               }
             }, function (error) {
-              console.log(error.error);
               _this.formErrors.apierror = "* Server Error";
               _this.showLoader = false;
             });

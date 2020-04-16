@@ -109,7 +109,6 @@ let LoginComponent = class LoginComponent {
                     this.formErrors.apierror = `* ${response.error[0]}`;
                 }
             }, (error) => {
-                console.log(error.error);
                 this.formErrors.apierror = `* Server Error`;
                 this.showLoader = false;
             });
