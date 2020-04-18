@@ -1350,6 +1350,9 @@ let ProductRegistrationService = class ProductRegistrationService {
     getMasterData(param = null) {
         return this.http.get(`${this.API_URL}/sorting/drop-down`, { params: param });
     }
+    getTagData(param = null) {
+        return this.http.get(`${this.API_URL}/sorting/get-tags`, { params: param });
+    }
     getSortingList(id) {
         return this.http.get(`${this.API_URL}/sorting/get-list/${id}`);
     }

@@ -2224,6 +2224,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
         }
       }, {
+        key: "getTagData",
+        value: function getTagData() {
+          var param = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+          return this.http.get("".concat(this.API_URL, "/sorting/get-tags"), {
+            params: param
+          });
+        }
+      }, {
         key: "getSortingList",
         value: function getSortingList(id) {
           return this.http.get("".concat(this.API_URL, "/sorting/get-list/").concat(id));
