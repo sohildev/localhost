@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\r\n  <div class=\"page-header\">\r\n    <div class=\"row\">\r\n      <div class=\"col d-flex\">\r\n        <h2 class=\"mr-auto\">{{PageTitle}}</h2>\r\n        <div class=\"ml-3\">\r\n          <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\r\n        </div>\r\n        <div class=\"ml-3\">\r\n          <app-btn-add [btnName]=\"'Add Product Registeration'\" [editData]=\"'/inbound/registeration/add'\"></app-btn-add>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"card\">\r\n    <div class=\"card-body\">\r\n      <app-table-list [headerData]=\"headerData\" [rawData]=\"objectArray\" (reloadEvent)=\"onReloadEvent()\">\r\n      </app-table-list>\r\n      <pagination *ngIf=\"showPagination\" [paginationList]=\"pagination\" [currentPage]=\"currentPage\"\r\n        (onPageChange)=\"getPage($event)\">\r\n      </pagination>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\r\n  <div class=\"page-header\">\r\n    <div class=\"row\">\r\n      <div class=\"col d-flex\">\r\n        <h2 class=\"mr-auto\">{{PageTitle}}</h2>\r\n        <div class=\"ml-3\">\r\n          <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\r\n        </div>\r\n        <div class=\"ml-3\">\r\n          <app-btn-add [btnName]=\"'Product Registeration Config'\" [editData]=\"'/inbound/registeration/add'\"></app-btn-add>\r\n        </div>\r\n        <div class=\"ml-3\">\r\n          <app-btn-add [btnName]=\"'Add Product Registeration'\" [editData]=\"'/inbound/registeration/add'\"></app-btn-add>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"card\">\r\n    <div class=\"card-body\">\r\n      <app-table-list [headerData]=\"headerData\" [rawData]=\"objectArray\" (reloadEvent)=\"onReloadEvent()\">\r\n      </app-table-list>\r\n      <pagination *ngIf=\"showPagination\" [paginationList]=\"pagination\" [currentPage]=\"currentPage\"\r\n        (onPageChange)=\"getPage($event)\">\r\n      </pagination>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -188,12 +188,17 @@ const routes = [
     },
     {
         path: 'add',
-        loadChildren: () => Promise.all(/*! import() | add-registeration-add-registeration-module */[__webpack_require__.e("default~add-order-add-order-module~add-put-away-add-put-away-module~add-registeration-add-registerat~d94f3084"), __webpack_require__.e("add-registeration-add-registeration-module")]).then(__webpack_require__.bind(null, /*! ./add-registeration/add-registeration.module */ "./src/app/pages/inbound/registeration/add-registeration/add-registeration.module.ts")).then(m => m.AddRegisterationModule),
+        loadChildren: () => Promise.all(/*! import() | add-registeration-add-registeration-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("add-registeration-add-registeration-module")]).then(__webpack_require__.bind(null, /*! ./add-registeration/add-registeration.module */ "./src/app/pages/inbound/registeration/add-registeration/add-registeration.module.ts")).then(m => m.AddRegisterationModule),
+        data: { title: 'add_product_register' },
+    },
+    {
+        path: 'add-config',
+        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
         data: { title: 'add_product_register' },
     },
     {
         path: 'edit',
-        loadChildren: () => Promise.all(/*! import() | add-registeration-add-registeration-module */[__webpack_require__.e("default~add-order-add-order-module~add-put-away-add-put-away-module~add-registeration-add-registerat~d94f3084"), __webpack_require__.e("add-registeration-add-registeration-module")]).then(__webpack_require__.bind(null, /*! ./add-registeration/add-registeration.module */ "./src/app/pages/inbound/registeration/add-registeration/add-registeration.module.ts")).then(m => m.AddRegisterationModule),
+        loadChildren: () => Promise.all(/*! import() | add-registeration-add-registeration-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("add-registeration-add-registeration-module")]).then(__webpack_require__.bind(null, /*! ./add-registeration/add-registeration.module */ "./src/app/pages/inbound/registeration/add-registeration/add-registeration.module.ts")).then(m => m.AddRegisterationModule),
         data: { title: 'edit_product_register' },
     }
 ];

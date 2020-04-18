@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <button  *ngIf=\"isSorting\" class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add',viewId]\">\r\n      Generate Sorting List</button>\r\n  </div>\r\n</div>\r\n\r\n<!-- <app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list> -->\r\n\r\n<div class=\"table-responsive\">\r\n  <table class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th>SKU No</th>\r\n        <th>Product</th>\r\n        <th class=\"text-center\">Receive Qty</th>\r\n        <th class=\"text-center\">Pending Qty</th>\r\n        <th class=\"text-center\">Sorted Qty</th>\r\n        \r\n        <th class=\"text-right\">Action</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let item of orderProductListArray; let i=index\">\r\n    \r\n        <td>{{item?.product.sku_no}}</td>\r\n        <td>{{item?.product.label}}</td>\r\n        <td class=\"text-center\">{{item?.unload_detail?.received_qty |number}}</td>\r\n        <td class=\"text-center\">{{item?.pending_qty |number}}</td>\r\n        <td class=\"text-center\">{{item?.sorted_qty |number}}</td>\r\n        <td>\r\n          <div *ngIf=\"item?.is_edit\"  class=\"action-drop dropdown text-right\">\r\n            <a href=\"#\" data-toggle=\"dropdown\" class=\"btn shadow-none btn-default btn-sm btn-icon-only\" title=\"\">\r\n              <i class=\"fa fa-ellipsis-h\"></i>\r\n            </a>\r\n            <div class=\"dropdown-menu dropdown-icon-menu drop-menu-right action-dropdown\" style=\"width: 100px;\">\r\n              <a *ngIf=\"item?.is_edit\" class=\"dropdown-item\"\r\n              [routerLink]=\"['/inbound/registeration/edit/',item?.product_register_id]\">\r\n                <i class=\"fa fa-file-pdf-o fa-fw text-primary\">\r\n                </i> Register Product</a>\r\n            </div>\r\n          </div>\r\n        </td>\r\n      </tr>\r\n      <tr *ngIf=\"!loadingState && orderProductListArray.length == 0\">\r\n        <td colspan=\"6\">No records found</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <!-- <button  *ngIf=\"isSorting\" class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add',viewId]\">\r\n      Generate Sorting List</button> -->\r\n      <button  *ngIf=\"isSorting\" class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add-config',viewId]\">\r\n        Generate Sorting List</button>\r\n  </div>\r\n</div>\r\n\r\n<!-- <app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list> -->\r\n\r\n<div class=\"table-responsive\">\r\n  <table class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th>SKU No</th>\r\n        <th>Product</th>\r\n        <th class=\"text-center\">Receive Qty</th>\r\n        <th class=\"text-center\">Pending Qty</th>\r\n        <th class=\"text-center\">Sorted Qty</th>\r\n        \r\n        <th class=\"text-right\">Action</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let item of orderProductListArray; let i=index\">\r\n    \r\n        <td>{{item?.product.sku_no}}</td>\r\n        <td>{{item?.product.label}}</td>\r\n        <td class=\"text-center\">{{item?.unload_detail?.received_qty |number}}</td>\r\n        <td class=\"text-center\">{{item?.pending_qty |number}}</td>\r\n        <td class=\"text-center\">{{item?.sorted_qty |number}}</td>\r\n        <td>\r\n          <div *ngIf=\"item?.is_edit\"  class=\"action-drop dropdown text-right\">\r\n            <a href=\"#\" data-toggle=\"dropdown\" class=\"btn shadow-none btn-default btn-sm btn-icon-only\" title=\"\">\r\n              <i class=\"fa fa-ellipsis-h\"></i>\r\n            </a>\r\n            <div class=\"dropdown-menu dropdown-icon-menu drop-menu-right action-dropdown\" style=\"width: 100px;\">\r\n              <a *ngIf=\"item?.is_edit\" class=\"dropdown-item\"\r\n              [routerLink]=\"['/inbound/registeration/edit/',item?.product_register_id]\">\r\n                <i class=\"fa fa-file-pdf-o fa-fw text-primary\">\r\n                </i> Register Product</a>\r\n            </div>\r\n          </div>\r\n        </td>\r\n      </tr>\r\n      <tr *ngIf=\"!loadingState && orderProductListArray.length == 0\">\r\n        <td colspan=\"6\">No records found</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>");
 
 /***/ }),
 
@@ -201,17 +201,17 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        loadChildren: () => Promise.all(/*! import() | order-list-order-list-module */[__webpack_require__.e("default~add-order-add-order-module~add-put-away-add-put-away-module~add-registeration-add-registerat~d94f3084"), __webpack_require__.e("order-list-order-list-module")]).then(__webpack_require__.bind(null, /*! ./order-list/order-list.module */ "./src/app/pages/inbound/order/order-list/order-list.module.ts")).then(m => m.OrderListModule),
+        loadChildren: () => Promise.all(/*! import() | order-list-order-list-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("order-list-order-list-module")]).then(__webpack_require__.bind(null, /*! ./order-list/order-list.module */ "./src/app/pages/inbound/order/order-list/order-list.module.ts")).then(m => m.OrderListModule),
         data: { title: 'order_list' },
     },
     {
         path: 'add',
-        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-order-add-order-module~add-put-away-add-put-away-module~add-registeration-add-registerat~d94f3084"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
+        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
         data: { title: 'add_order' },
     },
     {
         path: 'edit/:id',
-        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-order-add-order-module~add-put-away-add-put-away-module~add-registeration-add-registerat~d94f3084"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
+        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
         data: { title: 'edit_order' },
     },
     {
@@ -1352,6 +1352,16 @@ let ProductRegistrationService = class ProductRegistrationService {
     }
     getSortingList(id) {
         return this.http.get(`${this.API_URL}/sorting/get-list/${id}`);
+    }
+    // ==> product-config
+    addProductConfiguration(data) {
+        return this.http.post(`${this.API_URL}/sorting/product-config`, data);
+    }
+    editProductConfiguration(id, data) {
+        return this.http.put(`${this.API_URL}/sorting/product-config/${id}`, data);
+    }
+    getProductConfigurationById(id, param = null) {
+        return this.http.get(`${this.API_URL}/sorting/product-config/${id}`, { params: param });
     }
 };
 ProductRegistrationService.ctorParameters = () => [

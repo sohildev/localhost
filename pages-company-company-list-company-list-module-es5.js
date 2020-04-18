@@ -343,7 +343,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | company-add-company-add-module */
-        [__webpack_require__.e("default~add-order-add-order-module~add-put-away-add-put-away-module~add-registeration-add-registerat~d94f3084"), __webpack_require__.e("company-add-company-add-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("company-add-company-add-module")]).then(__webpack_require__.bind(null,
         /*! ../company-add/company-add.module */
         "./src/app/pages/company/company-add/company-add.module.ts")).then(function (m) {
           return m.CompanyAddModule;
@@ -357,7 +357,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | company-add-company-add-module */
-        [__webpack_require__.e("default~add-order-add-order-module~add-put-away-add-put-away-module~add-registeration-add-registerat~d94f3084"), __webpack_require__.e("company-add-company-add-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("company-add-company-add-module")]).then(__webpack_require__.bind(null,
         /*! ../company-add/company-add.module */
         "./src/app/pages/company/company-add/company-add.module.ts")).then(function (m) {
           return m.CompanyAddModule;
