@@ -320,42 +320,35 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "submitForm",
         value: function submitForm(formData) {
-          var _this3 = this;
-
           if (formData.valid) {
-            this.showLoader = true;
-            var data = new FormData();
-            data.append('registration_type', formData.value.registration_type);
-            data.append('order_id', formData.value.order_id);
-            data.append('product_id', formData.value.product_id);
-
-            if (this.isSerialShow) {
-              data.append('maintain_serial_no', formData.value.maintain_serial_no);
-            }
-
-            if (this.isEditing) {
-              this.productRegistrationService.editProductConfiguration(this.editId, data).subscribe(function (response) {
-                _this3.showLoader = false;
-
-                if (response.success) {
-                  _this3.next(); // this.router.navigateByUrl('/inbound/registeration');
-
-                }
-              }, function (error) {
-                _this3.showLoader = false;
-              });
-            } else {
-              this.productRegistrationService.addProductConfiguration(data).subscribe(function (response) {
-                _this3.showLoader = false;
-
-                if (response.success) {
-                  _this3.next(); // this.router.navigateByUrl('/inbound/registeration');
-
-                }
-              }, function (error) {
-                _this3.showLoader = false;
-              });
-            }
+            // this.showLoader = true;
+            // const data = new FormData();
+            // data.append('registration_type', formData.value.registration_type);
+            // data.append('order_id', formData.value.order_id);
+            // data.append('product_id', formData.value.product_id);
+            // if (this.isSerialShow) { data.append('maintain_serial_no', formData.value.maintain_serial_no); }
+            // if (this.isEditing) {
+            //   this.productRegistrationService.editProductConfiguration(this.editId, data).subscribe((response) => {
+            //     this.showLoader = false;
+            //     if (response.success) {
+            //       this.next();
+            //       // this.router.navigateByUrl('/inbound/registeration');
+            //     }
+            //   }, (error) => {
+            //     this.showLoader = false;
+            //   });
+            // } else {
+            //   this.productRegistrationService.addProductConfiguration(data).subscribe((response) => {
+            //     this.showLoader = false;
+            //     if (response.success) {
+            //       this.next();
+            //       // this.router.navigateByUrl('/inbound/registeration');
+            //     }
+            //   }, (error) => {
+            //     this.showLoader = false;
+            //   });
+            // }
+            this.next();
           }
         }
       }, {
@@ -412,11 +405,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getOrderDetails",
         value: function getOrderDetails() {
-          var _this4 = this;
+          var _this3 = this;
 
           this.subscription = this.dataService.OrderDetails.subscribe(function (data) {
             if (data) {
-              _this4.OrderDetails = data;
+              _this3.OrderDetails = data;
             }
           });
         }
@@ -431,7 +424,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "submitPForm",
         value: function submitPForm(formData) {
-          var _this5 = this;
+          var _this4 = this;
 
           console.log(formData);
 
@@ -440,23 +433,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
             if (this.isEditing) {
               this.productRegistrationService.editProductRegistration(this.editId, formData.value).subscribe(function (response) {
-                _this5.showLoader = false;
+                _this4.showLoader = false;
 
                 if (response.success) {
-                  _this5.back();
+                  _this4.back();
                 }
               }, function (error) {
-                _this5.showLoader = false;
+                _this4.showLoader = false;
               });
             } else {
               this.productRegistrationService.addProductRegistration(formData.value).subscribe(function (response) {
-                _this5.showLoader = false;
+                _this4.showLoader = false;
 
                 if (response.success) {
-                  _this5.back();
+                  _this4.back();
                 }
               }, function (error) {
-                _this5.showLoader = false;
+                _this4.showLoader = false;
               });
             }
           }
@@ -803,24 +796,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ControlErrorsDirective, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this6 = this;
+          var _this5 = this;
 
           if (this.control && this.control.valueChanges) {
             Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["merge"])(this.control.valueChanges, this.submit$).subscribe(function (v) {
-              var controlErrors = _this6.control.errors;
+              var controlErrors = _this5.control.errors;
 
               if (controlErrors) {
-                var control_name = _this6.getFormControlName(_this6.control); // console.log(control_name, controlErrors);
+                var control_name = _this5.getFormControlName(_this5.control); // console.log(control_name, controlErrors);
 
 
                 var firstKey = Object.keys(controlErrors)[0];
                 var messages = _form_errors__WEBPACK_IMPORTED_MODULE_7__["VALIDATION_MESSAGES"][control_name];
 
                 if (messages !== undefined && messages !== null && messages !== '') {
-                  _this6.setError(messages[firstKey]);
+                  _this5.setError(messages[firstKey]);
                 }
-              } else if (_this6.ref) {
-                _this6.setError(null);
+              } else if (_this5.ref) {
+                _this5.setError(null);
               }
             });
           }
@@ -933,14 +926,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*#__PURE__*/
     function () {
       function FormSubmitDirective(host) {
-        var _this7 = this;
+        var _this6 = this;
 
         _classCallCheck(this, FormSubmitDirective);
 
         this.host = host;
         this.submit$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["fromEvent"])(this.element, 'submit').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function () {
-          if (_this7.element.classList.contains('submitted') === false) {
-            _this7.element.classList.add('submitted');
+          if (_this6.element.classList.contains('submitted') === false) {
+            _this6.element.classList.add('submitted');
           }
         }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["shareReplay"])(1));
       }

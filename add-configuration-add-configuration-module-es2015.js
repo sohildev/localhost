@@ -235,36 +235,34 @@ let AddConfigurationComponent = class AddConfigurationComponent {
     }
     submitForm(formData) {
         if (formData.valid) {
-            this.showLoader = true;
-            const data = new FormData();
-            data.append('registration_type', formData.value.registration_type);
-            data.append('order_id', formData.value.order_id);
-            data.append('product_id', formData.value.product_id);
-            if (this.isSerialShow) {
-                data.append('maintain_serial_no', formData.value.maintain_serial_no);
-            }
-            if (this.isEditing) {
-                this.productRegistrationService.editProductConfiguration(this.editId, data).subscribe((response) => {
-                    this.showLoader = false;
-                    if (response.success) {
-                        this.next();
-                        // this.router.navigateByUrl('/inbound/registeration');
-                    }
-                }, (error) => {
-                    this.showLoader = false;
-                });
-            }
-            else {
-                this.productRegistrationService.addProductConfiguration(data).subscribe((response) => {
-                    this.showLoader = false;
-                    if (response.success) {
-                        this.next();
-                        // this.router.navigateByUrl('/inbound/registeration');
-                    }
-                }, (error) => {
-                    this.showLoader = false;
-                });
-            }
+            // this.showLoader = true;
+            // const data = new FormData();
+            // data.append('registration_type', formData.value.registration_type);
+            // data.append('order_id', formData.value.order_id);
+            // data.append('product_id', formData.value.product_id);
+            // if (this.isSerialShow) { data.append('maintain_serial_no', formData.value.maintain_serial_no); }
+            // if (this.isEditing) {
+            //   this.productRegistrationService.editProductConfiguration(this.editId, data).subscribe((response) => {
+            //     this.showLoader = false;
+            //     if (response.success) {
+            //       this.next();
+            //       // this.router.navigateByUrl('/inbound/registeration');
+            //     }
+            //   }, (error) => {
+            //     this.showLoader = false;
+            //   });
+            // } else {
+            //   this.productRegistrationService.addProductConfiguration(data).subscribe((response) => {
+            //     this.showLoader = false;
+            //     if (response.success) {
+            //       this.next();
+            //       // this.router.navigateByUrl('/inbound/registeration');
+            //     }
+            //   }, (error) => {
+            //     this.showLoader = false;
+            //   });
+            // }
+            this.next();
         }
     }
     back() {

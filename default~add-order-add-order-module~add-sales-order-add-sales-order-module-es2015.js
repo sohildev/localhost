@@ -142,11 +142,12 @@ let AddProductComponent = class AddProductComponent {
         }
     }
     submitForm(formData) {
+        console.log(formData.value);
         let product_name;
         if (formData.valid) {
             this.showLoader = true;
             this.productListArray.filter((item) => {
-                if (item.value = formData.value.product_id) {
+                if (item.value == formData.value.product_id) {
                     product_name = item.label;
                 }
             });
