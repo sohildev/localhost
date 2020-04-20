@@ -185,7 +185,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         if (this.activatedRoute.snapshot.paramMap.get('id')) {
           var id = this.activatedRoute.snapshot.paramMap.get('id');
 
-          if (location.path() == "/inbound/registeration/add-config/".concat(id)) {
+          if (location.path() == "/inbound/registeration/add/".concat(id)) {
             this.OrderId = id;
             this.addForm.patchValue({
               order_id: this.OrderId
@@ -243,31 +243,83 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               }
             }
           });
+          this.getTagData();
+        }
+      }, {
+        key: "getTagData",
+        value: function getTagData() {
+          var _this2 = this;
+
           this.productRegistrationService.getTagData().subscribe(function (res) {
             if (res.success) {
-              _this.tagArray = res.data.tag;
+              _this2.tagArray = res.data.tag;
             }
           });
         }
       }, {
         key: "getEditObject",
         value: function getEditObject() {
-          var _this2 = this;
+          var _this3 = this;
 
-          this.productRegistrationService.getProductConfigurationById(this.editId).subscribe(function (response) {
-            if (response.success) {
-              _this2.addForm.patchValue(response.data);
+          this.productRegistrationService.getProductRegistrationById(this.editId).subscribe(function (response) {
+            _this3.orderListArray = [response.data.order];
+            _this3.tagArray = [response.data.tag];
 
-              _this2.addForm.patchValue({
-                registration_type: response.data.unload_detail.registration_type,
-                maintain_serial_no: response.data.unload_detail.maintain_serial_no,
+            if (response.data.configuration.registration_type.value == 0) {
+              if (response.data.configuration.serial.value == 0) {
+                _this3.formtype = 2;
+                _this3.registrationTypeText = response.data.configuration.registration_type.label;
+                _this3.productText = response.data.product.label;
+
+                _this3.addWithForm.patchValue({
+                  registration_type: response.data.configuration.registration_type.value,
+                  order_id: response.data.order.value,
+                  maintain_serial_no: response.data.configuration.serial.value,
+                  product_id: response.data.product.value,
+                  tag_id: response.data.tag.value,
+                  qty: response.data.qty,
+                  serial_no: response.data.serial_no,
+                  barcode: response.data.barcode,
+                  sku_no: response.data.sku_no,
+                  unload_id: response.data.unload_id,
+                  unload_detail_id: response.data.unload_detail.unload_detail_id,
+                  received_qty: response.data.unload_detail.received_qty
+                });
+              } else if (response.data.configuration.serial.value == 1) {
+                _this3.formtype = 3;
+                _this3.registrationTypeText = response.data.configuration.registration_type.label;
+                _this3.productText = response.data.product.label;
+
+                _this3.addWithOutForm.patchValue({
+                  registration_type: response.data.configuration.registration_type.value,
+                  order_id: response.data.order.value,
+                  product_id: response.data.product.value,
+                  maintain_serial_no: response.data.configuration.serial.value,
+                  tag_id: response.data.tag.value,
+                  qty: response.data.qty,
+                  barcode: response.data.barcode,
+                  sku_no: response.data.sku_no,
+                  unload_id: response.data.unload_id,
+                  unload_detail_id: response.data.unload_detail.unload_detail_id,
+                  received_qty: response.data.unload_detail.received_qty
+                });
+              }
+            } else if (response.data.configuration.registration_type.value == 1) {
+              _this3.formtype = 4;
+              _this3.registrationTypeText = response.data.configuration.registration_type.label;
+              _this3.productText = response.data.product.label;
+
+              _this3.addBulkForm.patchValue({
+                registration_type: response.data.configuration.registration_type.value,
+                order_id: response.data.order.value,
                 product_id: response.data.product.value,
-                order_id: response.data.order.value
+                tag_id: response.data.tag.value,
+                qty: response.data.qty,
+                sku_no: response.data.sku_no,
+                unload_id: response.data.unload_id,
+                unload_detail_id: response.data.unload_detail.unload_detail_id,
+                received_qty: response.data.unload_detail.received_qty
               });
-
-              _this2.orderListArray = [response.data.order];
-              _this2.productListArray = [response.data.product];
-            } else {// this.router.navigateByUrl('/inbound/registeration');
             }
           });
         }
@@ -405,11 +457,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getOrderDetails",
         value: function getOrderDetails() {
-          var _this3 = this;
+          var _this4 = this;
 
           this.subscription = this.dataService.OrderDetails.subscribe(function (data) {
             if (data) {
-              _this3.OrderDetails = data;
+              _this4.OrderDetails = data;
             }
           });
         }
@@ -424,7 +476,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "submitPForm",
         value: function submitPForm(formData) {
-          var _this4 = this;
+          var _this5 = this;
 
           console.log(formData);
 
@@ -433,23 +485,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
             if (this.isEditing) {
               this.productRegistrationService.editProductRegistration(this.editId, formData.value).subscribe(function (response) {
-                _this4.showLoader = false;
+                _this5.showLoader = false;
 
                 if (response.success) {
-                  _this4.back();
+                  _this5.back();
                 }
               }, function (error) {
-                _this4.showLoader = false;
+                _this5.showLoader = false;
               });
             } else {
               this.productRegistrationService.addProductRegistration(formData.value).subscribe(function (response) {
-                _this4.showLoader = false;
+                _this5.showLoader = false;
 
                 if (response.success) {
-                  _this4.back();
+                  _this5.back();
                 }
               }, function (error) {
-                _this4.showLoader = false;
+                _this5.showLoader = false;
               });
             }
           }
@@ -796,24 +848,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ControlErrorsDirective, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this5 = this;
+          var _this6 = this;
 
           if (this.control && this.control.valueChanges) {
             Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["merge"])(this.control.valueChanges, this.submit$).subscribe(function (v) {
-              var controlErrors = _this5.control.errors;
+              var controlErrors = _this6.control.errors;
 
               if (controlErrors) {
-                var control_name = _this5.getFormControlName(_this5.control); // console.log(control_name, controlErrors);
+                var control_name = _this6.getFormControlName(_this6.control); // console.log(control_name, controlErrors);
 
 
                 var firstKey = Object.keys(controlErrors)[0];
                 var messages = _form_errors__WEBPACK_IMPORTED_MODULE_7__["VALIDATION_MESSAGES"][control_name];
 
                 if (messages !== undefined && messages !== null && messages !== '') {
-                  _this5.setError(messages[firstKey]);
+                  _this6.setError(messages[firstKey]);
                 }
-              } else if (_this5.ref) {
-                _this5.setError(null);
+              } else if (_this6.ref) {
+                _this6.setError(null);
               }
             });
           }
@@ -926,14 +978,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*#__PURE__*/
     function () {
       function FormSubmitDirective(host) {
-        var _this6 = this;
+        var _this7 = this;
 
         _classCallCheck(this, FormSubmitDirective);
 
         this.host = host;
         this.submit$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["fromEvent"])(this.element, 'submit').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function () {
-          if (_this6.element.classList.contains('submitted') === false) {
-            _this6.element.classList.add('submitted');
+          if (_this7.element.classList.contains('submitted') === false) {
+            _this7.element.classList.add('submitted');
           }
         }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["shareReplay"])(1));
       }

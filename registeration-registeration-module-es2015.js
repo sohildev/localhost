@@ -186,21 +186,21 @@ const routes = [
         component: _registeration_component__WEBPACK_IMPORTED_MODULE_3__["RegisterationComponent"],
         data: { title: 'product_register_list' },
     },
+    // {
+    //   path: 'add',
+    //   loadChildren: () => import('./add-registeration/add-registeration.module').then(m => m.AddRegisterationModule),
+    //   data: { title: 'add_product_register' },
+    // },
     {
         path: 'add',
-        loadChildren: () => Promise.all(/*! import() | add-registeration-add-registeration-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("add-registeration-add-registeration-module")]).then(__webpack_require__.bind(null, /*! ./add-registeration/add-registeration.module */ "./src/app/pages/inbound/registeration/add-registeration/add-registeration.module.ts")).then(m => m.AddRegisterationModule),
-        data: { title: 'add_product_register' },
-    },
-    {
-        path: 'add-config',
-        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
+        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
         data: { title: 'add_product_register' },
     },
     {
         path: 'edit',
-        loadChildren: () => Promise.all(/*! import() | add-registeration-add-registeration-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("add-registeration-add-registeration-module")]).then(__webpack_require__.bind(null, /*! ./add-registeration/add-registeration.module */ "./src/app/pages/inbound/registeration/add-registeration/add-registeration.module.ts")).then(m => m.AddRegisterationModule),
-        data: { title: 'edit_product_register' },
-    }
+        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
+        data: { title: 'add_product_register' },
+    },
 ];
 let RegisterationModule = class RegisterationModule {
 };

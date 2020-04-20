@@ -344,7 +344,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | company-setting-edit-company-setting-edit-module */
-        [__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("common"), __webpack_require__.e("company-setting-edit-company-setting-edit-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("common"), __webpack_require__.e("company-setting-edit-company-setting-edit-module")]).then(__webpack_require__.bind(null,
         /*! ../company-setting-edit/company-setting-edit.module */
         "./src/app/pages/company-setting/company-setting-edit/company-setting-edit.module.ts")).then(function (m) {
           return m.CompanySettingEditModule;

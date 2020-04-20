@@ -122,7 +122,7 @@ let AddConfigurationComponent = class AddConfigurationComponent {
         });
         if (this.activatedRoute.snapshot.paramMap.get('id')) {
             let id = this.activatedRoute.snapshot.paramMap.get('id');
-            if (location.path() == `/inbound/registeration/add-config/${id}`) {
+            if (location.path() == `/inbound/registeration/add/${id}`) {
                 this.OrderId = id;
                 this.addForm.patchValue({ order_id: this.OrderId });
                 this.OrderId_show = false;
@@ -169,6 +169,9 @@ let AddConfigurationComponent = class AddConfigurationComponent {
                 }
             }
         });
+        this.getTagData();
+    }
+    getTagData() {
         this.productRegistrationService.getTagData().subscribe((res) => {
             if (res.success) {
                 this.tagArray = res.data.tag;
@@ -176,20 +179,63 @@ let AddConfigurationComponent = class AddConfigurationComponent {
         });
     }
     getEditObject() {
-        this.productRegistrationService.getProductConfigurationById(this.editId).subscribe((response) => {
-            if (response.success) {
-                this.addForm.patchValue(response.data);
-                this.addForm.patchValue({
-                    registration_type: response.data.unload_detail.registration_type,
-                    maintain_serial_no: response.data.unload_detail.maintain_serial_no,
-                    product_id: response.data.product.value,
-                    order_id: response.data.order.value
-                });
-                this.orderListArray = [response.data.order];
-                this.productListArray = [response.data.product];
+        this.productRegistrationService.getProductRegistrationById(this.editId).subscribe((response) => {
+            this.orderListArray = [response.data.order];
+            this.tagArray = [response.data.tag];
+            if (response.data.configuration.registration_type.value == 0) {
+                if (response.data.configuration.serial.value == 0) {
+                    this.formtype = 2;
+                    this.registrationTypeText = response.data.configuration.registration_type.label;
+                    this.productText = response.data.product.label;
+                    this.addWithForm.patchValue({
+                        registration_type: response.data.configuration.registration_type.value,
+                        order_id: response.data.order.value,
+                        maintain_serial_no: response.data.configuration.serial.value,
+                        product_id: response.data.product.value,
+                        tag_id: response.data.tag.value,
+                        qty: response.data.qty,
+                        serial_no: response.data.serial_no,
+                        barcode: response.data.barcode,
+                        sku_no: response.data.sku_no,
+                        unload_id: response.data.unload_id,
+                        unload_detail_id: response.data.unload_detail.unload_detail_id,
+                        received_qty: response.data.unload_detail.received_qty,
+                    });
+                }
+                else if (response.data.configuration.serial.value == 1) {
+                    this.formtype = 3;
+                    this.registrationTypeText = response.data.configuration.registration_type.label;
+                    this.productText = response.data.product.label;
+                    this.addWithOutForm.patchValue({
+                        registration_type: response.data.configuration.registration_type.value,
+                        order_id: response.data.order.value,
+                        product_id: response.data.product.value,
+                        maintain_serial_no: response.data.configuration.serial.value,
+                        tag_id: response.data.tag.value,
+                        qty: response.data.qty,
+                        barcode: response.data.barcode,
+                        sku_no: response.data.sku_no,
+                        unload_id: response.data.unload_id,
+                        unload_detail_id: response.data.unload_detail.unload_detail_id,
+                        received_qty: response.data.unload_detail.received_qty,
+                    });
+                }
             }
-            else {
-                // this.router.navigateByUrl('/inbound/registeration');
+            else if (response.data.configuration.registration_type.value == 1) {
+                this.formtype = 4;
+                this.registrationTypeText = response.data.configuration.registration_type.label;
+                this.productText = response.data.product.label;
+                this.addBulkForm.patchValue({
+                    registration_type: response.data.configuration.registration_type.value,
+                    order_id: response.data.order.value,
+                    product_id: response.data.product.value,
+                    tag_id: response.data.tag.value,
+                    qty: response.data.qty,
+                    sku_no: response.data.sku_no,
+                    unload_id: response.data.unload_id,
+                    unload_detail_id: response.data.unload_detail.unload_detail_id,
+                    received_qty: response.data.unload_detail.received_qty,
+                });
             }
         });
     }

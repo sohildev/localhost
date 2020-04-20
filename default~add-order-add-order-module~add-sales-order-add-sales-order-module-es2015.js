@@ -142,7 +142,6 @@ let AddProductComponent = class AddProductComponent {
         }
     }
     submitForm(formData) {
-        console.log(formData.value);
         let product_name;
         if (formData.valid) {
             this.showLoader = true;

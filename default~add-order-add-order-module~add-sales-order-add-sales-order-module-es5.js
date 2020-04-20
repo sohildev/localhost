@@ -216,7 +216,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function submitForm(formData) {
           var _this2 = this;
 
-          console.log(formData.value);
           var product_name;
 
           if (formData.valid) {

@@ -316,7 +316,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-put-away-add-put-away-module */
-        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("add-put-away-add-put-away-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("add-put-away-add-put-away-module")]).then(__webpack_require__.bind(null,
         /*! ./add-put-away/add-put-away.module */
         "./src/app/pages/inbound/put-away/add-put-away/add-put-away.module.ts")).then(function (m) {
           return m.AddPutAwayModule;
@@ -330,7 +330,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-put-away-add-put-away-module */
-        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("add-put-away-add-put-away-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("add-put-away-add-put-away-module")]).then(__webpack_require__.bind(null,
         /*! ./add-put-away/add-put-away.module */
         "./src/app/pages/inbound/put-away/add-put-away/add-put-away.module.ts")).then(function (m) {
           return m.AddPutAwayModule;

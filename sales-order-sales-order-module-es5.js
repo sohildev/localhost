@@ -317,7 +317,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-sales-order-add-sales-order-module */
-        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("common"), __webpack_require__.e("add-sales-order-add-sales-order-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("common"), __webpack_require__.e("add-sales-order-add-sales-order-module")]).then(__webpack_require__.bind(null,
         /*! ./add-sales-order/add-sales-order.module */
         "./src/app/pages/outbound/sales-order/add-sales-order/add-sales-order.module.ts")).then(function (m) {
           return m.AddSalesOrderModule;
@@ -328,7 +328,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-sales-order-add-sales-order-module */
-        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~71daa61d"), __webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("common"), __webpack_require__.e("add-sales-order-add-sales-order-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("common"), __webpack_require__.e("add-sales-order-add-sales-order-module")]).then(__webpack_require__.bind(null,
         /*! ./add-sales-order/add-sales-order.module */
         "./src/app/pages/outbound/sales-order/add-sales-order/add-sales-order.module.ts")).then(function (m) {
           return m.AddSalesOrderModule;
