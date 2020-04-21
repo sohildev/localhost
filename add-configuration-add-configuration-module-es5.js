@@ -113,7 +113,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       function AddConfigurationComponent(router, activatedRoute, fb, location, dataService, productRegistrationService) {
         _classCallCheck(this, AddConfigurationComponent);
 
-        // console.log("location.path() ==>", location.path());
         this.router = router;
         this.activatedRoute = activatedRoute;
         this.fb = fb;
@@ -131,12 +130,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         };
         this.isEditing = false;
         this.editId = null;
-        this.OrderId_show = true;
+        this.orderId_show = true;
         this.isSerialShow = false;
         this.registrationTypeArray = [];
         this.serialArray = [];
         this.formtype = 1;
         this.tagArray = [];
+        this.isRegister = false;
+        console.log("location.path() ==>", location.path());
         this.addForm = this.fb.group({
           order_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
           maintain_serial_no: [null],
@@ -181,20 +182,39 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           unload_detail_id: [null],
           received_qty: [null]
         });
+        console.log(this.activatedRoute.snapshot.paramMap);
 
         if (this.activatedRoute.snapshot.paramMap.get('id')) {
           var id = this.activatedRoute.snapshot.paramMap.get('id');
 
           if (location.path() == "/inbound/registeration/add/".concat(id)) {
-            this.OrderId = id;
+            this.orderId = id;
             this.addForm.patchValue({
-              order_id: this.OrderId
+              order_id: this.orderId
             });
-            this.OrderId_show = false;
+            this.orderId_show = false;
             this.getOrderDetails();
           } else {
+            this.formtype = 5;
             this.editId = id;
             this.isEditing = true;
+          }
+        } else if (this.activatedRoute.snapshot.paramMap.get('order_id') && this.activatedRoute.snapshot.paramMap.get('product_id')) {
+          var order_id = this.activatedRoute.snapshot.paramMap.get('order_id');
+          var product_id = this.activatedRoute.snapshot.paramMap.get('product_id');
+
+          if (location.path() == "/inbound/registeration/register-product;order_id=".concat(order_id, ";product_id=").concat(product_id)) {
+            this.orderId = order_id;
+            this.productId = product_id;
+            this.addForm.patchValue({
+              order_id: this.orderId,
+              product_id: product_id
+            });
+            this.orderId_show = false;
+            this.formtype = 5;
+            this.isEditing = false;
+            this.isRegister = true;
+            this.getOrderDetails();
           }
         }
       }
@@ -204,6 +224,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function ngOnInit() {
           if (this.isEditing) {
             this.getEditObject();
+          } else if (this.isRegister) {
+            this.getProductRegistrationObject();
+            this.getTagData();
           } else {
             this.getMasterData();
           }
@@ -263,6 +286,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.productRegistrationService.getProductRegistrationById(this.editId).subscribe(function (response) {
             _this3.orderListArray = [response.data.order];
+            _this3.OrderDetails = {
+              po_no: response.data.order.label,
+              po_id: response.data.order.value
+            };
+            console.log(_this3.orderListArray);
             _this3.tagArray = [response.data.tag];
 
             if (response.data.configuration.registration_type.value == 0) {
@@ -505,6 +533,74 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               });
             }
           }
+        }
+      }, {
+        key: "getProductRegistrationObject",
+        value: function getProductRegistrationObject() {
+          var _this6 = this;
+
+          this.productRegistrationService.getProductConfigurationById(this.productId, this.orderId).subscribe(function (response) {
+            if (response.success) {
+              if (_this6.OrderDetails) {
+                _this6.orderListArray = [{
+                  label: _this6.OrderDetails.po_no,
+                  value: _this6.OrderDetails.po_id
+                }];
+              }
+
+              if (response.data.configuration.registration_type.value == 0) {
+                if (response.data.configuration.serial.value == 0) {
+                  _this6.formtype = 2;
+                  _this6.registrationTypeText = response.data.configuration.registration_type.label;
+                  _this6.productText = response.data.product.label;
+
+                  _this6.addWithForm.patchValue({
+                    order_id: _this6.orderId,
+                    registration_type: response.data.configuration.registration_type.value,
+                    maintain_serial_no: response.data.configuration.serial.value,
+                    product_id: response.data.product.value,
+                    serial_no: response.data.serial_no,
+                    barcode: response.data.barcode,
+                    sku_no: response.data.product.sku_no,
+                    unload_id: response.data.unload_id,
+                    unload_detail_id: response.data.unload_detail.unload_detail_id,
+                    received_qty: response.data.unload_detail.received_qty
+                  });
+                } else if (response.data.configuration.serial.value == 1) {
+                  _this6.formtype = 3;
+                  _this6.registrationTypeText = response.data.configuration.registration_type.label;
+                  _this6.productText = response.data.product.label;
+
+                  _this6.addWithOutForm.patchValue({
+                    order_id: _this6.orderId,
+                    registration_type: response.data.configuration.registration_type.value,
+                    product_id: response.data.product.value,
+                    maintain_serial_no: response.data.configuration.serial.value,
+                    barcode: response.data.barcode,
+                    sku_no: response.data.product.sku_no,
+                    unload_id: response.data.unload_id,
+                    unload_detail_id: response.data.unload_detail.unload_detail_id,
+                    received_qty: response.data.unload_detail.received_qty
+                  });
+                }
+              } else if (response.data.configuration.registration_type.value == 1) {
+                _this6.formtype = 4;
+                _this6.registrationTypeText = response.data.configuration.registration_type.label;
+                _this6.productText = response.data.product.label;
+
+                _this6.addBulkForm.patchValue({
+                  order_id: _this6.orderId,
+                  registration_type: response.data.configuration.registration_type.value,
+                  product_id: response.data.product.value,
+                  qty: response.data.qty,
+                  sku_no: response.data.product.sku_no,
+                  unload_id: response.data.unload_id,
+                  unload_detail_id: response.data.unload_detail.unload_detail_id,
+                  received_qty: response.data.unload_detail.received_qty
+                });
+              }
+            }
+          });
         }
       }]);
 
@@ -848,24 +944,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ControlErrorsDirective, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this6 = this;
+          var _this7 = this;
 
           if (this.control && this.control.valueChanges) {
             Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["merge"])(this.control.valueChanges, this.submit$).subscribe(function (v) {
-              var controlErrors = _this6.control.errors;
+              var controlErrors = _this7.control.errors;
 
               if (controlErrors) {
-                var control_name = _this6.getFormControlName(_this6.control); // console.log(control_name, controlErrors);
+                var control_name = _this7.getFormControlName(_this7.control); // console.log(control_name, controlErrors);
 
 
                 var firstKey = Object.keys(controlErrors)[0];
                 var messages = _form_errors__WEBPACK_IMPORTED_MODULE_7__["VALIDATION_MESSAGES"][control_name];
 
                 if (messages !== undefined && messages !== null && messages !== '') {
-                  _this6.setError(messages[firstKey]);
+                  _this7.setError(messages[firstKey]);
                 }
-              } else if (_this6.ref) {
-                _this6.setError(null);
+              } else if (_this7.ref) {
+                _this7.setError(null);
               }
             });
           }
@@ -978,14 +1074,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*#__PURE__*/
     function () {
       function FormSubmitDirective(host) {
-        var _this7 = this;
+        var _this8 = this;
 
         _classCallCheck(this, FormSubmitDirective);
 
         this.host = host;
         this.submit$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["fromEvent"])(this.element, 'submit').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function () {
-          if (_this7.element.classList.contains('submitted') === false) {
-            _this7.element.classList.add('submitted');
+          if (_this8.element.classList.contains('submitted') === false) {
+            _this8.element.classList.add('submitted');
           }
         }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["shareReplay"])(1));
       }

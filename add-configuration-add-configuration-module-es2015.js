@@ -52,7 +52,6 @@ __webpack_require__.r(__webpack_exports__);
 
 let AddConfigurationComponent = class AddConfigurationComponent {
     constructor(router, activatedRoute, fb, location, dataService, productRegistrationService) {
-        // console.log("location.path() ==>", location.path());
         this.router = router;
         this.activatedRoute = activatedRoute;
         this.fb = fb;
@@ -70,12 +69,14 @@ let AddConfigurationComponent = class AddConfigurationComponent {
         };
         this.isEditing = false;
         this.editId = null;
-        this.OrderId_show = true;
+        this.orderId_show = true;
         this.isSerialShow = false;
         this.registrationTypeArray = [];
         this.serialArray = [];
         this.formtype = 1;
         this.tagArray = [];
+        this.isRegister = false;
+        console.log("location.path() ==>", location.path());
         this.addForm = this.fb.group({
             order_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
             maintain_serial_no: [null],
@@ -120,23 +121,43 @@ let AddConfigurationComponent = class AddConfigurationComponent {
             unload_detail_id: [null],
             received_qty: [null]
         });
+        console.log(this.activatedRoute.snapshot.paramMap);
         if (this.activatedRoute.snapshot.paramMap.get('id')) {
             let id = this.activatedRoute.snapshot.paramMap.get('id');
             if (location.path() == `/inbound/registeration/add/${id}`) {
-                this.OrderId = id;
-                this.addForm.patchValue({ order_id: this.OrderId });
-                this.OrderId_show = false;
+                this.orderId = id;
+                this.addForm.patchValue({ order_id: this.orderId });
+                this.orderId_show = false;
                 this.getOrderDetails();
             }
             else {
+                this.formtype = 5;
                 this.editId = id;
                 this.isEditing = true;
+            }
+        }
+        else if (this.activatedRoute.snapshot.paramMap.get('order_id') && this.activatedRoute.snapshot.paramMap.get('product_id')) {
+            let order_id = this.activatedRoute.snapshot.paramMap.get('order_id');
+            let product_id = this.activatedRoute.snapshot.paramMap.get('product_id');
+            if (location.path() == `/inbound/registeration/register-product;order_id=${order_id};product_id=${product_id}`) {
+                this.orderId = order_id;
+                this.productId = product_id;
+                this.addForm.patchValue({ order_id: this.orderId, product_id: product_id });
+                this.orderId_show = false;
+                this.formtype = 5;
+                this.isEditing = false;
+                this.isRegister = true;
+                this.getOrderDetails();
             }
         }
     }
     ngOnInit() {
         if (this.isEditing) {
             this.getEditObject();
+        }
+        else if (this.isRegister) {
+            this.getProductRegistrationObject();
+            this.getTagData();
         }
         else {
             this.getMasterData();
@@ -181,6 +202,8 @@ let AddConfigurationComponent = class AddConfigurationComponent {
     getEditObject() {
         this.productRegistrationService.getProductRegistrationById(this.editId).subscribe((response) => {
             this.orderListArray = [response.data.order];
+            this.OrderDetails = { po_no: response.data.order.label, po_id: response.data.order.value };
+            console.log(this.orderListArray);
             this.tagArray = [response.data.tag];
             if (response.data.configuration.registration_type.value == 0) {
                 if (response.data.configuration.serial.value == 0) {
@@ -396,6 +419,65 @@ let AddConfigurationComponent = class AddConfigurationComponent {
                 });
             }
         }
+    }
+    getProductRegistrationObject() {
+        this.productRegistrationService.getProductConfigurationById(this.productId, this.orderId).subscribe((response) => {
+            if (response.success) {
+                if (this.OrderDetails) {
+                    this.orderListArray = [{ label: this.OrderDetails.po_no, value: this.OrderDetails.po_id }];
+                }
+                if (response.data.configuration.registration_type.value == 0) {
+                    if (response.data.configuration.serial.value == 0) {
+                        this.formtype = 2;
+                        this.registrationTypeText = response.data.configuration.registration_type.label;
+                        this.productText = response.data.product.label;
+                        this.addWithForm.patchValue({
+                            order_id: this.orderId,
+                            registration_type: response.data.configuration.registration_type.value,
+                            maintain_serial_no: response.data.configuration.serial.value,
+                            product_id: response.data.product.value,
+                            serial_no: response.data.serial_no,
+                            barcode: response.data.barcode,
+                            sku_no: response.data.product.sku_no,
+                            unload_id: response.data.unload_id,
+                            unload_detail_id: response.data.unload_detail.unload_detail_id,
+                            received_qty: response.data.unload_detail.received_qty,
+                        });
+                    }
+                    else if (response.data.configuration.serial.value == 1) {
+                        this.formtype = 3;
+                        this.registrationTypeText = response.data.configuration.registration_type.label;
+                        this.productText = response.data.product.label;
+                        this.addWithOutForm.patchValue({
+                            order_id: this.orderId,
+                            registration_type: response.data.configuration.registration_type.value,
+                            product_id: response.data.product.value,
+                            maintain_serial_no: response.data.configuration.serial.value,
+                            barcode: response.data.barcode,
+                            sku_no: response.data.product.sku_no,
+                            unload_id: response.data.unload_id,
+                            unload_detail_id: response.data.unload_detail.unload_detail_id,
+                            received_qty: response.data.unload_detail.received_qty,
+                        });
+                    }
+                }
+                else if (response.data.configuration.registration_type.value == 1) {
+                    this.formtype = 4;
+                    this.registrationTypeText = response.data.configuration.registration_type.label;
+                    this.productText = response.data.product.label;
+                    this.addBulkForm.patchValue({
+                        order_id: this.orderId,
+                        registration_type: response.data.configuration.registration_type.value,
+                        product_id: response.data.product.value,
+                        qty: response.data.qty,
+                        sku_no: response.data.product.sku_no,
+                        unload_id: response.data.unload_id,
+                        unload_detail_id: response.data.unload_detail.unload_detail_id,
+                        received_qty: response.data.unload_detail.received_qty,
+                    });
+                }
+            }
+        });
     }
 };
 AddConfigurationComponent.ctorParameters = () => [
