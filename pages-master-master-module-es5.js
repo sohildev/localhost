@@ -1625,9 +1625,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         path: 'area',
         loadChildren: function loadChildren() {
-          return Promise.all(
+          return __webpack_require__.e(
           /*! import() | area-area-module */
-          [__webpack_require__.e("common"), __webpack_require__.e("area-area-module")]).then(__webpack_require__.bind(null,
+          "area-area-module").then(__webpack_require__.bind(null,
           /*! ./area/area.module */
           "./src/app/pages/master/area/area.module.ts")).then(function (m) {
             return m.AreaModule;

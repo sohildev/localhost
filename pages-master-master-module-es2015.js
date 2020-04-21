@@ -1049,7 +1049,7 @@ const routes = [
             },
             {
                 path: 'area',
-                loadChildren: () => Promise.all(/*! import() | area-area-module */[__webpack_require__.e("common"), __webpack_require__.e("area-area-module")]).then(__webpack_require__.bind(null, /*! ./area/area.module */ "./src/app/pages/master/area/area.module.ts")).then(m => m.AreaModule)
+                loadChildren: () => __webpack_require__.e(/*! import() | area-area-module */ "area-area-module").then(__webpack_require__.bind(null, /*! ./area/area.module */ "./src/app/pages/master/area/area.module.ts")).then(m => m.AreaModule)
             },
             {
                 path: 'level',

@@ -81,7 +81,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <!-- <button  *ngIf=\"isSorting\" class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add',viewId]\">\r\n      Generate Sorting List</button> -->\r\n      <button  *ngIf=\"isSorting\" class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add',viewId]\">\r\n        Generate Sorting List</button>\r\n  </div>\r\n</div>\r\n\r\n<!-- <app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list> -->\r\n\r\n<div class=\"table-responsive\">\r\n  <table class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th>SKU No</th>\r\n        <th>Product</th>\r\n        <th class=\"text-center\">Receive Qty</th>\r\n        <th class=\"text-center\">Pending Qty</th>\r\n        <th class=\"text-center\">Sorted Qty</th>\r\n        \r\n        <th class=\"text-right\">Action</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let item of orderProductListArray; let i=index\">\r\n    \r\n        <td>{{item?.product.sku_no}}</td>\r\n        <td>{{item?.product.label}}</td>\r\n        <td class=\"text-center\">{{item?.unload_detail?.received_qty |number}}</td>\r\n        <td class=\"text-center\">{{item?.pending_qty |number}}</td>\r\n        <td class=\"text-center\">{{item?.sorted_qty |number}}</td>\r\n        <td>\r\n          <div *ngIf=\"item?.is_edit\"  class=\"action-drop dropdown text-right\">\r\n            <a href=\"#\" data-toggle=\"dropdown\" class=\"btn shadow-none btn-default btn-sm btn-icon-only\" title=\"\">\r\n              <i class=\"fa fa-ellipsis-h\"></i>\r\n            </a>\r\n            <div class=\"dropdown-menu dropdown-icon-menu drop-menu-right action-dropdown\" style=\"width: 100px;\">\r\n              <a *ngIf=\"item?.is_edit\" class=\"dropdown-item\"\r\n              [routerLink]=\"['/inbound/registeration/register-product',{order_id:viewId,product_id:item?.product?.value}]\"\r\n              >\r\n                <i class=\"fa fa-file-pdf-o fa-fw text-primary\">\r\n                </i> Register Product</a>\r\n            </div>\r\n          </div>\r\n        </td>\r\n      </tr>\r\n      <tr *ngIf=\"!loadingState && orderProductListArray.length == 0\">\r\n        <td colspan=\"6\">No records found</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>";
+    __webpack_exports__["default"] = "<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <!-- <button  *ngIf=\"isSorting\" class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add',viewId]\">\r\n      Generate Sorting List</button> -->\r\n    <button *ngIf=\"isSorting\" class=\"btn btn-primary\" [routerLink]=\"['/inbound/registeration/add',viewId]\">\r\n      Generate Sorting List</button>\r\n  </div>\r\n</div>\r\n\r\n<!-- <app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list> -->\r\n\r\n<div class=\"table-responsive\">\r\n  <table class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th>SKU No</th>\r\n        <th>Product</th>\r\n        <th class=\"text-center\">Receive Qty</th>\r\n        <th class=\"text-center\">Pending Qty</th>\r\n        <th class=\"text-center\">Sorted Qty</th>\r\n\r\n        <th class=\"text-right\">Action</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let item of orderProductListArray; let i=index\">\r\n\r\n        <td>{{item?.product.sku_no}}</td>\r\n        <td>{{item?.product.label}}</td>\r\n        <td class=\"text-center\">{{item?.unload_detail?.received_qty |number}}</td>\r\n        <td class=\"text-center\">{{item?.pending_qty |number}}</td>\r\n        <td class=\"text-center\"><a\r\n            [routerLink]=\"['/inbound/registeration/sorted-qty',{order_id:viewId,product_id:item?.product?.value}]\">{{item?.sorted_qty |number}}</a>\r\n        </td>\r\n        <td>\r\n          <div *ngIf=\"item?.is_edit\" class=\"action-drop dropdown text-right\">\r\n            <a href=\"#\" data-toggle=\"dropdown\" class=\"btn shadow-none btn-default btn-sm btn-icon-only\" title=\"\">\r\n              <i class=\"fa fa-ellipsis-h\"></i>\r\n            </a>\r\n            <div class=\"dropdown-menu dropdown-icon-menu drop-menu-right action-dropdown\" style=\"width: 100px;\">\r\n              <a *ngIf=\"item?.is_edit\" class=\"dropdown-item\"\r\n                [routerLink]=\"['/inbound/registeration/register-product',{order_id:viewId,product_id:item?.product?.value}]\">\r\n                <i class=\"fa fa-file-pdf-o fa-fw text-primary\">\r\n                </i> Register Product</a>\r\n            </div>\r\n          </div>\r\n        </td>\r\n      </tr>\r\n      <tr *ngIf=\"!loadingState && orderProductListArray.length == 0\">\r\n        <td colspan=\"6\">No records found</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>";
     /***/
   },
 
@@ -207,9 +207,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'registeration',
       loadChildren: function loadChildren() {
-        return Promise.all(
+        return __webpack_require__.e(
         /*! import() | registeration-registeration-module */
-        [__webpack_require__.e("common"), __webpack_require__.e("registeration-registeration-module")]).then(__webpack_require__.bind(null,
+        "registeration-registeration-module").then(__webpack_require__.bind(null,
         /*! ./registeration/registeration.module */
         "./src/app/pages/inbound/registeration/registeration.module.ts")).then(function (m) {
           return m.RegisterationModule;
@@ -2235,6 +2235,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "getSortingList",
         value: function getSortingList(id) {
           return this.http.get("".concat(this.API_URL, "/sorting/get-list/").concat(id));
+        }
+      }, {
+        key: "getSortedListById",
+        value: function getSortedListById(product_id, order_id, param) {
+          return this.http.get("".concat(this.API_URL, "/sorting/get-sorted/").concat(product_id, "/").concat(order_id), {
+            params: param
+          });
         } // ==> product-config
         // addProductConfiguration(data): Observable<any> {
         //   return this.http.post(`${this.API_URL}/sorting/product-config`, data);

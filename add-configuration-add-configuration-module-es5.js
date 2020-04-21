@@ -285,69 +285,70 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var _this3 = this;
 
           this.productRegistrationService.getProductRegistrationById(this.editId).subscribe(function (response) {
-            _this3.orderListArray = [response.data.order];
-            _this3.OrderDetails = {
-              po_no: response.data.order.label,
-              po_id: response.data.order.value
-            };
-            console.log(_this3.orderListArray);
-            _this3.tagArray = [response.data.tag];
+            if (response.success) {
+              _this3.orderListArray = [response.data.order];
+              _this3.OrderDetails = {
+                po_no: response.data.order.label,
+                po_id: response.data.order.value
+              };
+              _this3.tagArray = [response.data.tag];
 
-            if (response.data.configuration.registration_type.value == 0) {
-              if (response.data.configuration.serial.value == 0) {
-                _this3.formtype = 2;
+              if (response.data.configuration.registration_type.value == 0) {
+                if (response.data.configuration.serial.value == 0) {
+                  _this3.formtype = 2;
+                  _this3.registrationTypeText = response.data.configuration.registration_type.label;
+                  _this3.productText = response.data.product.label;
+
+                  _this3.addWithForm.patchValue({
+                    registration_type: response.data.configuration.registration_type.value,
+                    order_id: response.data.order.value,
+                    maintain_serial_no: response.data.configuration.serial.value,
+                    product_id: response.data.product.value,
+                    tag_id: response.data.tag.value,
+                    qty: response.data.qty,
+                    serial_no: response.data.serial_no,
+                    barcode: response.data.barcode,
+                    sku_no: response.data.sku_no,
+                    unload_id: response.data.unload_id,
+                    unload_detail_id: response.data.unload_detail.unload_detail_id,
+                    received_qty: response.data.unload_detail.received_qty
+                  });
+                } else if (response.data.configuration.serial.value == 1) {
+                  _this3.formtype = 3;
+                  _this3.registrationTypeText = response.data.configuration.registration_type.label;
+                  _this3.productText = response.data.product.label;
+
+                  _this3.addWithOutForm.patchValue({
+                    registration_type: response.data.configuration.registration_type.value,
+                    order_id: response.data.order.value,
+                    product_id: response.data.product.value,
+                    maintain_serial_no: response.data.configuration.serial.value,
+                    tag_id: response.data.tag.value,
+                    qty: response.data.qty,
+                    barcode: response.data.barcode,
+                    sku_no: response.data.sku_no,
+                    unload_id: response.data.unload_id,
+                    unload_detail_id: response.data.unload_detail.unload_detail_id,
+                    received_qty: response.data.unload_detail.received_qty
+                  });
+                }
+              } else if (response.data.configuration.registration_type.value == 1) {
+                _this3.formtype = 4;
                 _this3.registrationTypeText = response.data.configuration.registration_type.label;
                 _this3.productText = response.data.product.label;
 
-                _this3.addWithForm.patchValue({
-                  registration_type: response.data.configuration.registration_type.value,
-                  order_id: response.data.order.value,
-                  maintain_serial_no: response.data.configuration.serial.value,
-                  product_id: response.data.product.value,
-                  tag_id: response.data.tag.value,
-                  qty: response.data.qty,
-                  serial_no: response.data.serial_no,
-                  barcode: response.data.barcode,
-                  sku_no: response.data.sku_no,
-                  unload_id: response.data.unload_id,
-                  unload_detail_id: response.data.unload_detail.unload_detail_id,
-                  received_qty: response.data.unload_detail.received_qty
-                });
-              } else if (response.data.configuration.serial.value == 1) {
-                _this3.formtype = 3;
-                _this3.registrationTypeText = response.data.configuration.registration_type.label;
-                _this3.productText = response.data.product.label;
-
-                _this3.addWithOutForm.patchValue({
+                _this3.addBulkForm.patchValue({
                   registration_type: response.data.configuration.registration_type.value,
                   order_id: response.data.order.value,
                   product_id: response.data.product.value,
-                  maintain_serial_no: response.data.configuration.serial.value,
                   tag_id: response.data.tag.value,
                   qty: response.data.qty,
-                  barcode: response.data.barcode,
                   sku_no: response.data.sku_no,
                   unload_id: response.data.unload_id,
                   unload_detail_id: response.data.unload_detail.unload_detail_id,
                   received_qty: response.data.unload_detail.received_qty
                 });
               }
-            } else if (response.data.configuration.registration_type.value == 1) {
-              _this3.formtype = 4;
-              _this3.registrationTypeText = response.data.configuration.registration_type.label;
-              _this3.productText = response.data.product.label;
-
-              _this3.addBulkForm.patchValue({
-                registration_type: response.data.configuration.registration_type.value,
-                order_id: response.data.order.value,
-                product_id: response.data.product.value,
-                tag_id: response.data.tag.value,
-                qty: response.data.qty,
-                sku_no: response.data.sku_no,
-                unload_id: response.data.unload_id,
-                unload_detail_id: response.data.unload_detail.unload_detail_id,
-                received_qty: response.data.unload_detail.received_qty
-              });
             }
           });
         }

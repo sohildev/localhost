@@ -35027,6 +35027,53 @@ AreaModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 /***/ }),
 
+/***/ "./src/app/service/area.service.ts":
+/*!*****************************************!*\
+  !*** ./src/app/service/area.service.ts ***!
+  \*****************************************/
+/*! exports provided: AreaService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AreaService", function() { return AreaService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+let AreaService = class AreaService {
+    constructor(http) {
+        this.http = http;
+        this.API_URL = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].APIEndpoint;
+    }
+    getAreaList(param) {
+        return this.http.get(`${this.API_URL}/area`, { params: param });
+    }
+    addArea(data) {
+        return this.http.post(`${this.API_URL}/area`, data);
+    }
+    editArea(id, data) {
+        return this.http.put(`${this.API_URL}/area/${id}`, data);
+    }
+    getAreaById(id, param = null) {
+        return this.http.get(`${this.API_URL}/area/${id}`, { params: param });
+    }
+};
+AreaService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+];
+AreaService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()
+], AreaService);
+
+
+
+/***/ }),
+
 /***/ 5:
 /*!**********************!*\
   !*** zlib (ignored) ***!
