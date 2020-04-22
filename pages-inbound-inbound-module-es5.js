@@ -216,6 +216,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         });
       }
     }, {
+      path: 'product-config',
+      loadChildren: function loadChildren() {
+        return __webpack_require__.e(
+        /*! import() | product-config-product-config-list-product-config-list-module */
+        "product-config-product-config-list-product-config-list-module").then(__webpack_require__.bind(null,
+        /*! ./product-config/product-config-list/product-config-list.module */
+        "./src/app/pages/inbound/product-config/product-config-list/product-config-list.module.ts")).then(function (m) {
+          return m.ProductConfigListModule;
+        });
+      }
+    }, {
       path: 'put-away',
       loadChildren: function loadChildren() {
         return __webpack_require__.e(
@@ -355,7 +366,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | order-list-order-list-module */
-        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("order-list-order-list-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("order-list-order-list-module")]).then(__webpack_require__.bind(null,
         /*! ./order-list/order-list.module */
         "./src/app/pages/inbound/order/order-list/order-list.module.ts")).then(function (m) {
           return m.OrderListModule;
@@ -369,7 +380,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-order-add-order-module */
-        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
         /*! ./add-order/add-order.module */
         "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(function (m) {
           return m.AddOrderModule;
@@ -383,7 +394,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-order-add-order-module */
-        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
         /*! ./add-order/add-order.module */
         "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(function (m) {
           return m.AddOrderModule;

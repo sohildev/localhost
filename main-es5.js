@@ -879,7 +879,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | pages-master-master-module */
-        [__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("common"), __webpack_require__.e("pages-master-master-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("common"), __webpack_require__.e("pages-master-master-module")]).then(__webpack_require__.bind(null,
         /*! ./pages/master/master.module */
         "./src/app/pages/master/master.module.ts")).then(function (m) {
           return m.MasterModule;
@@ -2338,6 +2338,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 navLink: 'Unload',
                 navUrl: '/inbound/unload'
               }, {
+                navLink: 'Product Configuration ',
+                navUrl: '/inbound/product-config'
+              }, {
                 navLink: 'Product Registeration',
                 navUrl: '/inbound/registeration'
               }, {
@@ -2592,7 +2595,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       edit_unit: "Edit Unit | ".concat(APP_NAME),
       tag_list: "Tag List | ".concat(APP_NAME),
       add_tag: "Add Tag | ".concat(APP_NAME),
-      edit_tag: "Edit Tag | ".concat(APP_NAME)
+      edit_tag: "Edit Tag | ".concat(APP_NAME),
+      product_config_list: "Product Config List | ".concat(APP_NAME),
+      add_product_config: "Add Aroduct Config | ".concat(APP_NAME),
+      edit_product_config: "Edit Product Config | ".concat(APP_NAME)
     };
     var errorMessage = {
       change_password_success: 'Your password changed Successfully',
@@ -3845,7 +3851,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var environment = {
       production: false,
       // APIEndpoint: 'http://192.168.1.138:9005/api',
-      APIEndpoint: 'https://196eb657.ngrok.io/api'
+      APIEndpoint: 'https://44bd18ff.ngrok.io/api'
     };
     /*
      * For easier debugging in development mode, you can import the following file

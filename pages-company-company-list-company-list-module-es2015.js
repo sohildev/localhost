@@ -202,12 +202,12 @@ const routes = [
     },
     {
         path: 'add',
-        loadChildren: () => Promise.all(/*! import() | company-add-company-add-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("company-add-company-add-module")]).then(__webpack_require__.bind(null, /*! ../company-add/company-add.module */ "./src/app/pages/company/company-add/company-add.module.ts")).then(m => m.CompanyAddModule),
+        loadChildren: () => Promise.all(/*! import() | company-add-company-add-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("company-add-company-add-module")]).then(__webpack_require__.bind(null, /*! ../company-add/company-add.module */ "./src/app/pages/company/company-add/company-add.module.ts")).then(m => m.CompanyAddModule),
         data: { title: 'add_company' }
     },
     {
         path: 'edit/:id',
-        loadChildren: () => Promise.all(/*! import() | company-add-company-add-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("company-add-company-add-module")]).then(__webpack_require__.bind(null, /*! ../company-add/company-add.module */ "./src/app/pages/company/company-add/company-add.module.ts")).then(m => m.CompanyAddModule),
+        loadChildren: () => Promise.all(/*! import() | company-add-company-add-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("company-add-company-add-module")]).then(__webpack_require__.bind(null, /*! ../company-add/company-add.module */ "./src/app/pages/company/company-add/company-add.module.ts")).then(m => m.CompanyAddModule),
         data: { title: 'edit_company' }
     },
     {

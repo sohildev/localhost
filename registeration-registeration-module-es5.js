@@ -41,7 +41,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"container-fluid\">\n  <div class=\"page-header\">\n    <div class=\"row\">\n      <div class=\"col d-flex\">\n        <h2 class=\"mr-auto\">\n          Order No : {{orderDetais?.po_no}} <br>\n          Product Name : {{productDetials?.label}} - {{productDetials?.sku_no}}<br>\n          Sorted Quantity\n        </h2>\n        <div class=\"ml-3\">\n          <a class=\"btn shadow-none btn-link\" routerLink=\"/inbound/order\">\n            <i class=\"fa fa-chevron-left mr-2 mt-1\"></i>Back to list\n          </a>\n        </div>\n        <!-- <div class=\"ml-3\">\n          <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\n        </div> -->\n\n      </div>\n    </div>\n  </div>\n  <div class=\"card\">\n    <div class=\"card-body\">\n      <app-table-list [headerData]=\"headerData\" [rawData]=\"objectArray\" (reloadEvent)=\"onReloadEvent()\">\n      </app-table-list>\n      <!-- <pagination *ngIf=\"showPagination\" [paginationList]=\"pagination\" [currentPage]=\"currentPage\"\n          (onPageChange)=\"getPage($event)\">\n        </pagination> -->\n    </div>\n  </div>\n</div>";
+    __webpack_exports__["default"] = "<div class=\"container-fluid\">\n  <div class=\"page-header\">\n    <div class=\"row\">\n      <div class=\"col d-flex\">\n        <h2 class=\"mr-auto\">\n          Order No : {{orderDetais?.po_no}} <br>\n          Product Name : {{productDetials?.label}} - {{productDetials?.sku_no}}<br>\n          Sorted Quantity\n        </h2>\n        <div class=\"ml-3\">\n          <a class=\"btn shadow-none btn-link\" (click)=\"back()\">\n            <i class=\"fa fa-chevron-left mr-2 mt-1\"></i>Back to list\n          </a>\n        </div>\n        <!-- <div class=\"ml-3\">\n          <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\n        </div> -->\n\n      </div>\n    </div>\n  </div>\n  <div class=\"card\">\n    <div class=\"card-body\">\n      <app-table-list [headerData]=\"headerData\" [rawData]=\"objectArray\" (reloadEvent)=\"onReloadEvent()\">\n      </app-table-list>\n      <!-- <pagination *ngIf=\"showPagination\" [paginationList]=\"pagination\" [currentPage]=\"currentPage\"\n          (onPageChange)=\"getPage($event)\">\n        </pagination> -->\n    </div>\n  </div>\n</div>";
     /***/
   },
 
@@ -356,7 +356,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-configuration-add-configuration-module */
-        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null,
         /*! ./add-configuration/add-configuration.module */
         "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(function (m) {
           return m.AddConfigurationModule;
@@ -370,7 +370,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-configuration-add-configuration-module */
-        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null,
         /*! ./add-configuration/add-configuration.module */
         "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(function (m) {
           return m.AddConfigurationModule;
@@ -384,7 +384,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-configuration-add-configuration-module */
-        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null,
         /*! ./add-configuration/add-configuration.module */
         "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(function (m) {
           return m.AddConfigurationModule;
@@ -468,17 +468,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var src_app_service_data_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! src/app/service/data.service */
     "./src/app/service/data.service.ts");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 
     var SortedListComponent =
     /*#__PURE__*/
     function () {
-      function SortedListComponent(paginationService, dataService, activatedRoute, productregistrationService) {
+      function SortedListComponent(paginationService, dataService, location, activatedRoute, productregistrationService) {
         var _this2 = this;
 
         _classCallCheck(this, SortedListComponent);
 
         this.paginationService = paginationService;
         this.dataService = dataService;
+        this.location = location;
         this.activatedRoute = activatedRoute;
         this.productregistrationService = productregistrationService;
         this.loadform = false;
@@ -581,6 +588,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.getObjects();
         }
       }, {
+        key: "back",
+        value: function back() {
+          this.location.back();
+        }
+      }, {
         key: "searchObject",
         value: function searchObject(text) {
           this.searchText = text;
@@ -609,6 +621,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_2__["PaginationService"]
       }, {
         type: src_app_service_data_service__WEBPACK_IMPORTED_MODULE_6__["DataService"]
+      }, {
+        type: _angular_common__WEBPACK_IMPORTED_MODULE_7__["Location"]
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"]
       }, {

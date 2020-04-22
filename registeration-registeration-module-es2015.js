@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"page-header\">\n    <div class=\"row\">\n      <div class=\"col d-flex\">\n        <h2 class=\"mr-auto\">\n          Order No : {{orderDetais?.po_no}} <br>\n          Product Name : {{productDetials?.label}} - {{productDetials?.sku_no}}<br>\n          Sorted Quantity\n        </h2>\n        <div class=\"ml-3\">\n          <a class=\"btn shadow-none btn-link\" routerLink=\"/inbound/order\">\n            <i class=\"fa fa-chevron-left mr-2 mt-1\"></i>Back to list\n          </a>\n        </div>\n        <!-- <div class=\"ml-3\">\n          <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\n        </div> -->\n\n      </div>\n    </div>\n  </div>\n  <div class=\"card\">\n    <div class=\"card-body\">\n      <app-table-list [headerData]=\"headerData\" [rawData]=\"objectArray\" (reloadEvent)=\"onReloadEvent()\">\n      </app-table-list>\n      <!-- <pagination *ngIf=\"showPagination\" [paginationList]=\"pagination\" [currentPage]=\"currentPage\"\n          (onPageChange)=\"getPage($event)\">\n        </pagination> -->\n    </div>\n  </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"page-header\">\n    <div class=\"row\">\n      <div class=\"col d-flex\">\n        <h2 class=\"mr-auto\">\n          Order No : {{orderDetais?.po_no}} <br>\n          Product Name : {{productDetials?.label}} - {{productDetials?.sku_no}}<br>\n          Sorted Quantity\n        </h2>\n        <div class=\"ml-3\">\n          <a class=\"btn shadow-none btn-link\" (click)=\"back()\">\n            <i class=\"fa fa-chevron-left mr-2 mt-1\"></i>Back to list\n          </a>\n        </div>\n        <!-- <div class=\"ml-3\">\n          <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\n        </div> -->\n\n      </div>\n    </div>\n  </div>\n  <div class=\"card\">\n    <div class=\"card-body\">\n      <app-table-list [headerData]=\"headerData\" [rawData]=\"objectArray\" (reloadEvent)=\"onReloadEvent()\">\n      </app-table-list>\n      <!-- <pagination *ngIf=\"showPagination\" [paginationList]=\"pagination\" [currentPage]=\"currentPage\"\n          (onPageChange)=\"getPage($event)\">\n        </pagination> -->\n    </div>\n  </div>\n</div>");
 
 /***/ }),
 
@@ -213,17 +213,17 @@ const routes = [
     // },
     {
         path: 'add',
-        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
+        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
         data: { title: 'add_product_register' },
     },
     {
         path: 'edit',
-        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
+        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
         data: { title: 'edit_product_register' },
     },
     {
         path: 'register-product',
-        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~5fe00dad"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
+        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
         data: { title: 'add_product_register' },
     },
 ];
@@ -265,6 +265,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/service/product-registration.service */ "./src/app/service/product-registration.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var src_app_service_data_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/service/data.service */ "./src/app/service/data.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+
 
 
 
@@ -273,9 +275,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SortedListComponent = class SortedListComponent {
-    constructor(paginationService, dataService, activatedRoute, productregistrationService) {
+    constructor(paginationService, dataService, location, activatedRoute, productregistrationService) {
         this.paginationService = paginationService;
         this.dataService = dataService;
+        this.location = location;
         this.activatedRoute = activatedRoute;
         this.productregistrationService = productregistrationService;
         this.loadform = false;
@@ -359,6 +362,9 @@ let SortedListComponent = class SortedListComponent {
         this.currentPage = page;
         this.getObjects();
     }
+    back() {
+        this.location.back();
+    }
     searchObject(text) {
         this.searchText = text;
         this.currentPage = 1;
@@ -376,6 +382,7 @@ let SortedListComponent = class SortedListComponent {
 SortedListComponent.ctorParameters = () => [
     { type: src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_2__["PaginationService"] },
     { type: src_app_service_data_service__WEBPACK_IMPORTED_MODULE_6__["DataService"] },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_7__["Location"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] },
     { type: src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_4__["ProductRegistrationService"] }
 ];
