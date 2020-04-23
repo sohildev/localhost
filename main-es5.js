@@ -3851,7 +3851,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var environment = {
       production: false,
       // APIEndpoint: 'http://192.168.1.138:9005/api',
-      APIEndpoint: 'https://44bd18ff.ngrok.io/api'
+      APIEndpoint: 'https://1fcecd73.ngrok.io/api'
     };
     /*
      * For easier debugging in development mode, you can import the following file
