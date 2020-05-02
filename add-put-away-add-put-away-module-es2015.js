@@ -80,6 +80,11 @@ let AddPutAwayComponent = class AddPutAwayComponent {
             bin_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
             bin_tag_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
             location: [null],
+            level_id: [null],
+            bay_id: [null],
+            aisle_id: [null],
+            area_id: [null],
+            from_location_bin: [null],
             qty: [null],
             putaway_qty: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
         });
@@ -115,7 +120,7 @@ let AddPutAwayComponent = class AddPutAwayComponent {
         });
     }
     getProductByOrderId() {
-        event ? this.addForm.patchValue({ sku_no: '' }) : '';
+        // event ? this.addForm.patchValue({ sku_no: '' }) : '';
         this.putawayService.getProductByOrderId(this.addForm.value.order_id).subscribe((response) => {
             if (response.success) {
                 this.skuListArray = response.data.product;
@@ -134,9 +139,11 @@ let AddPutAwayComponent = class AddPutAwayComponent {
                     pick_qty: response.data.pick_qty,
                     bin_id: response.data.bin_id,
                     bin_tag_id: response.data.bin_tag_id,
-                    putaway_qty: response.data.put_away_qty
+                    putaway_qty: response.data.put_away_qty,
+                    from_location_bin: response.data.from_location_bin
                 });
                 this.getMasterData();
+                this.getProductByOrderId();
             }
             else {
                 // this.router.navigateByUrl('/inbound/registeration');
@@ -145,8 +152,16 @@ let AddPutAwayComponent = class AddPutAwayComponent {
     }
     setBinDetail(data) {
         if (data) {
+            let location_text = `${data.location.area.label}-${data.location.aisle.label}-${data.location.bay.label}-${data.location.level.label}`;
+            console.log(location_text);
             this.addForm.patchValue({
                 bin_tag_id: data.tag_id,
+                location: location_text,
+                bin_id: data.value,
+                level_id: data.location.level.value,
+                bay_id: data.location.bay.value,
+                aisle_id: data.location.aisle.value,
+                area_id: data.location.area.value
             });
         }
     }
@@ -169,6 +184,7 @@ let AddPutAwayComponent = class AddPutAwayComponent {
             data.append('bin_id', formData.value.bin_id);
             data.append('bin_tag_id', formData.value.bin_tag_id);
             data.append('putaway_qty', formData.value.putaway_qty);
+            data.append('from_location_bin', formData.value.from_location_bin);
             let put_away_data = {
                 order_id: formData.value.order_id,
                 sku_no: formData.value.sku_no,
@@ -177,6 +193,14 @@ let AddPutAwayComponent = class AddPutAwayComponent {
                 bin_tag_id: formData.value.bin_tag_id,
                 put_away_qty: formData.value.putaway_qty,
             };
+            let from_location_bin = {
+                bin_id: formData.value.bin_id,
+                level_id: formData.value.level_id,
+                bay_id: formData.value.bay_id,
+                aisle_id: formData.value.aisle_id,
+                area_id: formData.value.area_id
+            };
+            data.append('from_location_bin', JSON.stringify(from_location_bin));
             data.append('put_away_data', JSON.stringify(put_away_data));
             this.showLoader = true;
             if (this.isEditing) {

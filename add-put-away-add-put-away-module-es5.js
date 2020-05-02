@@ -141,6 +141,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           bin_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
           bin_tag_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
           location: [null],
+          level_id: [null],
+          bay_id: [null],
+          aisle_id: [null],
+          area_id: [null],
+          from_location_bin: [null],
           qty: [null],
           putaway_qty: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])]
         });
@@ -189,9 +194,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function getProductByOrderId() {
           var _this2 = this;
 
-          event ? this.addForm.patchValue({
-            sku_no: ''
-          }) : '';
+          // event ? this.addForm.patchValue({ sku_no: '' }) : '';
           this.putawayService.getProductByOrderId(this.addForm.value.order_id).subscribe(function (response) {
             if (response.success) {
               _this2.skuListArray = response.data.product;
@@ -214,10 +217,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 pick_qty: response.data.pick_qty,
                 bin_id: response.data.bin_id,
                 bin_tag_id: response.data.bin_tag_id,
-                putaway_qty: response.data.put_away_qty
+                putaway_qty: response.data.put_away_qty,
+                from_location_bin: response.data.from_location_bin
               });
 
               _this3.getMasterData();
+
+              _this3.getProductByOrderId();
             } else {// this.router.navigateByUrl('/inbound/registeration');
             }
           });
@@ -226,8 +232,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "setBinDetail",
         value: function setBinDetail(data) {
           if (data) {
+            var location_text = "".concat(data.location.area.label, "-").concat(data.location.aisle.label, "-").concat(data.location.bay.label, "-").concat(data.location.level.label);
+            console.log(location_text);
             this.addForm.patchValue({
-              bin_tag_id: data.tag_id
+              bin_tag_id: data.tag_id,
+              location: location_text,
+              bin_id: data.value,
+              level_id: data.location.level.value,
+              bay_id: data.location.bay.value,
+              aisle_id: data.location.aisle.value,
+              area_id: data.location.area.value
             });
           }
         }
@@ -256,6 +270,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             data.append('bin_id', formData.value.bin_id);
             data.append('bin_tag_id', formData.value.bin_tag_id);
             data.append('putaway_qty', formData.value.putaway_qty);
+            data.append('from_location_bin', formData.value.from_location_bin);
             var put_away_data = {
               order_id: formData.value.order_id,
               sku_no: formData.value.sku_no,
@@ -264,6 +279,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               bin_tag_id: formData.value.bin_tag_id,
               put_away_qty: formData.value.putaway_qty
             };
+            var from_location_bin = {
+              bin_id: formData.value.bin_id,
+              level_id: formData.value.level_id,
+              bay_id: formData.value.bay_id,
+              aisle_id: formData.value.aisle_id,
+              area_id: formData.value.area_id
+            };
+            data.append('from_location_bin', JSON.stringify(from_location_bin));
             data.append('put_away_data', JSON.stringify(put_away_data));
             this.showLoader = true;
 

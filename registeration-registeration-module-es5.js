@@ -540,13 +540,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               path: '/inbound/registeration/edit/',
               id: 'product_register_id'
             };
-          } // if (canDelete) {
-          //   actions['delete'] = {
-          //     path: 'sorting/',
-          //     id: 'product_register_id'
-          //   }
-          // }
+          }
 
+          if (canDelete) {
+            actions['delete'] = {
+              path: 'sorting/',
+              id: 'product_register_id'
+            };
+          }
 
           var actionColom = new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["ActionField"](actions);
           this.headerData.push(actionColom);

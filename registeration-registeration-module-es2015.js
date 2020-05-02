@@ -326,12 +326,12 @@ let SortedListComponent = class SortedListComponent {
                 id: 'product_register_id'
             };
         }
-        // if (canDelete) {
-        //   actions['delete'] = {
-        //     path: 'sorting/',
-        //     id: 'product_register_id'
-        //   }
-        // }
+        if (canDelete) {
+            actions['delete'] = {
+                path: 'sorting/',
+                id: 'product_register_id'
+            };
+        }
         let actionColom = new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["ActionField"](actions);
         this.headerData.push(actionColom);
     }
