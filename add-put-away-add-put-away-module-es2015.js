@@ -188,6 +188,7 @@ let AddPutAwayComponent = class AddPutAwayComponent {
             data.append('bin_id', formData.value.bin_id);
             data.append('bin_tag_id', formData.value.bin_tag_id);
             data.append('putaway_qty', formData.value.putaway_qty);
+            data.append('location', formData.value.location);
             data.append('from_location_bin', formData.value.from_location_bin);
             let put_away_data = {
                 order_id: formData.value.order_id,
