@@ -130,6 +130,7 @@ let AddPutAwayComponent = class AddPutAwayComponent {
     getEditObject() {
         this.putawayService.getPutAwayById(this.editId).subscribe((response) => {
             if (response.success) {
+                let location_text = `${response.data.from_location_bin.area.label}-${response.data.from_location_bin.aisle.label}-${response.data.from_location_bin.bay.label}-${response.data.from_location_bin.level.label}`;
                 this.addForm.patchValue({
                     order_id: response.data.order_id,
                     qty: response.data.qty,
@@ -140,7 +141,11 @@ let AddPutAwayComponent = class AddPutAwayComponent {
                     bin_id: response.data.bin_id,
                     bin_tag_id: response.data.bin_tag_id,
                     putaway_qty: response.data.put_away_qty,
-                    from_location_bin: response.data.from_location_bin
+                    location: location_text,
+                    level_id: response.data.from_location_bin.level.value,
+                    bay_id: response.data.from_location_bin.bay.value,
+                    aisle_id: response.data.from_location_bin.aisle.value,
+                    area_id: response.data.from_location_bin.area.value
                 });
                 this.getMasterData();
                 this.getProductByOrderId();
@@ -153,7 +158,6 @@ let AddPutAwayComponent = class AddPutAwayComponent {
     setBinDetail(data) {
         if (data) {
             let location_text = `${data.location.area.label}-${data.location.aisle.label}-${data.location.bay.label}-${data.location.level.label}`;
-            console.log(location_text);
             this.addForm.patchValue({
                 bin_tag_id: data.tag_id,
                 location: location_text,

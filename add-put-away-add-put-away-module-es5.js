@@ -208,6 +208,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.putawayService.getPutAwayById(this.editId).subscribe(function (response) {
             if (response.success) {
+              var location_text = "".concat(response.data.from_location_bin.area.label, "-").concat(response.data.from_location_bin.aisle.label, "-").concat(response.data.from_location_bin.bay.label, "-").concat(response.data.from_location_bin.level.label);
+
               _this3.addForm.patchValue({
                 order_id: response.data.order_id,
                 qty: response.data.qty,
@@ -218,7 +220,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 bin_id: response.data.bin_id,
                 bin_tag_id: response.data.bin_tag_id,
                 putaway_qty: response.data.put_away_qty,
-                from_location_bin: response.data.from_location_bin
+                location: location_text,
+                level_id: response.data.from_location_bin.level.value,
+                bay_id: response.data.from_location_bin.bay.value,
+                aisle_id: response.data.from_location_bin.aisle.value,
+                area_id: response.data.from_location_bin.area.value
               });
 
               _this3.getMasterData();
@@ -233,7 +239,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function setBinDetail(data) {
           if (data) {
             var location_text = "".concat(data.location.area.label, "-").concat(data.location.aisle.label, "-").concat(data.location.bay.label, "-").concat(data.location.level.label);
-            console.log(location_text);
             this.addForm.patchValue({
               bin_tag_id: data.tag_id,
               location: location_text,
