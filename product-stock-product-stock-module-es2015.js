@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\r\n    <!-- <div class=\"page-header border-b\">\r\n        <div class=\"row m-0\">\r\n            <h2 class=\"mr-auto\">{{PageTitle}}</h2>\r\n        </div>\r\n        <div class=\"ml-3\">\r\n            <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\r\n          </div>\r\n    </div> -->\r\n\r\n    <div class=\"page-header border-b\">\r\n        <div class=\"row m-0\">\r\n          <h2 class=\"mr-auto\">{{PageTitle}}</h2>\r\n          <div class=\"ml-3\">\r\n            <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\r\n          </div>\r\n          \r\n        </div>\r\n    \r\n      </div>\r\n    <div class=\"card\">\r\n        <div class=\"card-body\">\r\n            <ul class=\"nav nav-tabs\" id=\"myTab\" role=\"tablist\">\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link active\" id=\"productStock-tab\" data-toggle=\"tab\" href=\"#productStock\" role=\"tab\"\r\n                        aria-controls=\"productStock\" aria-selected=\"true\">Product Stock</a>\r\n                </li>\r\n\r\n            </ul>\r\n            <div class=\"tab-content\" id=\"myTabContent\">\r\n                <div class=\"tab-pane fade show active\" id=\"productStock\" role=\"tabpanel\"\r\n                    aria-labelledby=\"productStock-tab\">\r\n                    <div class=\"table-responsive-md mt-3\">\r\n                        <table class=\"table\">\r\n                            <thead class=\"thead-dark\">\r\n                                <tr>\r\n                                    <th class=\"align-items-center d-flex\">\r\n                                        <div class=\"form-check form-check-inline mr-0\">\r\n                                            <div class=\"checkbox-container\">\r\n                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"all\">\r\n                                                <span class=\"checkmark\"></span>\r\n                                            </div>\r\n                                        </div>\r\n                                    </th>\r\n                                    <th>Article</th>\r\n                                    <th>Serial No</th>\r\n                                    <th>Description</th>\r\n                                    <th>Bin</th>\r\n                                    <th>Bin Location</th>\r\n                                    <th>Stock In Date</th>\r\n                                    <th>Stock Out Date</th>\r\n                                    <th>Status</th>\r\n                                </tr>\r\n                            </thead>\r\n                            <tbody>\r\n                                <tr>\r\n                                    <td class=\"align-items-center d-flex\">\r\n                                        <div class=\"form-check form-check-inline mr-0\">\r\n                                            <div class=\"checkbox-container\">\r\n                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"all\">\r\n                                                <span class=\"checkmark\"></span>\r\n                                            </div>\r\n                                        </div>\r\n                                    </td>\r\n                                    <td>MC-1579177226867</td>\r\n                                    <td>00584</td>\r\n                                    <td>lorem ispum lorem ispum</td>\r\n                                    <td class=\"text-center\">500</td>\r\n                                    <td>Johnberg</td>\r\n                                    <td>18/01/2020</td>\r\n                                    <td>20/01/2020</td>\r\n                                    <td><span class=\"badge badge-success\">Success</span>\r\n                                        <!-- <span class=\"badge badge-warning text-white\">Pending</span> -->\r\n                                    </td>\r\n                                </tr>\r\n                                <tr *ngIf=\"!loadingState && orderProductListArray.length == 0\">\r\n                                    <td colspan=\"8\">No records found</td>\r\n                                </tr>\r\n                            </tbody>\r\n                        </table>\r\n                    </div>\r\n                    <pagination *ngIf=\"showPagination\" [paginationList]=\"pagination\" [currentPage]=\"currentPage\"\r\n                        (onPageChange)=\"getPage($event)\">\r\n                    </pagination>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\r\n    <!-- <div class=\"page-header border-b\">\r\n        <div class=\"row m-0\">\r\n            <h2 class=\"mr-auto\">{{PageTitle}}</h2>\r\n        </div>\r\n        <div class=\"ml-3\">\r\n            <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\r\n          </div>\r\n    </div> -->\r\n\r\n    <div class=\"page-header border-b\">\r\n        <div class=\"row m-0\">\r\n            <h2 class=\"mr-auto\">{{PageTitle}}</h2>\r\n            <div class=\"ml-3\">\r\n                <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"card\">\r\n        <div class=\"card-body\">\r\n            <ul class=\"nav nav-tabs\" id=\"myTab\" role=\"tablist\">\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link active\" id=\"productStock-tab\" data-toggle=\"tab\" href=\"#productStock\" role=\"tab\"\r\n                        aria-controls=\"productStock\" aria-selected=\"true\">Product Stock</a>\r\n                </li>\r\n\r\n            </ul>\r\n            <div class=\"tab-content\" id=\"myTabContent\">\r\n                <div class=\"tab-pane fade show active\" id=\"productStock\" role=\"tabpanel\"\r\n                    aria-labelledby=\"productStock-tab\">\r\n                    <div class=\"table-responsive-md mt-3\">\r\n                        <table class=\"table\">\r\n                            <thead class=\"thead-dark\">\r\n                                <tr>\r\n                                    <th class=\"align-items-center d-flex\">\r\n                                        <div class=\"form-check form-check-inline mr-0\">\r\n                                            <div class=\"checkbox-container\">\r\n                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"all\">\r\n                                                <span class=\"checkmark\"></span>\r\n                                            </div>\r\n                                        </div>\r\n                                    </th>\r\n                                    <th>Article</th>\r\n                                    <th>Serial No</th>\r\n                                    <th>Description</th>\r\n                                    <th>Bin</th>\r\n                                    <th>Bin Location</th>\r\n                                    <th>Stock In Date</th>\r\n                                    <th>Stock Out Date</th>\r\n                                    <th>Status</th>\r\n                                </tr>\r\n                            </thead>\r\n                            <tbody>\r\n                                <tr *ngFor=\"let item of objectArray; let i=index\">\r\n                                    <td class=\"align-items-center d-flex\">\r\n                                        <div class=\"form-check form-check-inline mr-0\">\r\n                                            <div class=\"checkbox-container\">\r\n                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"all\">\r\n                                                <span class=\"checkmark\"></span>\r\n                                            </div>\r\n                                        </div>\r\n                                    </td>\r\n                                    <td>{{item?.article ? item?.article :\"-\"}}</td>\r\n                                    <td>{{item?.serial_no ? item?.serial_no :\"-\"}}</td>\r\n                                    <td>{{item?.description ? item?.description :\"-\"}}</td>\r\n                                    <td>{{item?.bin?.bin_code ? item?.bin?.bin_code :\"-\"}}</td>\r\n                                    <td>{{item?.location_code}}</td>\r\n                                    <td>{{item?.stock_datetime|date:date_format :timezone}} </td>\r\n                                    <td>-</td>\r\n                                    <td>\r\n                                        <span class=\"badge\" [ngClass]=\"{\r\n                                            'badge-success': item?.status?.value == '3',\r\n                                            'badge-primary': item?.status?.value == '4',\r\n                                            'badge-warning text-white': item?.status?.value == '2',\r\n                                            'badge-danger': item?.status?.value == '1',\r\n                                            'badge-info': item?.status?.value == '0' }\">\r\n                                            {{item?.status?.label  }}\r\n                                        </span>\r\n                                    </td>\r\n                                </tr>\r\n                                <tr *ngIf=\"!loadingState && objectArray?.length == 0\">\r\n                                    <td colspan=\"8\">No records found</td>\r\n                                </tr>\r\n                            </tbody>\r\n                        </table>\r\n                    </div>\r\n                    <pagination *ngIf=\"showPagination\" [paginationList]=\"pagination\" [currentPage]=\"currentPage\"\r\n                        (onPageChange)=\"getPage($event)\">\r\n                    </pagination>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
 
 /***/ }),
 
@@ -117,14 +117,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/service/pagination.service */ "./src/app/service/pagination.service.ts");
 /* harmony import */ var src_app_service_product_stock_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/service/product-stock.service */ "./src/app/service/product-stock.service.ts");
+/* harmony import */ var src_app_service_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/service/data.service */ "./src/app/service/data.service.ts");
+
 
 
 
 
 let ProductStockComponent = class ProductStockComponent {
-    constructor(paginationService, productStockService) {
+    constructor(paginationService, productStockService, dataService) {
         this.paginationService = paginationService;
         this.productStockService = productStockService;
+        this.dataService = dataService;
         this.PageTitle = "Product Stock";
         this.loadform = false;
         this.loadingState = true;
@@ -134,6 +137,7 @@ let ProductStockComponent = class ProductStockComponent {
         this.currentPage = 1;
         this.permissionObject = null;
         this.showPagination = false;
+        this.date_format = "M/d/yy";
         //For Dynamic List
         this.headerData = [];
     }
@@ -141,6 +145,15 @@ let ProductStockComponent = class ProductStockComponent {
         // this.dataService.permission.subscribe((perms) => {
         //   this.permissionObject = perms['product_stock'];
         // });
+        this.dataService.currentCompany.subscribe((response) => {
+            if (response) {
+                this.timezone = String(response.timezone.format);
+                ;
+                this.time_format = response.time_format.label;
+                this.date_format = response.date_format.label;
+                this.currentCompany = response;
+            }
+        });
         this.loadform = false;
         this.getObjects();
     }
@@ -152,7 +165,7 @@ let ProductStockComponent = class ProductStockComponent {
         this.productStockService.getProductStockList(params).subscribe((response) => {
             this.loadingState = false;
             if (response.success) {
-                this.objectArray = response.data.list;
+                this.objectArray = response.data.list ? response.data.list : [];
                 this.showPagination = true;
                 this.pagination = this.paginationService.getPager(response.data.pagination['total_page'], this.currentPage);
             }
@@ -178,7 +191,8 @@ let ProductStockComponent = class ProductStockComponent {
 };
 ProductStockComponent.ctorParameters = () => [
     { type: src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_2__["PaginationService"] },
-    { type: src_app_service_product_stock_service__WEBPACK_IMPORTED_MODULE_3__["ProductStockService"] }
+    { type: src_app_service_product_stock_service__WEBPACK_IMPORTED_MODULE_3__["ProductStockService"] },
+    { type: src_app_service_data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"] }
 ];
 ProductStockComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
