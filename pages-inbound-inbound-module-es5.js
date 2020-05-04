@@ -61,7 +61,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Putaway Tab Content -->\r\n<!-- <div class=\"tab-pane fade\" id=\"putaway\" role=\"tabpanel\" aria-labelledby=\"putaway-tab\"> -->\r\n<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <button class=\"btn btn-primary\" [routerLink]=\"['/inbound/put-away/add',viewId]\">Generate\r\n      Transfer\r\n      Order</button>\r\n  </div>\r\n</div>\r\n<!-- <div class=\"table-responsive-md mt-2\">\r\n  <table class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th>Transfer Order No.</th>\r\n        <th>Case No.</th>\r\n        <th>Location</th>\r\n        <th class=\"text-center\">Article</th>\r\n        <th class=\"text-center\">Putaway Quantity</th>\r\n        <th class=\"text-center\">Pick Quantity</th>\r\n        <th>Status</th>\r\n        <th class=\"text-right\">Action</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n\r\n    </tbody>\r\n  </table>\r\n</div> -->\r\n\r\n<app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list>\r\n\r\n\r\n<!-- </div> -->\r\n";
+    __webpack_exports__["default"] = "<!-- Putaway Tab Content -->\r\n\r\n<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <button class=\"btn btn-primary\" [routerLink]=\"['/inbound/put-away/add',viewId]\">Generate\r\n      Transfer\r\n      Order</button>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"table-responsive-md mt-2\">\r\n  <table class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th>Transfer Order No</th>\r\n        <th>Case No</th>\r\n        <th class=\"text-center\">Location</th>\r\n        <th class=\"text-center\">Article</th>\r\n        <th class=\"text-center\">Putaway Quantity</th>\r\n        <th class=\"text-center\">Pick Quantity</th>\r\n        <th class=\"text-center\">Status</th>\r\n        <th class=\"text-right\">Action</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let item of orderProductListArray; let i=index\">\r\n\r\n        <td>{{item?.transfer_order_no}}</td>\r\n        <td>{{item?.case_no}}</td>\r\n        <td class=\"text-center\">{{item?.location}}</td>\r\n        <td class=\"text-center\">-</td>\r\n        <td class=\"text-center\">{{item?.put_away?.put_away_qty}} </td>\r\n        <td class=\"text-center\">{{item?.put_away?.pick_qty}} </td>\r\n        \r\n        <td>\r\n         \r\n      \r\n\r\n        <div class=\"dropdown table-dropdown\">\r\n          <a href=\"javascript:;\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"\r\n            class=\"text-decoration-none label bg-success\" style=\"font-weight: normal;\" >\r\n            <span class=\"badge\" [ngClass]=\"{\r\n              'badge-success': item?.status?.value == '3',\r\n              'badge-primary': item?.status?.value == '4',\r\n              'badge-warning text-white': item?.status?.value == '2',\r\n              'badge-danger': item?.status?.value == '1',\r\n              'badge-info': item?.status?.value == '0'\r\n            }\"> {{item?.status?.label  }} </span>\r\n          </a>\r\n          <div class=\"dropdown-menu-arrow\" style=\"bottom: -16px;\"></div>\r\n\r\n          <ul class=\"dropdown-menu\" >\r\n            <li class=\"dropdown-item\" \r\n             *ngFor=\"let obj of statusArray; let i=index\">\r\n              <a\r\n                (click)=\"statusChange(item?.transfer_order_id,obj?.value,item?.status?.value)\">{{obj?.label}}</a>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      \r\n      </td>\r\n        <td>\r\n          <div  class=\"action-drop dropdown text-right\">\r\n            <a href=\"#\" data-toggle=\"dropdown\" class=\"btn shadow-none btn-default btn-sm btn-icon-only\" title=\"\">\r\n              <i class=\"fa fa-ellipsis-h\"></i>\r\n            </a>\r\n            <div class=\"dropdown-menu dropdown-icon-menu drop-menu-right action-dropdown\" style=\"width: 100px;\">\r\n              <a  class=\"dropdown-item\"\r\n                [routerLink]=\"['/inbound/put-away/edit/',item?.transfer_order_id]\">\r\n                <i class=\"fa font-size16 text-primary fa fa-edit \"> </i>Edit</a>\r\n            </div>\r\n          </div>\r\n        </td>\r\n      </tr>\r\n      <tr *ngIf=\"!loadingState && orderProductListArray.length == 0\">\r\n        <td colspan=\"8\">No records found</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>\r\n<!-- <app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list> -->\r\n\r\n\r\n\r\n";
     /***/
   },
 
@@ -740,15 +740,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! src/app/common-module/table-list/list-field-type */
-    "./src/app/common-module/table-list/list-field-type.ts");
+    var src_app_service_put_away_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! src/app/service/put-away.service */
+    "./src/app/service/put-away.service.ts");
     /* harmony import */
 
 
-    var src_app_service_put_away_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-    /*! src/app/service/put-away.service */
-    "./src/app/service/put-away.service.ts");
+    var src_app_messages__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! src/app/messages */
+    "./src/app/messages.ts");
 
     var OrderPutawayComponent =
     /*#__PURE__*/
@@ -768,6 +768,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.loadingState = false;
         this.isGenerate = false;
         this.currentPage = 1;
+        this.statusArray = [];
         this.activatedRoute.parent.params.subscribe(function (response) {
           _this4.viewId = response['id'];
         });
@@ -781,7 +782,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(OrderPutawayComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          this.setHeaderData();
           this.getOrderProductList();
         }
       }, {
@@ -790,59 +790,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.location.back();
         }
       }, {
-        key: "setHeaderData",
-        value: function setHeaderData() {
-          this.headerData.push(new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Transfer Order No",
-            key: 'transfer_order_no'
-          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Case No",
-            key: 'case_no'
-          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Location",
-            key: ''
-          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Article",
-            key: ''
-          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Putaway Quantity",
-            key: 'put_away.put_away_qty'
-          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Pick Quantity",
-            key: 'put_away.pick_qty'
-          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["StatusField"]({
-            label: "Status",
-            key: 'status.label'
-          })); // let canEdit = true;
-          // let actions = {};
-          // //
-          // // View Details
-          // if (canEdit) {
-          //   actions['view'] = {
-          //     path: '/inbound/registeration/add/',
-          //     id: 'order_id',
-          //     showText: 'Register Product',
-          //     // class: 'fa-bell'
-          //   }
-          // }
-          // let actionColom = new ActionField(actions);
-          // this.headerData.push(
-          //   actionColom
-          // );
-        }
-      }, {
-        key: "onReloadEvent",
-        value: function onReloadEvent() {
-          this.getOrderProductList();
-        }
-      }, {
         key: "getOrderProductList",
         value: function getOrderProductList() {
           var _this5 = this;
 
           this.PutAwayService.getTransferOrderListById(this.viewId).subscribe(function (response) {
-            if (response.success && response.data.length > 0) {
-              _this5.orderProductListArray = response.data ? response.data : [];
+            if (response.success && response.data.list.length > 0) {
+              _this5.orderProductListArray = response.data.list ? response.data.list : [];
+              _this5.statusArray = response.data.status;
 
               if (_this5.orderProductListArray.length > 0) {
                 _this5.setOrderId();
@@ -872,6 +827,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
         }
       }, {
+        key: "statusChange",
+        value: function statusChange(transfer_order_id, status_id, current_status_id) {
+          var _this7 = this;
+
+          if (current_status_id != status_id) {
+            swal.fire({
+              title: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["errorMessage"].status_change_header_text,
+              text: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["errorMessage"].status_change_smalll_text,
+              icon: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["errorMessage"].status_change_dialogue_type,
+              showCancelButton: true,
+              confirmButtonText: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["errorMessage"].status_change_confirm_button,
+              cancelButtonText: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["errorMessage"].status_change_cancel_button
+            }).then(function (result) {
+              if (result.value) {
+                if (transfer_order_id && status_id) {
+                  var data = {
+                    status_id: status_id
+                  };
+
+                  _this7.PutAwayService.statusChange(transfer_order_id, data).subscribe(function (response) {
+                    if (response.success) {
+                      _this7.getOrderProductList();
+                    }
+                  });
+                }
+              }
+            }).catch(swal.noop);
+          }
+        }
+      }, {
         key: "ngOnDestroy",
         value: function ngOnDestroy() {
           if (this.subscription) {
@@ -889,7 +874,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         type: src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_3__["PaginationService"]
       }, {
-        type: src_app_service_put_away_service__WEBPACK_IMPORTED_MODULE_7__["PutAwayService"]
+        type: src_app_service_put_away_service__WEBPACK_IMPORTED_MODULE_6__["PutAwayService"]
       }, {
         type: _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"]
       }, {
@@ -972,7 +957,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function OrderSortingComponent(dataService, paginationService, ProductRegistrationService, location, activatedRoute) {
-        var _this7 = this;
+        var _this8 = this;
 
         _classCallCheck(this, OrderSortingComponent);
 
@@ -987,11 +972,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.isSorting = false;
         this.currentPage = 1;
         this.activatedRoute.parent.params.subscribe(function (response) {
-          _this7.viewId = response['id'];
+          _this8.viewId = response['id'];
         });
         this.subscription = this.dataService.OrderDetails.subscribe(function (data) {
           if (data) {
-            _this7.objectArray = data;
+            _this8.objectArray = data;
           }
         });
       }
@@ -1049,24 +1034,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getOrderProductList",
         value: function getOrderProductList() {
-          var _this8 = this;
+          var _this9 = this;
 
           this.ProductRegistrationService.getSortingList(this.viewId).subscribe(function (response) {
             if (response.success && response.data) {
-              _this8.orderProductListArray = response.data.list ? response.data.list : []; // this.setOrderId();
+              _this9.orderProductListArray = response.data.list ? response.data.list : []; // this.setOrderId();
 
-              _this8.isSorting = response.data.is_sorting; // this.pagination = this.paginationService.getPager(response.data.pagination['total_page'], this.currentPage);
+              _this9.isSorting = response.data.is_sorting; // this.pagination = this.paginationService.getPager(response.data.pagination['total_page'], this.currentPage);
             } else {
-              _this8.orderProductListArray = [];
-              _this8.loadingState = false;
-              _this8.isSorting = false;
-              _this8.pagination = null;
+              _this9.orderProductListArray = [];
+              _this9.loadingState = false;
+              _this9.isSorting = false;
+              _this9.pagination = null;
             }
           }, function (error) {
-            _this8.orderProductListArray = [];
-            _this8.isSorting = false;
-            _this8.loadingState = false;
-            _this8.pagination = null;
+            _this9.orderProductListArray = [];
+            _this9.isSorting = false;
+            _this9.loadingState = false;
+            _this9.pagination = null;
           });
         } // setOrderId() {
         //   this.orderProductListArray.filter((obj) => {
@@ -1181,7 +1166,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function OrderUnlodingComponent(dataService, paginationService, unloadService, location, activatedRoute) {
-        var _this9 = this;
+        var _this10 = this;
 
         _classCallCheck(this, OrderUnlodingComponent);
 
@@ -1196,11 +1181,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.isGenerate = false;
         this.currentPage = 1;
         this.activatedRoute.parent.params.subscribe(function (response) {
-          _this9.viewId = response['id'];
+          _this10.viewId = response['id'];
         });
         this.subscription = this.dataService.OrderDetails.subscribe(function (data) {
           if (data) {
-            _this9.objectArray = data;
+            _this10.objectArray = data;
           }
         });
       }
@@ -1278,29 +1263,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getOrderProductList",
         value: function getOrderProductList() {
-          var _this10 = this;
+          var _this11 = this;
 
           this.unloadService.getUnloadGeneratedListById(this.viewId).subscribe(function (response) {
             if (response.success && response.data) {
-              _this10.orderProductListArray = response.data.list ? response.data.list : [];
-              _this10.isGenerate = response.data.is_generate; // this.pagination = this.paginationService.getPager(response.data.pagination['total_page'], this.currentPage);
+              _this11.orderProductListArray = response.data.list ? response.data.list : [];
+              _this11.isGenerate = response.data.is_generate; // this.pagination = this.paginationService.getPager(response.data.pagination['total_page'], this.currentPage);
             } else {
-              _this10.orderProductListArray = [];
-              _this10.loadingState = false;
-              _this10.isGenerate = false;
-              _this10.pagination = null;
+              _this11.orderProductListArray = [];
+              _this11.loadingState = false;
+              _this11.isGenerate = false;
+              _this11.pagination = null;
             }
           }, function (error) {
-            _this10.orderProductListArray = [];
-            _this10.isGenerate = false;
-            _this10.loadingState = false;
-            _this10.pagination = null;
+            _this11.orderProductListArray = [];
+            _this11.isGenerate = false;
+            _this11.loadingState = false;
+            _this11.pagination = null;
           });
         }
       }, {
         key: "deleteObject",
         value: function deleteObject(object) {
-          var _this11 = this;
+          var _this12 = this;
 
           swal.fire({
             title: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["errorMessage"].delete_header_text,
@@ -1315,9 +1300,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 unload_detail_id: object.unload_detail_id
               };
 
-              _this11.unloadService.deleteUnloadSubmitReports(object.unload_id, params).subscribe(function (response) {
+              _this12.unloadService.deleteUnloadSubmitReports(object.unload_id, params).subscribe(function (response) {
                 if (response.success) {
-                  _this11.getOrderProductList();
+                  _this12.getOrderProductList();
                 }
               });
             }
@@ -1553,14 +1538,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getOrderDetails",
         value: function getOrderDetails() {
-          var _this12 = this;
+          var _this13 = this;
 
           this.orderService.getOrderViewById(this.viewId).subscribe(function (res) {
             if (res.success && res.data) {
-              _this12.objectArray = res.data;
-              _this12.PageTitle = _this12.PageTitle + "".concat(_this12.objectArray.po_no);
+              _this13.objectArray = res.data;
+              _this13.PageTitle = _this13.PageTitle + "".concat(_this13.objectArray.po_no);
 
-              _this12.dataService.OrderDetailsSubject.next(_this12.objectArray);
+              _this13.dataService.OrderDetailsSubject.next(_this13.objectArray);
             }
           });
         }
@@ -1938,7 +1923,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getObjects",
         value: function getObjects() {
-          var _this13 = this;
+          var _this14 = this;
 
           var params = {
             page: this.currentPage
@@ -1949,20 +1934,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this.UnloadService.getUnloadList(params).subscribe(function (response) {
-            _this13.loadingState = false;
+            _this14.loadingState = false;
 
             if (response.success) {
-              _this13.objectArray = response.data.list ? response.data.list : [];
-              _this13.showPagination = true;
-              _this13.pagination = _this13.paginationService.getPager(response.data.pagination['total_page'], _this13.currentPage);
+              _this14.objectArray = response.data.list ? response.data.list : [];
+              _this14.showPagination = true;
+              _this14.pagination = _this14.paginationService.getPager(response.data.pagination['total_page'], _this14.currentPage);
             } else {
-              _this13.objectArray = [];
-              _this13.pagination = null;
+              _this14.objectArray = [];
+              _this14.pagination = null;
             }
           }, function (error) {
-            _this13.loadingState = false;
-            _this13.objectArray = [];
-            _this13.pagination = null;
+            _this14.loadingState = false;
+            _this14.objectArray = [];
+            _this14.pagination = null;
           });
         }
       }, {
@@ -2380,6 +2365,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return this.http.get("".concat(this.API_URL, "/transfer-order/list/").concat(id), {
             params: param
           });
+        }
+      }, {
+        key: "statusChange",
+        value: function statusChange(id, data) {
+          return this.http.patch("".concat(this.API_URL, "/transfer-order/").concat(id), data);
         }
       }]);
 

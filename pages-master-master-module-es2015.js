@@ -805,7 +805,7 @@ let BinListComponent = class BinListComponent {
             label: "Bin Volume",
             key: "bin_volume",
         }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
-            label: "Avliable Volunme",
+            label: "Avliable Volume",
             key: "available_volume",
         }));
         let canEdit = true;

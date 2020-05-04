@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Putaway Tab Content -->\r\n<!-- <div class=\"tab-pane fade\" id=\"putaway\" role=\"tabpanel\" aria-labelledby=\"putaway-tab\"> -->\r\n<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <button class=\"btn btn-primary\" [routerLink]=\"['/inbound/put-away/add',viewId]\">Generate\r\n      Transfer\r\n      Order</button>\r\n  </div>\r\n</div>\r\n<!-- <div class=\"table-responsive-md mt-2\">\r\n  <table class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th>Transfer Order No.</th>\r\n        <th>Case No.</th>\r\n        <th>Location</th>\r\n        <th class=\"text-center\">Article</th>\r\n        <th class=\"text-center\">Putaway Quantity</th>\r\n        <th class=\"text-center\">Pick Quantity</th>\r\n        <th>Status</th>\r\n        <th class=\"text-right\">Action</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n\r\n    </tbody>\r\n  </table>\r\n</div> -->\r\n\r\n<app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list>\r\n\r\n\r\n<!-- </div> -->\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Putaway Tab Content -->\r\n\r\n<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n    <button class=\"btn btn-primary\" [routerLink]=\"['/inbound/put-away/add',viewId]\">Generate\r\n      Transfer\r\n      Order</button>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"table-responsive-md mt-2\">\r\n  <table class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th>Transfer Order No</th>\r\n        <th>Case No</th>\r\n        <th class=\"text-center\">Location</th>\r\n        <th class=\"text-center\">Article</th>\r\n        <th class=\"text-center\">Putaway Quantity</th>\r\n        <th class=\"text-center\">Pick Quantity</th>\r\n        <th class=\"text-center\">Status</th>\r\n        <th class=\"text-right\">Action</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let item of orderProductListArray; let i=index\">\r\n\r\n        <td>{{item?.transfer_order_no}}</td>\r\n        <td>{{item?.case_no}}</td>\r\n        <td class=\"text-center\">{{item?.location}}</td>\r\n        <td class=\"text-center\">-</td>\r\n        <td class=\"text-center\">{{item?.put_away?.put_away_qty}} </td>\r\n        <td class=\"text-center\">{{item?.put_away?.pick_qty}} </td>\r\n        \r\n        <td>\r\n         \r\n      \r\n\r\n        <div class=\"dropdown table-dropdown\">\r\n          <a href=\"javascript:;\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"\r\n            class=\"text-decoration-none label bg-success\" style=\"font-weight: normal;\" >\r\n            <span class=\"badge\" [ngClass]=\"{\r\n              'badge-success': item?.status?.value == '3',\r\n              'badge-primary': item?.status?.value == '4',\r\n              'badge-warning text-white': item?.status?.value == '2',\r\n              'badge-danger': item?.status?.value == '1',\r\n              'badge-info': item?.status?.value == '0'\r\n            }\"> {{item?.status?.label  }} </span>\r\n          </a>\r\n          <div class=\"dropdown-menu-arrow\" style=\"bottom: -16px;\"></div>\r\n\r\n          <ul class=\"dropdown-menu\" >\r\n            <li class=\"dropdown-item\" \r\n             *ngFor=\"let obj of statusArray; let i=index\">\r\n              <a\r\n                (click)=\"statusChange(item?.transfer_order_id,obj?.value,item?.status?.value)\">{{obj?.label}}</a>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      \r\n      </td>\r\n        <td>\r\n          <div  class=\"action-drop dropdown text-right\">\r\n            <a href=\"#\" data-toggle=\"dropdown\" class=\"btn shadow-none btn-default btn-sm btn-icon-only\" title=\"\">\r\n              <i class=\"fa fa-ellipsis-h\"></i>\r\n            </a>\r\n            <div class=\"dropdown-menu dropdown-icon-menu drop-menu-right action-dropdown\" style=\"width: 100px;\">\r\n              <a  class=\"dropdown-item\"\r\n                [routerLink]=\"['/inbound/put-away/edit/',item?.transfer_order_id]\">\r\n                <i class=\"fa font-size16 text-primary fa fa-edit \"> </i>Edit</a>\r\n            </div>\r\n          </div>\r\n        </td>\r\n      </tr>\r\n      <tr *ngIf=\"!loadingState && orderProductListArray.length == 0\">\r\n        <td colspan=\"8\">No records found</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>\r\n<!-- <app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list> -->\r\n\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -409,8 +409,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/service/pagination.service */ "./src/app/service/pagination.service.ts");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-/* harmony import */ var src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/common-module/table-list/list-field-type */ "./src/app/common-module/table-list/list-field-type.ts");
-/* harmony import */ var src_app_service_put_away_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/service/put-away.service */ "./src/app/service/put-away.service.ts");
+/* harmony import */ var src_app_service_put_away_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/service/put-away.service */ "./src/app/service/put-away.service.ts");
+/* harmony import */ var src_app_messages__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/messages */ "./src/app/messages.ts");
 
 
 
@@ -431,6 +431,7 @@ let OrderPutawayComponent = class OrderPutawayComponent {
         this.loadingState = false;
         this.isGenerate = false;
         this.currentPage = 1;
+        this.statusArray = [];
         this.activatedRoute.parent.params.subscribe((response) => {
             this.viewId = response['id'];
         });
@@ -441,59 +442,16 @@ let OrderPutawayComponent = class OrderPutawayComponent {
         });
     }
     ngOnInit() {
-        this.setHeaderData();
         this.getOrderProductList();
     }
     back() {
         this.location.back();
     }
-    setHeaderData() {
-        this.headerData.push(new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Transfer Order No",
-            key: 'transfer_order_no',
-        }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Case No",
-            key: 'case_no',
-        }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Location",
-            key: '',
-        }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Article",
-            key: '',
-        }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Putaway Quantity",
-            key: 'put_away.put_away_qty',
-        }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
-            label: "Pick Quantity",
-            key: 'put_away.pick_qty',
-        }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["StatusField"]({
-            label: "Status",
-            key: 'status.label',
-        }));
-        // let canEdit = true;
-        // let actions = {};
-        // //
-        // // View Details
-        // if (canEdit) {
-        //   actions['view'] = {
-        //     path: '/inbound/registeration/add/',
-        //     id: 'order_id',
-        //     showText: 'Register Product',
-        //     // class: 'fa-bell'
-        //   }
-        // }
-        // let actionColom = new ActionField(actions);
-        // this.headerData.push(
-        //   actionColom
-        // );
-    }
-    onReloadEvent() {
-        this.getOrderProductList();
-    }
     getOrderProductList() {
         this.PutAwayService.getTransferOrderListById(this.viewId).subscribe((response) => {
-            if (response.success && response.data.length > 0) {
-                this.orderProductListArray = response.data ? response.data : [];
+            if (response.success && response.data.list.length > 0) {
+                this.orderProductListArray = response.data.list ? response.data.list : [];
+                this.statusArray = response.data.status;
                 if (this.orderProductListArray.length > 0) {
                     this.setOrderId();
                 }
@@ -518,6 +476,29 @@ let OrderPutawayComponent = class OrderPutawayComponent {
             obj.order_id = this.viewId;
         });
     }
+    statusChange(transfer_order_id, status_id, current_status_id) {
+        if (current_status_id != status_id) {
+            swal.fire({
+                title: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["errorMessage"].status_change_header_text,
+                text: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["errorMessage"].status_change_smalll_text,
+                icon: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["errorMessage"].status_change_dialogue_type,
+                showCancelButton: true,
+                confirmButtonText: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["errorMessage"].status_change_confirm_button,
+                cancelButtonText: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["errorMessage"].status_change_cancel_button,
+            }).then((result) => {
+                if (result.value) {
+                    if (transfer_order_id && status_id) {
+                        let data = { status_id: status_id };
+                        this.PutAwayService.statusChange(transfer_order_id, data).subscribe((response) => {
+                            if (response.success) {
+                                this.getOrderProductList();
+                            }
+                        });
+                    }
+                }
+            }).catch(swal.noop);
+        }
+    }
     ngOnDestroy() {
         if (this.subscription) {
             this.subscription.unsubscribe();
@@ -527,7 +508,7 @@ let OrderPutawayComponent = class OrderPutawayComponent {
 OrderPutawayComponent.ctorParameters = () => [
     { type: src_app_service_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"] },
     { type: src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_3__["PaginationService"] },
-    { type: src_app_service_put_away_service__WEBPACK_IMPORTED_MODULE_7__["PutAwayService"] },
+    { type: src_app_service_put_away_service__WEBPACK_IMPORTED_MODULE_6__["PutAwayService"] },
     { type: _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] }
 ];
@@ -1428,6 +1409,9 @@ let PutAwayService = class PutAwayService {
     }
     getTransferOrderListById(id, param = null) {
         return this.http.get(`${this.API_URL}/transfer-order/list/${id}`, { params: param });
+    }
+    statusChange(id, data) {
+        return this.http.patch(`${this.API_URL}/transfer-order/${id}`, data);
     }
 };
 PutAwayService.ctorParameters = () => [
