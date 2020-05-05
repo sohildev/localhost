@@ -1491,6 +1491,8 @@ const pageTitles = {
     product_config_list: `Product Config List | ${APP_NAME}`,
     add_product_config: `Add Aroduct Config | ${APP_NAME}`,
     edit_product_config: `Edit Product Config | ${APP_NAME}`,
+    product_stock_list: `Product Stock List | ${APP_NAME}`,
+    product_sammary_list: `Stock Summary List | ${APP_NAME}`,
 };
 const errorMessage = {
     change_password_success: 'Your password changed Successfully',

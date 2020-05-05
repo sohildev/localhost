@@ -2598,7 +2598,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       edit_tag: "Edit Tag | ".concat(APP_NAME),
       product_config_list: "Product Config List | ".concat(APP_NAME),
       add_product_config: "Add Aroduct Config | ".concat(APP_NAME),
-      edit_product_config: "Edit Product Config | ".concat(APP_NAME)
+      edit_product_config: "Edit Product Config | ".concat(APP_NAME),
+      product_stock_list: "Product Stock List | ".concat(APP_NAME),
+      product_sammary_list: "Stock Summary List | ".concat(APP_NAME)
     };
     var errorMessage = {
       change_password_success: 'Your password changed Successfully',

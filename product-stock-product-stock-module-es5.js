@@ -26,22 +26,42 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/operation/product-stock/product-stock.component.html":
-  /*!******************************************************************************************************************!*\
-    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/operation/product-stock/product-stock.component.html ***!
-    \******************************************************************************************************************/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/operation/product-stock/product-stock-list/product-stock-list.component.html":
+  /*!******************************************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/operation/product-stock/product-stock-list/product-stock-list.component.html ***!
+    \******************************************************************************************************************************************/
 
   /*! exports provided: default */
 
   /***/
-  function node_modulesRawLoaderDistCjsJsSrcAppPagesOperationProductStockProductStockComponentHtml(module, __webpack_exports__, __webpack_require__) {
+  function node_modulesRawLoaderDistCjsJsSrcAppPagesOperationProductStockProductStockListProductStockListComponentHtml(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n    <!-- <div class=\"page-header border-b\">\r\n        <div class=\"row m-0\">\r\n            <h2 class=\"mr-auto\">{{PageTitle}}</h2>\r\n        </div>\r\n        <div class=\"ml-3\">\r\n            <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\r\n          </div>\r\n    </div> -->\r\n\r\n    <div class=\"page-header border-b\">\r\n        <div class=\"row m-0\">\r\n            <h2 class=\"mr-auto\">{{PageTitle}}</h2>\r\n            <div class=\"ml-3\">\r\n                <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\r\n            </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"card\">\r\n        <div class=\"card-body\">\r\n            <ul class=\"nav nav-tabs\" id=\"myTab\" role=\"tablist\">\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link active\" id=\"productStock-tab\" data-toggle=\"tab\" href=\"#productStock\" role=\"tab\"\r\n                        aria-controls=\"productStock\" aria-selected=\"true\">Product Stock</a>\r\n                </li>\r\n\r\n            </ul>\r\n            <div class=\"tab-content\" id=\"myTabContent\">\r\n                <div class=\"tab-pane fade show active\" id=\"productStock\" role=\"tabpanel\"\r\n                    aria-labelledby=\"productStock-tab\">\r\n                    <div class=\"table-responsive-md mt-3\">\r\n                        <table class=\"table\">\r\n                            <thead class=\"thead-dark\">\r\n                                <tr>\r\n                                    <th class=\"align-items-center d-flex\">\r\n                                        <div class=\"form-check form-check-inline mr-0\">\r\n                                            <div class=\"checkbox-container\">\r\n                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"all\">\r\n                                                <span class=\"checkmark\"></span>\r\n                                            </div>\r\n                                        </div>\r\n                                    </th>\r\n                                    <th>Article</th>\r\n                                    <th>Serial No</th>\r\n                                    <th>Description</th>\r\n                                    <th>Category</th>\r\n                                    <th>Bin</th>\r\n                                    <th>Bin Location</th>\r\n                                    <th>Stock In Date</th>\r\n                                    <th>Stock Out Date</th>\r\n                                    <th>Status</th>\r\n                                </tr>\r\n                            </thead>\r\n                            <tbody>\r\n                                <tr *ngFor=\"let item of objectArray; let i=index\">\r\n                                    <td class=\"align-items-center d-flex\">\r\n                                        <div class=\"form-check form-check-inline mr-0\">\r\n                                            <div class=\"checkbox-container\">\r\n                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"all\">\r\n                                                <span class=\"checkmark\"></span>\r\n                                            </div>\r\n                                        </div>\r\n                                    </td>\r\n                                    <td>{{item?.product?.label ? item?.product?.label :\"-\"}}</td>\r\n                                    <td>{{item?.product?.sku_no ? item?.product?.sku_no :\"-\"}}</td>\r\n                                    <td>{{item?.product?.description ? item?.product?.description :\"-\"}}</td>\r\n                                    <td>{{item?.category?.label ? item?.category?.label :\"-\"}}</td>\r\n                                    <td>{{item?.bin?.bin_code ? item?.bin?.bin_code :\"-\"}}</td>\r\n                                    <td>{{item?.location_code}}</td>\r\n                                    <td>{{item?.stock_datetime|date:date_format :timezone}} </td>\r\n                                    <td>\r\n                                        <span *ngIf=\"item?.stock_out_date;else outdate\">\r\n                                            {{item?.stock_out_date|date:date_format :timezone}}\r\n                                        </span>\r\n                                        <ng-template #outdate>\r\n                                            <span> - </span>\r\n                                        </ng-template>\r\n                                    </td>\r\n                                    <td>\r\n                                        <span class=\"badge\" [ngClass]=\"{\r\n                                            'badge-success': item?.status?.value == '3',\r\n                                            'badge-primary': item?.status?.value == '4',\r\n                                            'badge-warning text-white': item?.status?.value == '2',\r\n                                            'badge-danger': item?.status?.value == '1',\r\n                                            'badge-info': item?.status?.value == '0' }\">\r\n                                            {{item?.status?.label  }}\r\n                                        </span>\r\n                                    </td>\r\n                                </tr>\r\n                                <tr *ngIf=\"!loadingState && objectArray?.length == 0\">\r\n                                    <td colspan=\"8\">No records found</td>\r\n                                </tr>\r\n                            </tbody>\r\n                        </table>\r\n                    </div>\r\n                    <pagination *ngIf=\"showPagination\" [paginationList]=\"pagination\" [currentPage]=\"currentPage\"\r\n                        (onPageChange)=\"getPage($event)\">\r\n                    </pagination>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+    __webpack_exports__["default"] = "<div class=\"container-fluid\">\n    <!-- <div class=\"page-header border-b\">\n        <div class=\"row m-0\">\n            <h2 class=\"mr-auto\">{{PageTitle}}</h2>\n        </div>\n        <div class=\"ml-3\">\n            <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\n          </div>\n    </div> -->\n\n    <div class=\"page-header border-b\">\n        <div class=\"row m-0\">\n            <h2 class=\"mr-auto\">{{PageTitle}}</h2>\n            <div class=\"ml-3\">\n                <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\n            </div>\n\n        </div>\n\n    </div>\n    <div class=\"card\">\n        <div class=\"card-body\">\n            <ul class=\"nav nav-tabs\" id=\"myTab\" role=\"tablist\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link active\" id=\"productStock-tab\" data-toggle=\"tab\" href=\"#productStock\" role=\"tab\"\n                        aria-controls=\"productStock\" [routerLink]=\"['/stock/search-product']\" routerLinkActive=\"router-link-active\" aria-selected=\"true\">Product Stock</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" data-toggle=\"tab\"  role=\"tab\"\n                        aria-controls=\"productStock\" aria-selected=\"true\" [routerLink]=\"['/stock/search-product/summary']\" routerLinkActive=\"router-link-active\" >Stock Summary</a>\n                </li>\n\n            </ul>\n            <div class=\"tab-content\" id=\"myTabContent\">\n                <div class=\"tab-pane fade show active\" id=\"productStock\" role=\"tabpanel\"\n                    aria-labelledby=\"productStock-tab\">\n                    <div class=\"table-responsive-md mt-3\">\n                        <table class=\"table\">\n                            <thead class=\"thead-dark\">\n                                <tr>\n                                    <th class=\"align-items-center d-flex\">\n                                        <div class=\"form-check form-check-inline mr-0\">\n                                            <div class=\"checkbox-container\">\n                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"all\">\n                                                <span class=\"checkmark\"></span>\n                                            </div>\n                                        </div>\n                                    </th>\n                                    <th>Article</th>\n                                    <th>Serial No</th>\n                                    <th>Description</th>\n                                    <th>Category</th>\n                                    <th>Quantity</th>\n                                    <th>Bin</th>\n                                    <th>Bin Location</th>\n                                    <th>Stock In Date</th>\n                                    <th>Stock Out Date</th>\n                                    <th>Status</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr *ngFor=\"let item of objectArray; let i=index\">\n                                    <td class=\"align-items-center d-flex\">\n                                        <div class=\"form-check form-check-inline mr-0\">\n                                            <div class=\"checkbox-container\">\n                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"all\">\n                                                <span class=\"checkmark\"></span>\n                                            </div>\n                                        </div>\n                                    </td>\n                                    <td>{{item?.product?.label ? item?.product?.label :\"-\"}}</td>\n                                    <td>{{item?.product?.sku_no ? item?.product?.sku_no :\"-\"}}</td>\n                                    <td>{{item?.product?.description ? item?.product?.description :\"-\"}}</td>\n                                    <td>{{item?.category?.label ? item?.category?.label :\"-\"}}</td>\n                                    <td>{{item?.qty}}</td>\n                                    <td>{{item?.bin?.bin_code ? item?.bin?.bin_code :\"-\"}}</td>\n                                    <td>{{item?.location_code}}</td>\n                                    <td>{{item?.stock_datetime|date:date_format :timezone}} </td>\n                                    <td>\n                                        <span *ngIf=\"item?.stock_out_date;else outdate\">\n                                            {{item?.stock_out_date|date:date_format :timezone}}\n                                        </span>\n                                        <ng-template #outdate>\n                                            <span> - </span>\n                                        </ng-template>\n                                    </td>\n                                    <td>\n                                        <span class=\"badge\" [ngClass]=\"{\n                                            'badge-success': item?.status?.value == '3',\n                                            'badge-primary': item?.status?.value == '4',\n                                            'badge-warning text-white': item?.status?.value == '2',\n                                            'badge-danger': item?.status?.value == '1',\n                                            'badge-info': item?.status?.value == '0' }\">\n                                            {{item?.status?.label  }}\n                                        </span>\n                                    </td>\n                                </tr>\n                                <tr *ngIf=\"!loadingState && objectArray?.length == 0\">\n                                    <td colspan=\"11\">No records found</td>\n                                </tr>\n                            </tbody>\n                        </table>\n                    </div>\n                    <pagination *ngIf=\"showPagination\" [paginationList]=\"pagination\" [currentPage]=\"currentPage\"\n                        (onPageChange)=\"getPage($event)\">\n                    </pagination>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/operation/product-stock/product-stock-summary-list/product-stock-summary-list.component.html":
+  /*!**********************************************************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/operation/product-stock/product-stock-summary-list/product-stock-summary-list.component.html ***!
+    \**********************************************************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppPagesOperationProductStockProductStockSummaryListProductStockSummaryListComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div class=\"container-fluid\">\n    <div class=\"page-header border-b\">\n        <div class=\"row m-0\">\n            <h2 class=\"mr-auto\">{{PageTitle}}</h2>\n            <div class=\"ml-3\">\n                <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\n            </div>\n\n        </div>\n\n    </div>\n    <div class=\"card\">\n        <div class=\"card-body\">\n            <ul class=\"nav nav-tabs\" id=\"myTab\" role=\"tablist\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"productStock-tab\" data-toggle=\"tab\" href=\"#productStock\" role=\"tab\"\n                        aria-controls=\"productStock\" [routerLink]=\"['/stock/search-product']\" routerLinkActive=\"router-link-active\" aria-selected=\"true\">Product Stock</a>\n                </li>\n                \n                <li class=\"nav-item\">\n                    <a class=\"nav-link active\" id=\"productStocksummary-tab\" data-toggle=\"tab\" href=\"#productStocksummary\" role=\"tab\"\n                        aria-controls=\"productStocksummary\"  aria-selected=\"true\">Stock Summary</a>\n                </li>\n\n            </ul>\n            <div class=\"tab-content\" id=\"myTabContent\">\n                <div class=\"tab-pane fade show active\" id=\"productStocksummary\" role=\"tabpanel\"\n                    aria-labelledby=\"productStocksummary-tab\">\n                    <div class=\"table-responsive-md mt-3\">\n                        <table class=\"table\">\n                            <thead class=\"thead-dark\">\n                                <tr>\n                                    <th>Product</th>\n                                    <th>SKU No</th>\n                                    <th>Category</th>\n                                    <th>Quantity</th>\n                                    <th>Volume Total</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr *ngFor=\"let item of objectArray; let i=index\">\n                                   \n                                    <td>{{item?.product?.label ? item?.product?.label :\"-\"}}</td>\n                                    <td>{{item?.product?.sku_no ? item?.product?.sku_no :\"-\"}}</td>\n                                    \n                                    <td>{{item?.category?.label ? item?.category?.label :\"-\"}}</td>\n                                    <td>{{item?.qty}}</td>\n                                    <td>{{item?.volume}}</td>\n                                </tr>\n                                <tr *ngIf=\"!loadingState && objectArray?.length == 0\">\n                                    <td colspan=\"5\">No records found</td>\n                                </tr>\n                            </tbody>\n                        </table>\n                    </div>\n                    <pagination *ngIf=\"showPagination\" [paginationList]=\"pagination\" [currentPage]=\"currentPage\"\n                        (onPageChange)=\"getPage($event)\">\n                    </pagination>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>";
     /***/
   },
 
@@ -167,23 +187,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./src/app/pages/operation/product-stock/product-stock.component.ts":
-  /*!**************************************************************************!*\
-    !*** ./src/app/pages/operation/product-stock/product-stock.component.ts ***!
-    \**************************************************************************/
+  "./src/app/pages/operation/product-stock/product-stock-list/product-stock-list.component.ts":
+  /*!**************************************************************************************************!*\
+    !*** ./src/app/pages/operation/product-stock/product-stock-list/product-stock-list.component.ts ***!
+    \**************************************************************************************************/
 
-  /*! exports provided: ProductStockComponent */
+  /*! exports provided: ProductStockListComponent */
 
   /***/
-  function srcAppPagesOperationProductStockProductStockComponentTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppPagesOperationProductStockProductStockListProductStockListComponentTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "ProductStockComponent", function () {
-      return ProductStockComponent;
+    __webpack_require__.d(__webpack_exports__, "ProductStockListComponent", function () {
+      return ProductStockListComponent;
     });
     /* harmony import */
 
@@ -216,11 +236,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! src/app/service/data.service */
     "./src/app/service/data.service.ts");
 
-    var ProductStockComponent =
+    var ProductStockListComponent =
     /*#__PURE__*/
     function () {
-      function ProductStockComponent(paginationService, productStockService, dataService) {
-        _classCallCheck(this, ProductStockComponent);
+      function ProductStockListComponent(paginationService, productStockService, dataService) {
+        _classCallCheck(this, ProductStockListComponent);
 
         this.paginationService = paginationService;
         this.productStockService = productStockService;
@@ -239,7 +259,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.headerData = [];
       }
 
-      _createClass(ProductStockComponent, [{
+      _createClass(ProductStockListComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
           var _this = this;
@@ -304,10 +324,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }
       }]);
 
-      return ProductStockComponent;
+      return ProductStockListComponent;
     }();
 
-    ProductStockComponent.ctorParameters = function () {
+    ProductStockListComponent.ctorParameters = function () {
       return [{
         type: src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_2__["PaginationService"]
       }, {
@@ -317,12 +337,172 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }];
     };
 
-    ProductStockComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-      selector: 'app-product-stock',
+    ProductStockListComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-product-stock-list',
       template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
-      /*! raw-loader!./product-stock.component.html */
-      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/operation/product-stock/product-stock.component.html")).default
-    })], ProductStockComponent);
+      /*! raw-loader!./product-stock-list.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/operation/product-stock/product-stock-list/product-stock-list.component.html")).default
+    })], ProductStockListComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/pages/operation/product-stock/product-stock-summary-list/product-stock-summary-list.component.ts":
+  /*!******************************************************************************************************************!*\
+    !*** ./src/app/pages/operation/product-stock/product-stock-summary-list/product-stock-summary-list.component.ts ***!
+    \******************************************************************************************************************/
+
+  /*! exports provided: ProductStockSummaryListComponent */
+
+  /***/
+  function srcAppPagesOperationProductStockProductStockSummaryListProductStockSummaryListComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ProductStockSummaryListComponent", function () {
+      return ProductStockSummaryListComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! src/app/service/pagination.service */
+    "./src/app/service/pagination.service.ts");
+    /* harmony import */
+
+
+    var src_app_service_product_stock_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/app/service/product-stock.service */
+    "./src/app/service/product-stock.service.ts");
+    /* harmony import */
+
+
+    var src_app_service_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! src/app/service/data.service */
+    "./src/app/service/data.service.ts");
+
+    var ProductStockSummaryListComponent =
+    /*#__PURE__*/
+    function () {
+      function ProductStockSummaryListComponent(paginationService, productStockService, dataService) {
+        _classCallCheck(this, ProductStockSummaryListComponent);
+
+        this.paginationService = paginationService;
+        this.productStockService = productStockService;
+        this.dataService = dataService;
+        this.PageTitle = "Stock Summary";
+        this.loadform = false;
+        this.loadingState = true;
+        this.objectArray = [];
+        this.pagination = null;
+        this.searchText = null;
+        this.currentPage = 1;
+        this.permissionObject = null;
+        this.showPagination = false;
+        this.date_format = "M/d/yy"; //For Dynamic List
+
+        this.headerData = [];
+      }
+
+      _createClass(ProductStockSummaryListComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this3 = this;
+
+          // this.dataService.permission.subscribe((perms) => {
+          //   this.permissionObject = perms['product_stock'];
+          // });
+          this.dataService.currentCompany.subscribe(function (response) {
+            if (response) {
+              _this3.timezone = String(response.timezone.format);
+              ;
+              _this3.time_format = response.time_format.label;
+              _this3.date_format = response.date_format.label;
+              _this3.currentCompany = response;
+            }
+          });
+          this.loadform = false;
+          this.getObjects();
+        }
+      }, {
+        key: "getObjects",
+        value: function getObjects() {
+          var _this4 = this;
+
+          var params = {
+            page: this.currentPage
+          };
+
+          if (this.searchText) {
+            params.search = this.searchText;
+          }
+
+          this.productStockService.getProductStockSummeryList(params).subscribe(function (response) {
+            _this4.loadingState = false;
+
+            if (response.success) {
+              _this4.objectArray = response.data.list ? response.data.list : [];
+              _this4.showPagination = true;
+              _this4.pagination = _this4.paginationService.getPager(response.data.pagination['total_page'], _this4.currentPage);
+            } else {
+              _this4.objectArray = [];
+              _this4.pagination = null;
+            }
+          }, function (error) {
+            _this4.loadingState = false;
+            _this4.objectArray = [];
+            _this4.pagination = null;
+          });
+        }
+      }, {
+        key: "getPage",
+        value: function getPage(page) {
+          this.currentPage = page;
+          this.getObjects();
+        }
+      }, {
+        key: "searchObject",
+        value: function searchObject(text) {
+          this.searchText = text;
+          this.currentPage = 1;
+          this.getObjects();
+        }
+      }]);
+
+      return ProductStockSummaryListComponent;
+    }();
+
+    ProductStockSummaryListComponent.ctorParameters = function () {
+      return [{
+        type: src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_2__["PaginationService"]
+      }, {
+        type: src_app_service_product_stock_service__WEBPACK_IMPORTED_MODULE_3__["ProductStockService"]
+      }, {
+        type: src_app_service_data_service__WEBPACK_IMPORTED_MODULE_4__["DataService"]
+      }];
+    };
+
+    ProductStockSummaryListComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-product-stock-summary-list',
+      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! raw-loader!./product-stock-summary-list.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/operation/product-stock/product-stock-summary-list/product-stock-summary-list.component.html")).default
+    })], ProductStockSummaryListComponent);
     /***/
   },
 
@@ -372,43 +552,58 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _product_stock_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./product-stock.component */
-    "./src/app/pages/operation/product-stock/product-stock.component.ts");
-    /* harmony import */
-
-
-    var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! src/app/shared/shared.module */
     "./src/app/shared/shared.module.ts");
     /* harmony import */
 
 
-    var src_app_common_module_pagination_pagination_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var src_app_common_module_pagination_pagination_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! src/app/common-module/pagination/pagination.module */
     "./src/app/common-module/pagination/pagination.module.ts");
     /* harmony import */
 
 
-    var src_app_common_module_search_search_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var src_app_common_module_search_search_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! src/app/common-module/search/search.module */
     "./src/app/common-module/search/search.module.ts");
     /* harmony import */
 
 
-    var src_app_service_product_stock_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var src_app_service_product_stock_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! src/app/service/product-stock.service */
     "./src/app/service/product-stock.service.ts");
+    /* harmony import */
+
+
+    var _product_stock_list_product_stock_list_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! ./product-stock-list/product-stock-list.component */
+    "./src/app/pages/operation/product-stock/product-stock-list/product-stock-list.component.ts");
+    /* harmony import */
+
+
+    var _product_stock_summary_list_product_stock_summary_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! ./product-stock-summary-list/product-stock-summary-list.component */
+    "./src/app/pages/operation/product-stock/product-stock-summary-list/product-stock-summary-list.component.ts");
 
     var routes = [{
       path: '',
-      component: _product_stock_component__WEBPACK_IMPORTED_MODULE_3__["ProductStockComponent"]
+      component: _product_stock_list_product_stock_list_component__WEBPACK_IMPORTED_MODULE_8__["ProductStockListComponent"],
+      data: {
+        title: 'product_stock_list'
+      }
+    }, {
+      path: 'summary',
+      component: _product_stock_summary_list_product_stock_summary_list_component__WEBPACK_IMPORTED_MODULE_9__["ProductStockSummaryListComponent"],
+      data: {
+        title: 'product_sammary_list'
+      }
     }];
 
     var ProductStockModule = function ProductStockModule() {
@@ -416,9 +611,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     };
 
     ProductStockModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-      declarations: [_product_stock_component__WEBPACK_IMPORTED_MODULE_3__["ProductStockComponent"]],
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes), src_app_common_module_search_search_module__WEBPACK_IMPORTED_MODULE_7__["SearchModule"], src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"], src_app_common_module_pagination_pagination_module__WEBPACK_IMPORTED_MODULE_6__["PaginationModule"]],
-      providers: [src_app_service_product_stock_service__WEBPACK_IMPORTED_MODULE_8__["ProductStockService"]]
+      declarations: [_product_stock_list_product_stock_list_component__WEBPACK_IMPORTED_MODULE_8__["ProductStockListComponent"], _product_stock_summary_list_product_stock_summary_list_component__WEBPACK_IMPORTED_MODULE_9__["ProductStockSummaryListComponent"]],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes), src_app_common_module_search_search_module__WEBPACK_IMPORTED_MODULE_6__["SearchModule"], src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__["SharedModule"], src_app_common_module_pagination_pagination_module__WEBPACK_IMPORTED_MODULE_5__["PaginationModule"]],
+      providers: [src_app_service_product_stock_service__WEBPACK_IMPORTED_MODULE_7__["ProductStockService"]]
     })], ProductStockModule);
     /***/
   },
@@ -578,6 +773,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "getProductStockList",
         value: function getProductStockList(param) {
           return this.http.get("".concat(this.API_URL, "/product_stock/list"), {
+            params: param
+          });
+        }
+      }, {
+        key: "getProductStockSummeryList",
+        value: function getProductStockSummeryList(param) {
+          return this.http.get("".concat(this.API_URL, "/product_stock/summary-list"), {
             params: param
           });
         }
