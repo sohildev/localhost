@@ -19,11 +19,11 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: 'sales-order',
-        loadChildren: () => Promise.all(/*! import() | sales-order-sales-order-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("common"), __webpack_require__.e("sales-order-sales-order-module")]).then(__webpack_require__.bind(null, /*! ./sales-order/sales-order.module */ "./src/app/pages/outbound/sales-order/sales-order.module.ts")).then(m => m.SalesOrderModule)
+        loadChildren: () => Promise.all(/*! import() | sales-order-sales-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("common"), __webpack_require__.e("sales-order-sales-order-module")]).then(__webpack_require__.bind(null, /*! ./sales-order/sales-order.module */ "./src/app/pages/outbound/sales-order/sales-order.module.ts")).then(m => m.SalesOrderModule)
     },
     {
         path: 'pick-list',
-        loadChildren: () => Promise.all(/*! import() | pick-list-pick-list-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("common"), __webpack_require__.e("pick-list-pick-list-module")]).then(__webpack_require__.bind(null, /*! ./pick-list/pick-list.module */ "./src/app/pages/outbound/pick-list/pick-list.module.ts")).then(m => m.PickListModule)
+        loadChildren: () => Promise.all(/*! import() | pick-list-pick-list-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("common"), __webpack_require__.e("pick-list-pick-list-module")]).then(__webpack_require__.bind(null, /*! ./pick-list/pick-list.module */ "./src/app/pages/outbound/pick-list/pick-list.module.ts")).then(m => m.PickListModule)
     }
 ];
 let OutboundRoutingModule = class OutboundRoutingModule {

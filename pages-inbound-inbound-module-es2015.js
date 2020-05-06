@@ -205,17 +205,17 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        loadChildren: () => Promise.all(/*! import() | order-list-order-list-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("order-list-order-list-module")]).then(__webpack_require__.bind(null, /*! ./order-list/order-list.module */ "./src/app/pages/inbound/order/order-list/order-list.module.ts")).then(m => m.OrderListModule),
+        loadChildren: () => Promise.all(/*! import() | order-list-order-list-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("order-list-order-list-module")]).then(__webpack_require__.bind(null, /*! ./order-list/order-list.module */ "./src/app/pages/inbound/order/order-list/order-list.module.ts")).then(m => m.OrderListModule),
         data: { title: 'order_list' },
     },
     {
         path: 'add',
-        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
+        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
         data: { title: 'add_order' },
     },
     {
         path: 'edit/:id',
-        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
+        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
         data: { title: 'edit_order' },
     },
     {

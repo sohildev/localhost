@@ -808,14 +808,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ProductStockService, [{
         key: "getProductStockList",
         value: function getProductStockList(param) {
-          return this.http.get("".concat(this.API_URL, "/product_stock/list"), {
+          return this.http.get("".concat(this.API_URL, "/product-stock/list"), {
             params: param
           });
         }
       }, {
         key: "getProductStockSummeryList",
         value: function getProductStockSummeryList(param) {
-          return this.http.get("".concat(this.API_URL, "/product_stock/summary-list"), {
+          return this.http.get("".concat(this.API_URL, "/product-stock/summary-list"), {
             params: param
           });
         }

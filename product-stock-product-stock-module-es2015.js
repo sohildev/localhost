@@ -505,10 +505,10 @@ let ProductStockService = class ProductStockService {
         this.API_URL = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].APIEndpoint;
     }
     getProductStockList(param) {
-        return this.http.get(`${this.API_URL}/product_stock/list`, { params: param });
+        return this.http.get(`${this.API_URL}/product-stock/list`, { params: param });
     }
     getProductStockSummeryList(param) {
-        return this.http.get(`${this.API_URL}/product_stock/summary-list`, { params: param });
+        return this.http.get(`${this.API_URL}/product-stock/summary-list`, { params: param });
     }
 };
 ProductStockService.ctorParameters = () => [

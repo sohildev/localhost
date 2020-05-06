@@ -53,9 +53,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'add-bin-transfer',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | add-bin-transfer-add-bin-transfer-module */
-        "add-bin-transfer-add-bin-transfer-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("add-bin-transfer-add-bin-transfer-module")]).then(__webpack_require__.bind(null,
         /*! ./add-bin-transfer/add-bin-transfer.module */
         "./src/app/pages/operation/add-bin-transfer/add-bin-transfer.module.ts")).then(function (m) {
           return m.AddBinTransferModule;

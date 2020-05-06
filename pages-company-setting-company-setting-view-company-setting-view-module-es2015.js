@@ -194,7 +194,7 @@ const routes = [
     },
     {
         path: 'edit',
-        loadChildren: () => Promise.all(/*! import() | company-setting-edit-company-setting-edit-module */[__webpack_require__.e("default~auth-forgot-password-forgot-password-module~auth-login-login-module~auth-reset-password-rese~b21af0a8"), __webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("common"), __webpack_require__.e("company-setting-edit-company-setting-edit-module")]).then(__webpack_require__.bind(null, /*! ../company-setting-edit/company-setting-edit.module */ "./src/app/pages/company-setting/company-setting-edit/company-setting-edit.module.ts")).then(m => m.CompanySettingEditModule),
+        loadChildren: () => Promise.all(/*! import() | company-setting-edit-company-setting-edit-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("company-setting-edit-company-setting-edit-module")]).then(__webpack_require__.bind(null, /*! ../company-setting-edit/company-setting-edit.module */ "./src/app/pages/company-setting/company-setting-edit/company-setting-edit.module.ts")).then(m => m.CompanySettingEditModule),
     }
 ];
 let CompanySettingViewModule = class CompanySettingViewModule {

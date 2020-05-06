@@ -310,7 +310,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | product-config-add-product-config-add-module */
-        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("product-config-add-product-config-add-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("product-config-add-product-config-add-module")]).then(__webpack_require__.bind(null,
         /*! ../product-config-add/product-config-add.module */
         "./src/app/pages/inbound/product-config/product-config-add/product-config-add.module.ts")).then(function (m) {
           return m.ProductConfigAddModule;
@@ -324,7 +324,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | product-config-add-product-config-add-module */
-        [__webpack_require__.e("default~add-configuration-add-configuration-module~add-order-add-order-module~add-put-away-add-put-a~ddcbf140"), __webpack_require__.e("product-config-add-product-config-add-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("product-config-add-product-config-add-module")]).then(__webpack_require__.bind(null,
         /*! ../product-config-add/product-config-add.module */
         "./src/app/pages/inbound/product-config/product-config-add/product-config-add.module.ts")).then(function (m) {
           return m.ProductConfigAddModule;
