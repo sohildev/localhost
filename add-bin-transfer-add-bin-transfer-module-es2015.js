@@ -197,7 +197,8 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _add_bin_transfer_component__WEBPACK_IMPORTED_MODULE_4__["AddBinTransferComponent"]
+        component: _add_bin_transfer_component__WEBPACK_IMPORTED_MODULE_4__["AddBinTransferComponent"],
+        data: { title: 'bin_tranfer_add' },
     }
 ];
 let AddBinTransferModule = class AddBinTransferModule {

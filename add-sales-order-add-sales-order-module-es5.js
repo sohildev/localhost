@@ -21,7 +21,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n  <div class=\"page-header\">\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <h2 class=\"mr-auto\">{{ isEditing ? 'Update' : 'Create' }} {{PageTitle}}</h2>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"card\">\r\n    <form [formGroup]=\"addForm\" (ngSubmit)=\"submitForm(addForm)\" class=\"form-horizontal\" role=\"form\">\r\n      <div class=\"card-body\">\r\n        <div class=\"row\">\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\" [ngClass]=\"{'has-error': formErrors.order_no}\">\r\n              <label class=\"control-label text-md-right\">Order No. <em>*</em></label>\r\n              <div class=\"\">\r\n                <input [formControl]=\"addForm.controls['sales_order_no']\" (change)=\"removeError()\" type=\"text\"\r\n                  class=\"form-control\" placeholder=\"\">\r\n                <span *ngIf=\"formErrors.order_no\" class=\"help-block\" [innerHTML]=\"formErrors.order_no\"></span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Order Date <em>*</em></label>\r\n              <div class=\"date-picker\">\r\n                <ng2-flatpickr [setDate]=\"orderDate\" [formControl]=\"addForm.controls['sales_order_date']\"\r\n                  [config]=\"exampleOptions\">\r\n                </ng2-flatpickr>\r\n                <span class=\"date-picker-icon\">\r\n                  <span class=\"fa fa-calendar\"></span>\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Client <em>*</em></label>\r\n              <ng-select [formControl]=\"addForm.controls['client_id']\" [items]=\"clientListArray\" bindLabel=\"label\"\r\n                bindValue=\"value\" placeholder=\"Select Client\">\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Supplier <em>*</em></label>\r\n              <ng-select [formControl]=\"addForm.controls['supplier_id']\" [items]=\"supplierListArray\" bindLabel=\"label\"\r\n                bindValue=\"value\" placeholder=\"Select Supplier\">\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n          <!-- <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Deliver Address <em>*</em></label>\r\n              <textarea [formControl]=\"addForm.controls['deliver_address']\" class=\"form-control\" rows=\"2\"></textarea>\r\n            </div>\r\n          </div>\r\n      </div>-->\r\n\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Country <em>*</em></label>\r\n              <div class=\"\">\r\n                <ng-select [formControl]=\"addForm.controls['country_id']\" (change)=\"getCountryName($event)\"\r\n                  [items]=\"countryListArray\" bindLabel=\"label\" bindValue=\"value\" placeholder=\"Select Country\">\r\n                </ng-select>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">State <em>*</em></label>\r\n              <div class=\"\">\r\n                <input [formControl]=\"addForm.controls['state']\" type=\"text\" class=\"form-control\" placeholder=\"\">\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">City <em>*</em></label>\r\n              <div class=\"\">\r\n                <input [formControl]=\"addForm.controls['city']\" type=\"text\" class=\"form-control\" placeholder=\"\">\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Street Address <em>*</em></label>\r\n              <div class=\"\">\r\n                <input [formControl]=\"addForm.controls['street_address']\" type=\"text\" class=\"form-control\"\r\n                  placeholder=\"\">\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n        <div class=\"row mt-5\">\r\n          <div class=\"col-7 d-flex align-items-center\">\r\n            <h5>Product</h5>\r\n          </div>\r\n          <div class=\"col-5 text-right\">\r\n            <button type=\"button\" class=\"btn btn-light\" (click)=\"addform()\">\r\n              <i class=\"la la-plus\"></i>\r\n              Add Product\r\n            </button>\r\n          </div>\r\n        </div>\r\n        <div class=\"row mt-3\">\r\n          <div class=\"col\">\r\n            <div class=\"table-responsive-md\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th>No.</th>\r\n                    <th>Product</th>\r\n                    <th>Sku No</th>\r\n                    <th>Order Quantity</th>\r\n                    <th>Price</th>\r\n                    <th>Total Price</th>\r\n                    <th class=\"text-right\" width=\"80\">Action</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody>\r\n                  <tr *ngFor=\"let item of objectArray; let i=index\">\r\n                    <td>{{i+1}}</td>\r\n                    <td>{{item?.product_name}}</td>\r\n                    <td>{{item?.sku_no}}</td>\r\n                    <td>{{item?.qty}}</td>\r\n                    <td>{{item?.price}}</td>\r\n                    <td>{{currentCompany?.currency?.label }} {{(item?.qty) * (item?.price) | number}}</td>\r\n                    <td>\r\n                      <div class=\"action-drop dropdown text-right\">\r\n                        <a href=\"#\" data-toggle=\"dropdown\" class=\"btn shadow-none btn-default btn-sm btn-icon-only\"\r\n                          title=\"\">\r\n                          <i class=\"fa fa-ellipsis-h\"></i>\r\n                        </a>\r\n                        <div class=\"dropdown-menu dropdown-icon-menu drop-menu-right\" style=\"width: 100px;\">\r\n                          <a *ngIf=\"isEditing\" class=\"dropdown-item\" (click)=\"editform(item?.po_detail_id,i,item)\"><i\r\n                              class=\"fa fa-edit fa-fw text-primary\">\r\n                            </i> Edit</a>\r\n                          <a class=\"dropdown-item\" (click)=\"deleteObject(item,i)\">\r\n                            <i class=\"fa fa-trash fa-fw text-primary\"></i>\r\n                            Delete\r\n                          </a>\r\n                        </div>\r\n                      </div>\r\n                    </td>\r\n                  </tr>\r\n                  <tr *ngIf=\"!loadingState && objectArray.length === 0\">\r\n                    <td colspan=\"7\">No records found</td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n            <pagination [paginationList]=\"pagination\" [currentPage]=\"currentPage\" (onPageChange)=\"getPage($event)\">\r\n            </pagination>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-5\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Notes</label>\r\n              <textarea [formControl]=\"addForm.controls['notes']\" class=\"form-control\" rows=\"2\"></textarea>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"text-right border-top py-4 mt-5 card-footer\">\r\n        <button type=\"button\" class=\"btn btn-light\" routerLink=\"/outbound/sales-order\">Cancel</button>\r\n        <button type=\"submit\" class=\"btn btn-secondary ml-2\">Submit</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n\r\n\r\n<app-add-product (onRelodeEvent)=\"onRelodeEvent($event)\" [ProductList]=\"objectArray\"\r\n  [orderNo]=\"addForm.value.sales_order_no\" (onProductSubmit)=\"onProductSubmit($event)\"></app-add-product>\r\n";
+    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n  <div class=\"page-header\">\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <h2 class=\"mr-auto\">{{ isEditing ? 'Update' : 'Create' }} {{PageTitle}}</h2>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"card\">\r\n    <form [formGroup]=\"addForm\" (ngSubmit)=\"submitForm(addForm)\" class=\"form-horizontal\" role=\"form\">\r\n      <div class=\"card-body\">\r\n        <div class=\"row\">\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\" [ngClass]=\"{'has-error': formErrors.order_no}\">\r\n              <label class=\"control-label text-md-right\">Order No. <em>*</em></label>\r\n              <div class=\"\">\r\n                <input [formControl]=\"addForm.controls['sales_order_no']\" (change)=\"removeError()\" type=\"text\"\r\n                  class=\"form-control\" placeholder=\"\">\r\n                <span *ngIf=\"formErrors.order_no\" class=\"help-block\" [innerHTML]=\"formErrors.order_no\"></span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Order Date <em>*</em></label>\r\n              <div class=\"date-picker\">\r\n                <ng2-flatpickr [setDate]=\"orderDate\" [formControl]=\"addForm.controls['sales_order_date']\"\r\n                  [config]=\"exampleOptions\">\r\n                </ng2-flatpickr>\r\n                <span class=\"date-picker-icon\">\r\n                  <span class=\"fa fa-calendar\"></span>\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Client <em>*</em></label>\r\n              <ng-select [formControl]=\"addForm.controls['client_id']\" [items]=\"clientListArray\" bindLabel=\"label\"\r\n                bindValue=\"value\" placeholder=\"Select Client\">\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Supplier <em>*</em></label>\r\n              <ng-select [formControl]=\"addForm.controls['supplier_id']\" [items]=\"supplierListArray\" bindLabel=\"label\"\r\n                bindValue=\"value\" placeholder=\"Select Supplier\">\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n          <!-- <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Deliver Address <em>*</em></label>\r\n              <textarea [formControl]=\"addForm.controls['deliver_address']\" class=\"form-control\" rows=\"2\"></textarea>\r\n            </div>\r\n          </div>\r\n      </div>-->\r\n\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Country <em>*</em></label>\r\n              <div class=\"\">\r\n                <ng-select [formControl]=\"addForm.controls['country_id']\" (change)=\"getCountryName($event)\"\r\n                  [items]=\"countryListArray\" bindLabel=\"label\" bindValue=\"value\" placeholder=\"Select Country\">\r\n                </ng-select>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">State <em>*</em></label>\r\n              <div class=\"\">\r\n                <input [formControl]=\"addForm.controls['state']\" type=\"text\" class=\"form-control\" placeholder=\"\">\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">City <em>*</em></label>\r\n              <div class=\"\">\r\n                <input [formControl]=\"addForm.controls['city']\" type=\"text\" class=\"form-control\" placeholder=\"\">\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Street Address <em>*</em></label>\r\n              <div class=\"\">\r\n                <input [formControl]=\"addForm.controls['street_address']\" type=\"text\" class=\"form-control\"\r\n                  placeholder=\"\">\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Invoice No. </label>\r\n              <input [formControl]=\"addForm.controls['invoice_no']\"  type=\"text\"\r\n              class=\"form-control\" placeholder=\"\">\r\n            </div>\r\n          </div>\r\n\r\n\r\n        </div>\r\n        <div class=\"row mt-5\">\r\n          <div class=\"col-7 d-flex align-items-center\">\r\n            <h5>Product</h5>\r\n          </div>\r\n          <div class=\"col-5 text-right\">\r\n            <button type=\"button\" class=\"btn btn-light\" (click)=\"addform()\">\r\n              <i class=\"la la-plus\"></i>\r\n              Add Product\r\n            </button><br>\r\n            <span *ngIf=\"formErrors.product\" class=\"help-block\" [innerHTML]=\"formErrors.product\"></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"row mt-3\">\r\n          <div class=\"col\">\r\n            <div class=\"table-responsive-md\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th>No.</th>\r\n                    <th>Product</th>\r\n                    <th>Sku No</th>\r\n                    <th>Order Quantity</th>\r\n                    <th>Price</th>\r\n                    <th>Total Price</th>\r\n                    <th class=\"text-right\" width=\"80\">Action</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody>\r\n                  <tr *ngFor=\"let item of objectArray; let i=index\">\r\n                    <td>{{i+1}}</td>\r\n                    <td>{{item?.product_name}}</td>\r\n                    <td>{{item?.sku_no}}</td>\r\n                    <td>{{item?.qty}}</td>\r\n                    <td>{{currentCompany?.currency?.label }} {{item?.price}}</td>\r\n                    <td>{{currentCompany?.currency?.label }} {{(item?.qty) * (item?.price) | number}}</td>\r\n                    <td>\r\n                      <div class=\"action-drop dropdown text-right\">\r\n                        <a href=\"#\" data-toggle=\"dropdown\" class=\"btn shadow-none btn-default btn-sm btn-icon-only\"\r\n                          title=\"\">\r\n                          <i class=\"fa fa-ellipsis-h\"></i>\r\n                        </a>\r\n                        <div class=\"dropdown-menu dropdown-icon-menu drop-menu-right\" style=\"width: 100px;\">\r\n                          <a *ngIf=\"isEditing\" class=\"dropdown-item\" (click)=\"editform(item?.po_detail_id,i,item)\"><i\r\n                              class=\"fa fa-edit fa-fw text-primary\">\r\n                            </i> Edit</a>\r\n                          <a class=\"dropdown-item\" (click)=\"deleteObject(item,i)\">\r\n                            <i class=\"fa fa-trash fa-fw text-primary\"></i>\r\n                            Delete\r\n                          </a>\r\n                        </div>\r\n                      </div>\r\n                    </td>\r\n                  </tr>\r\n                  <tr *ngIf=\"!loadingState && objectArray.length === 0\">\r\n                    <td colspan=\"7\">No records found</td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n            <pagination [paginationList]=\"pagination\" [currentPage]=\"currentPage\" (onPageChange)=\"getPage($event)\">\r\n            </pagination>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-5\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Notes</label>\r\n              <textarea [formControl]=\"addForm.controls['notes']\" class=\"form-control\" rows=\"2\"></textarea>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"text-right border-top py-4 mt-5 card-footer\">\r\n        <button type=\"button\" class=\"btn btn-light\" routerLink=\"/outbound/sales-order\">Cancel</button>\r\n        <button type=\"submit\" class=\"btn btn-secondary ml-2\">Submit</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n\r\n\r\n<app-add-product (onRelodeEvent)=\"onRelodeEvent($event)\" [ProductList]=\"objectArray\"\r\n  [orderNo]=\"addForm.value.sales_order_no\" (onProductSubmit)=\"onProductSubmit($event)\"></app-add-product>\r\n";
     /***/
   },
 
@@ -114,7 +114,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var AddSalesOrderComponent =
     /*#__PURE__*/
     function () {
-      function AddSalesOrderComponent(router, activatedRoute, fb, salesOrderService, paginationService, commonService, dataservice) {
+      function AddSalesOrderComponent(router, activatedRoute, fb, salesOrderService, paginationService, cdr, commonService, dataservice) {
         _classCallCheck(this, AddSalesOrderComponent);
 
         this.router = router;
@@ -122,6 +122,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.fb = fb;
         this.salesOrderService = salesOrderService;
         this.paginationService = paginationService;
+        this.cdr = cdr;
         this.commonService = commonService;
         this.dataservice = dataservice;
         this.PageTitle = "Sales Order";
@@ -138,7 +139,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.showLoader = false;
         this.formErrors = {
           apierror: null,
-          order_no: null
+          order_no: null,
+          product: null
         };
         this.isEditing = false;
         this.editId = null;
@@ -157,6 +159,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           client_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
           notes: [null],
           address: [null],
+          invoice_no: [""],
           country_name: [null],
           country_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
           state: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
@@ -257,6 +260,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 country_id: response.data.address.country_id,
                 state: response.data.address.state,
                 city: response.data.address.city,
+                invoice_no: response.data.invoice_no,
                 street_address: response.data.address.street_address ? response.data.address.street_address : ''
               });
             } else {
@@ -281,6 +285,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               this.objectArray.push(data);
             }
           }
+
+          if (this.objectArray && this.objectArray.length > 0) {
+            this.formErrors.product = null;
+          } else {
+            this.formErrors.product = "* Please Add Product";
+          }
         }
       }, {
         key: "submitForm",
@@ -288,80 +298,86 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var _this6 = this;
 
           if (formData.valid) {
-            this.showLoader = true;
-            var data = new FormData();
-            data.append('sales_order_no', formData.value.sales_order_no);
-            data.append('sales_order_date', src_app_common__WEBPACK_IMPORTED_MODULE_4__["CommonFunction"].changedateFormate(formData.value.sales_order_date[0]));
-            data.append('supplier_id', formData.value.supplier_id);
-            data.append('client_id', formData.value.client_id);
-            data.append('notes', formData.value.notes ? formData.value.notes : '');
-            var address = {
-              country_id: formData.value.country_id,
-              country_name: formData.value.country_name,
-              state: formData.value.state,
-              city: formData.value.city,
-              street_address: formData.value.street_address
-            };
-            data.append('address', JSON.stringify(address));
+            if (this.objectArray && this.objectArray.length > 0) {
+              this.formErrors.product = null;
+              this.showLoader = true;
+              var data = new FormData();
+              data.append('sales_order_no', formData.value.sales_order_no);
+              data.append('sales_order_date', src_app_common__WEBPACK_IMPORTED_MODULE_4__["CommonFunction"].changedateFormate(formData.value.sales_order_date[0]));
+              data.append('supplier_id', formData.value.supplier_id);
+              data.append('client_id', formData.value.client_id);
+              data.append('invoice_no', formData.value.invoice_no);
+              data.append('notes', formData.value.notes ? formData.value.notes : '');
+              var address = {
+                country_id: formData.value.country_id,
+                country_name: formData.value.country_name,
+                state: formData.value.state,
+                city: formData.value.city,
+                street_address: formData.value.street_address
+              };
+              data.append('address', JSON.stringify(address));
 
-            if (this.isEditing) {
-              this.salesOrderService.editSalesOrder(this.editId, data).subscribe(function (response) {
-                _this6.showLoader = false;
+              if (this.isEditing) {
+                this.salesOrderService.editSalesOrder(this.editId, data).subscribe(function (response) {
+                  _this6.showLoader = false;
 
-                if (response.success) {
-                  if (_this6.objectArray && _this6.objectArray.length > 0) {
-                    var EditobjectArray = [];
+                  if (response.success) {
+                    if (_this6.objectArray && _this6.objectArray.length > 0) {
+                      var EditobjectArray = [];
 
-                    _this6.objectArray.filter(function (item) {
-                      if (!item.sales_order_detail_id) {
-                        EditobjectArray.push(item);
-                      }
-                    });
+                      _this6.objectArray.filter(function (item) {
+                        if (!item.sales_order_detail_id) {
+                          EditobjectArray.push(item);
+                        }
+                      });
 
-                    EditobjectArray.filter(function (item) {
-                      item.sales_order_id = _this6.editId;
-                    });
+                      EditobjectArray.filter(function (item) {
+                        item.sales_order_id = _this6.editId;
+                      });
 
-                    _this6.salesOrderService.addSalesOrderProduct(EditobjectArray).subscribe(function (res) {
-                      _this6.showLoader = false;
+                      _this6.salesOrderService.addSalesOrderProduct(EditobjectArray).subscribe(function (res) {
+                        _this6.showLoader = false;
 
-                      if (res.success) {}
-                    }, function (error) {
-                      _this6.showLoader = false;
-                    });
+                        if (res.success) {}
+                      }, function (error) {
+                        _this6.showLoader = false;
+                      });
+                    }
+
+                    _this6.router.navigateByUrl('/outbound/sales-order');
                   }
+                }, function (error) {
+                  _this6.showLoader = false;
+                });
+              } else {
+                this.salesOrderService.addSalesOrder(data).subscribe(function (response) {
+                  _this6.showLoader = false;
 
-                  _this6.router.navigateByUrl('/outbound/sales-order');
-                }
-              }, function (error) {
-                _this6.showLoader = false;
-              });
+                  if (response.success) {
+                    var sales_order_id = response.data.sales_order_id;
+
+                    if (_this6.objectArray && _this6.objectArray.length > 0) {
+                      _this6.objectArray.filter(function (item) {
+                        item.sales_order_id = sales_order_id;
+                      });
+
+                      _this6.salesOrderService.addSalesOrderProduct(_this6.objectArray).subscribe(function (res) {
+                        _this6.showLoader = false;
+
+                        if (res.success) {}
+                      }, function (error) {
+                        _this6.showLoader = false;
+                      });
+                    }
+
+                    _this6.router.navigateByUrl('/outbound/sales-order');
+                  }
+                }, function (error) {
+                  _this6.showLoader = false;
+                });
+              }
             } else {
-              this.salesOrderService.addSalesOrder(data).subscribe(function (response) {
-                _this6.showLoader = false;
-
-                if (response.success) {
-                  var sales_order_id = response.data.sales_order_id;
-
-                  if (_this6.objectArray && _this6.objectArray.length > 0) {
-                    _this6.objectArray.filter(function (item) {
-                      item.sales_order_id = sales_order_id;
-                    });
-
-                    _this6.salesOrderService.addSalesOrderProduct(_this6.objectArray).subscribe(function (res) {
-                      _this6.showLoader = false;
-
-                      if (res.success) {}
-                    }, function (error) {
-                      _this6.showLoader = false;
-                    });
-                  }
-
-                  _this6.router.navigateByUrl('/outbound/sales-order');
-                }
-              }, function (error) {
-                _this6.showLoader = false;
-              });
+              this.formErrors.product = "* Please Add Product";
             }
           }
         }
@@ -373,6 +389,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (this.addForm.value.sales_order_no) {
             setTimeout(function () {
               _this7.productAdd.addObject();
+
+              _this7.orderDate = _this7.addForm.value.sales_order_date;
             }, 200);
           } else {
             this.formErrors.order_no = "* Plese Enter Order Number";
@@ -385,6 +403,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           setTimeout(function () {
             _this8.productAdd.editObject(id, index, data, _this8.editId, _this8.addForm.value.sales_order_no);
+
+            _this8.orderDate = _this8.addForm.value.sales_order_date;
           }, 200);
         }
       }, {
@@ -432,7 +452,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }
       }, {
         key: "ngAfterViewChecked",
-        value: function ngAfterViewChecked() {// this.orderDate = new Date();
+        value: function ngAfterViewChecked() {
+          this.cdr.detectChanges();
         }
       }]);
 
@@ -450,6 +471,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: src_app_service_sales_order_service__WEBPACK_IMPORTED_MODULE_8__["SalesOrderService"]
       }, {
         type: src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_5__["PaginationService"]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectorRef"]
       }, {
         type: src_app_service_common_service__WEBPACK_IMPORTED_MODULE_9__["CommonService"]
       }, {

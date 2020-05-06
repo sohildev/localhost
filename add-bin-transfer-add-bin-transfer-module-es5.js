@@ -329,7 +329,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var routes = [{
       path: '',
-      component: _add_bin_transfer_component__WEBPACK_IMPORTED_MODULE_4__["AddBinTransferComponent"]
+      component: _add_bin_transfer_component__WEBPACK_IMPORTED_MODULE_4__["AddBinTransferComponent"],
+      data: {
+        title: 'bin_tranfer_add'
+      }
     }];
 
     var AddBinTransferModule = function AddBinTransferModule() {

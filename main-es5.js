@@ -2600,7 +2600,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       add_product_config: "Add Aroduct Config | ".concat(APP_NAME),
       edit_product_config: "Edit Product Config | ".concat(APP_NAME),
       product_stock_list: "Product Stock List | ".concat(APP_NAME),
-      product_sammary_list: "Stock Summary List | ".concat(APP_NAME)
+      product_sammary_list: "Stock Summary List | ".concat(APP_NAME),
+      bin_tranfer_add: " Add Bin Transfer | ".concat(APP_NAME),
+      sales_order_list: " Sales Order List | ".concat(APP_NAME),
+      add_sales_order: "Add Sales Order | ".concat(APP_NAME),
+      edit_sales_order: "Edit Sales Order | ".concat(APP_NAME),
+      view_sales_order: "View Sales Order | ".concat(APP_NAME)
     };
     var errorMessage = {
       change_password_success: 'Your password changed Successfully',

@@ -519,6 +519,9 @@ let PickListService = class PickListService {
     getPickListSubmitReports(id, data) {
         return this.http.put(`${this.API_URL}/picking/submit-report/${id}`, data);
     }
+    deletePickListSubmitReports(id, param = null) {
+        return this.http.delete(`${this.API_URL}/picking/${id}`, { params: param });
+    }
 };
 PickListService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }

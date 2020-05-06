@@ -311,7 +311,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var routes = [{
       path: '',
-      component: _sales_order_component__WEBPACK_IMPORTED_MODULE_3__["SalesOrderComponent"]
+      component: _sales_order_component__WEBPACK_IMPORTED_MODULE_3__["SalesOrderComponent"],
+      data: {
+        title: 'sales_order_list'
+      }
     }, {
       path: 'add',
       loadChildren: function loadChildren() {
@@ -322,6 +325,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "./src/app/pages/outbound/sales-order/add-sales-order/add-sales-order.module.ts")).then(function (m) {
           return m.AddSalesOrderModule;
         });
+      },
+      data: {
+        title: 'add_sales_order'
       }
     }, {
       path: 'edit/:id',
@@ -333,6 +339,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "./src/app/pages/outbound/sales-order/add-sales-order/add-sales-order.module.ts")).then(function (m) {
           return m.AddSalesOrderModule;
         });
+      },
+      data: {
+        title: 'edit_sales_order'
       }
     }, {
       path: 'view/:id',
@@ -344,6 +353,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         "./src/app/pages/outbound/sales-order/sales-order-view/sales-order-view.module.ts")).then(function (m) {
           return m.SalesOrderViewModule;
         });
+      },
+      data: {
+        title: 'view_sales_order'
       }
     }];
 

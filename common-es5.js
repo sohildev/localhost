@@ -937,6 +937,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function getPickListSubmitReports(id, data) {
           return this.http.put("".concat(this.API_URL, "/picking/submit-report/").concat(id), data);
         }
+      }, {
+        key: "deletePickListSubmitReports",
+        value: function deletePickListSubmitReports(id) {
+          var param = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+          return this.http.delete("".concat(this.API_URL, "/picking/").concat(id), {
+            params: param
+          });
+        }
       }]);
 
       return PickListService;

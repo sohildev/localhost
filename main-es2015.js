@@ -1493,6 +1493,11 @@ const pageTitles = {
     edit_product_config: `Edit Product Config | ${APP_NAME}`,
     product_stock_list: `Product Stock List | ${APP_NAME}`,
     product_sammary_list: `Stock Summary List | ${APP_NAME}`,
+    bin_tranfer_add: ` Add Bin Transfer | ${APP_NAME}`,
+    sales_order_list: ` Sales Order List | ${APP_NAME}`,
+    add_sales_order: `Add Sales Order | ${APP_NAME}`,
+    edit_sales_order: `Edit Sales Order | ${APP_NAME}`,
+    view_sales_order: `View Sales Order | ${APP_NAME}`,
 };
 const errorMessage = {
     change_password_success: 'Your password changed Successfully',

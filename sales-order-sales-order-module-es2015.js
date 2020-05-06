@@ -186,19 +186,23 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        component: _sales_order_component__WEBPACK_IMPORTED_MODULE_3__["SalesOrderComponent"]
+        component: _sales_order_component__WEBPACK_IMPORTED_MODULE_3__["SalesOrderComponent"],
+        data: { title: 'sales_order_list' },
     },
     {
         path: 'add',
-        loadChildren: () => Promise.all(/*! import() | add-sales-order-add-sales-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("common"), __webpack_require__.e("add-sales-order-add-sales-order-module")]).then(__webpack_require__.bind(null, /*! ./add-sales-order/add-sales-order.module */ "./src/app/pages/outbound/sales-order/add-sales-order/add-sales-order.module.ts")).then(m => m.AddSalesOrderModule)
+        loadChildren: () => Promise.all(/*! import() | add-sales-order-add-sales-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("common"), __webpack_require__.e("add-sales-order-add-sales-order-module")]).then(__webpack_require__.bind(null, /*! ./add-sales-order/add-sales-order.module */ "./src/app/pages/outbound/sales-order/add-sales-order/add-sales-order.module.ts")).then(m => m.AddSalesOrderModule),
+        data: { title: 'add_sales_order' },
     },
     {
         path: 'edit/:id',
-        loadChildren: () => Promise.all(/*! import() | add-sales-order-add-sales-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("common"), __webpack_require__.e("add-sales-order-add-sales-order-module")]).then(__webpack_require__.bind(null, /*! ./add-sales-order/add-sales-order.module */ "./src/app/pages/outbound/sales-order/add-sales-order/add-sales-order.module.ts")).then(m => m.AddSalesOrderModule)
+        loadChildren: () => Promise.all(/*! import() | add-sales-order-add-sales-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("common"), __webpack_require__.e("add-sales-order-add-sales-order-module")]).then(__webpack_require__.bind(null, /*! ./add-sales-order/add-sales-order.module */ "./src/app/pages/outbound/sales-order/add-sales-order/add-sales-order.module.ts")).then(m => m.AddSalesOrderModule),
+        data: { title: 'edit_sales_order' },
     },
     {
         path: 'view/:id',
-        loadChildren: () => Promise.all(/*! import() | sales-order-view-sales-order-view-module */[__webpack_require__.e("common"), __webpack_require__.e("sales-order-view-sales-order-view-module")]).then(__webpack_require__.bind(null, /*! ./sales-order-view/sales-order-view.module */ "./src/app/pages/outbound/sales-order/sales-order-view/sales-order-view.module.ts")).then(m => m.SalesOrderViewModule)
+        loadChildren: () => Promise.all(/*! import() | sales-order-view-sales-order-view-module */[__webpack_require__.e("common"), __webpack_require__.e("sales-order-view-sales-order-view-module")]).then(__webpack_require__.bind(null, /*! ./sales-order-view/sales-order-view.module */ "./src/app/pages/outbound/sales-order/sales-order-view/sales-order-view.module.ts")).then(m => m.SalesOrderViewModule),
+        data: { title: 'view_sales_order' },
     }
 ];
 let SalesOrderModule = class SalesOrderModule {

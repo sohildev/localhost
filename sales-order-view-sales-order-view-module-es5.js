@@ -41,7 +41,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n\r\n    <button *ngIf=\"isGenerate\" class=\"btn btn-primary\" [routerLink]=\"['/outbound/pick-list/generate/',viewId]\">\r\n      Generate PickList</button>\r\n  </div>\r\n</div>\r\n\r\n<app-table-list [headerData]=\"headerData\" [rawData]=\"orderProductListArray\" (reloadEvent)=\"onReloadEvent()\">\r\n</app-table-list>\r\n";
+    __webpack_exports__["default"] = "<div class=\"row mt-4\">\r\n  <div class=\"col\">\r\n\r\n    <button *ngIf=\"isGenerate\" class=\"btn btn-primary\" [routerLink]=\"['/outbound/pick-list/generate/',viewId]\">\r\n      Generate PickList</button>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"table-responsive\">\r\n  <table class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th>UN No</th>\r\n        <th>SKU No</th>\r\n        <th>Product</th>\r\n        <th class=\"text-center\">Product Qty</th>\r\n        <th class=\"text-center\">Status</th>\r\n        <th class=\"text-right\">Action</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let item of orderProductListArray; let i=index\">\r\n        <td>{{item?.pick_list_index}}</td>\r\n        <td>{{item?.product.sku_no}}</td>\r\n        <td>{{item?.product.product_name}}</td>\r\n        <td class=\"text-center\">{{item?.product_qty  |number}}</td>\r\n        <td class=\"text-center\">\r\n          <span *ngIf=\"item?.status?.value ==2\" class=\"badge badge-warning text-white\">{{item?.status?.label}}</span>\r\n          <span *ngIf=\"item?.status?.value ==3\" class=\"badge badge-success\">{{item?.status?.label}}</span>\r\n          <span *ngIf=\"item?.status?.value ==4\" class=\"badge badge-primary\">{{item?.status?.label}}</span> \r\n        </td>\r\n        <td>\r\n          <div class=\"action-drop dropdown text-right\">\r\n            <a href=\"#\" data-toggle=\"dropdown\" class=\"btn shadow-none btn-default btn-sm btn-icon-only\" title=\"\">\r\n              <i class=\"fa fa-ellipsis-h\"></i>\r\n            </a>\r\n            <div class=\"dropdown-menu dropdown-icon-menu drop-menu-right action-dropdown\" style=\"width: 100px;\">\r\n              <a [routerLink]=\"['/outbound/pick-list/view/',item?.pick_list_id]\" class=\"dropdown-item\"><i\r\n                  class=\"fa fa-eye fa-fw text-primary\">\r\n                </i> View</a>\r\n\r\n              <a *ngIf=\"item?.status?.value !=3\" class=\"dropdown-item\"\r\n                [routerLink]=\"['/outbound/pick-list/generate-pick-list/',item?.pick_list_id]\">\r\n                <i class=\"fa fa-file-pdf-o fa-fw text-primary\">\r\n                </i> Submit Report</a>\r\n              <a *ngIf=\"item?.status?.value ==3\" class=\"dropdown-item\"\r\n                [routerLink]=\"['/outbound/pick-list/generate-pick-list/',item?.pick_list_id]\">\r\n                <i class=\"fa fa-edit fa-fw text-primary\">\r\n                </i> Edit</a>\r\n              <a *ngIf=\"item?.status?.value ==3\" class=\"dropdown-item\" (click)=\"deleteObject(item)\">\r\n                <i class=\"fa fa-trash fa-fw text-primary\">\r\n                </i> Delete</a>\r\n\r\n            </div>\r\n          </div>\r\n        </td>\r\n      </tr>\r\n      <tr *ngIf=\"!loadingState && orderProductListArray.length == 0\">\r\n        <td colspan=\"9\">No records found</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>\r\n";
     /***/
   },
 
@@ -321,6 +321,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var src_app_service_pick_list_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! src/app/service/pick-list.service */
     "./src/app/service/pick-list.service.ts");
+    /* harmony import */
+
+
+    var src_app_messages__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! src/app/messages */
+    "./src/app/messages.ts");
 
     var SalesOrderPicklistComponent =
     /*#__PURE__*/
@@ -376,7 +382,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
             label: "Product Qty",
             key: 'product_qty'
-          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["TextField"]({
+          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_6__["StatusField"]({
             label: "Status",
             key: 'status.label'
           }));
@@ -427,6 +433,32 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             _this5.loadingState = false;
             _this5.pagination = null;
           });
+        }
+      }, {
+        key: "deleteObject",
+        value: function deleteObject(object) {
+          var _this6 = this;
+
+          swal.fire({
+            title: src_app_messages__WEBPACK_IMPORTED_MODULE_8__["errorMessage"].delete_header_text,
+            text: src_app_messages__WEBPACK_IMPORTED_MODULE_8__["errorMessage"].delete_smalll_text,
+            icon: src_app_messages__WEBPACK_IMPORTED_MODULE_8__["errorMessage"].delete_dialogue_type,
+            showCancelButton: true,
+            confirmButtonText: src_app_messages__WEBPACK_IMPORTED_MODULE_8__["errorMessage"].delete_confirm_button,
+            cancelButtonText: src_app_messages__WEBPACK_IMPORTED_MODULE_8__["errorMessage"].delete_cancel_button
+          }).then(function (result) {
+            if (result.value) {
+              var params = {
+                pick_list_detail_id: object.pick_list_detail_id
+              };
+
+              _this6.picklistService.deletePickListSubmitReports(object.pick_list_id, params).subscribe(function (response) {
+                if (response.success) {
+                  _this6.getOrderProductList();
+                }
+              });
+            }
+          }).catch(swal.noop);
         }
       }, {
         key: "ngOnDestroy",
@@ -538,14 +570,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getOrderDetails",
         value: function getOrderDetails() {
-          var _this6 = this;
+          var _this7 = this;
 
           this.salesorderService.getSalesOrderViewById(this.viewId).subscribe(function (res) {
             if (res.success && res.data) {
-              _this6.objectArray = res.data;
-              _this6.PageTitle = _this6.PageTitle + "".concat(_this6.objectArray.sales_order_no);
+              _this7.objectArray = res.data;
+              _this7.PageTitle = _this7.PageTitle + "".concat(_this7.objectArray.sales_order_no);
 
-              _this6.dataService.SalesOrderDetailsSubject.next(_this6.objectArray);
+              _this7.dataService.SalesOrderDetailsSubject.next(_this7.objectArray);
             }
           });
         }
@@ -671,13 +703,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         path: '',
         component: _sales_order_details_sales_order_details_component__WEBPACK_IMPORTED_MODULE_6__["SalesOrderDetailsComponent"],
         data: {
-          title: 'view_order'
+          title: 'view_sales_order'
         }
       }, {
         path: 'picklist',
         component: _sales_order_picklist_sales_order_picklist_component__WEBPACK_IMPORTED_MODULE_7__["SalesOrderPicklistComponent"],
         data: {
-          title: 'view_order'
+          title: 'view_sales_order'
         }
       }]
     }];
