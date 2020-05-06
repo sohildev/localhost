@@ -623,7 +623,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "getPage",
         value: function getPage(page) {
           this.currentPage = page;
-          this.currentPage = 1;
           this.getOrderProductList();
         }
       }, {
@@ -632,7 +631,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this3 = this;
 
           var params = {
-            order_id: this.viewId
+            order_id: this.viewId,
+            page: this.currentPage
           };
           this.orderService.getOrderProductList(params).subscribe(function (response) {
             if (response.success && response.data) {

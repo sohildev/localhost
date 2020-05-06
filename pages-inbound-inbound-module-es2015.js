@@ -349,11 +349,10 @@ let OrderDetailsComponent = class OrderDetailsComponent {
     }
     getPage(page) {
         this.currentPage = page;
-        this.currentPage = 1;
         this.getOrderProductList();
     }
     getOrderProductList() {
-        const params = { order_id: this.viewId };
+        const params = { order_id: this.viewId, page: this.currentPage };
         this.orderService.getOrderProductList(params).subscribe((response) => {
             if (response.success && response.data) {
                 this.orderProductListArray = response.data.list;

@@ -26,26 +26,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./src/app/pages/operation/add-bin-transfer/add-bin-transfer.component.css":
-  /*!*********************************************************************************!*\
-    !*** ./src/app/pages/operation/add-bin-transfer/add-bin-transfer.component.css ***!
-    \*********************************************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function srcAppPagesOperationAddBinTransferAddBinTransferComponentCss(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL29wZXJhdGlvbi9hZGQtYmluLXRyYW5zZmVyL2FkZC1iaW4tdHJhbnNmZXIuY29tcG9uZW50LmNzcyJ9 */";
-    /***/
-  },
-
-  /***/
   "./src/app/pages/operation/add-bin-transfer/add-bin-transfer.component.ts":
   /*!********************************************************************************!*\
     !*** ./src/app/pages/operation/add-bin-transfer/add-bin-transfer.component.ts ***!
@@ -98,10 +78,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selector: 'app-add-bin-transfer',
       template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
       /*! raw-loader!./add-bin-transfer.component.html */
-      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/operation/add-bin-transfer/add-bin-transfer.component.html")).default,
-      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
-      /*! ./add-bin-transfer.component.css */
-      "./src/app/pages/operation/add-bin-transfer/add-bin-transfer.component.css")).default]
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/operation/add-bin-transfer/add-bin-transfer.component.html")).default
     })], AddBinTransferComponent);
     /***/
   },
