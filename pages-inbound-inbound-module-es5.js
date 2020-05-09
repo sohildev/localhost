@@ -207,9 +207,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'registeration',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | registeration-registeration-module */
-        "registeration-registeration-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("common"), __webpack_require__.e("registeration-registeration-module")]).then(__webpack_require__.bind(null,
         /*! ./registeration/registeration.module */
         "./src/app/pages/inbound/registeration/registeration.module.ts")).then(function (m) {
           return m.RegisterationModule;
@@ -218,9 +218,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'product-config',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | product-config-product-config-list-product-config-list-module */
-        "product-config-product-config-list-product-config-list-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("common"), __webpack_require__.e("product-config-product-config-list-product-config-list-module")]).then(__webpack_require__.bind(null,
         /*! ./product-config/product-config-list/product-config-list.module */
         "./src/app/pages/inbound/product-config/product-config-list/product-config-list.module.ts")).then(function (m) {
           return m.ProductConfigListModule;
@@ -229,9 +229,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'put-away',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | put-away-put-away-module */
-        "put-away-put-away-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("common"), __webpack_require__.e("put-away-put-away-module")]).then(__webpack_require__.bind(null,
         /*! ./put-away/put-away.module */
         "./src/app/pages/inbound/put-away/put-away.module.ts")).then(function (m) {
           return m.PutAwayModule;
@@ -380,7 +380,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-order-add-order-module */
-        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
         /*! ./add-order/add-order.module */
         "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(function (m) {
           return m.AddOrderModule;
@@ -394,7 +394,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-order-add-order-module */
-        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
         /*! ./add-order/add-order.module */
         "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(function (m) {
           return m.AddOrderModule;
@@ -2107,9 +2107,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'generate-unloading',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | generate-unloading-generate-unloading-module */
-        "generate-unloading-generate-unloading-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("common"), __webpack_require__.e("generate-unloading-generate-unloading-module")]).then(__webpack_require__.bind(null,
         /*! ./generate-unloading/generate-unloading.module */
         "./src/app/pages/inbound/unload/generate-unloading/generate-unloading.module.ts")).then(function (m) {
           return m.GenerateUnloadingModule;
@@ -2129,6 +2129,152 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], src_app_common_module_search_search_module__WEBPACK_IMPORTED_MODULE_4__["SearchModule"], src_app_common_module_btn_add_btn_add_module__WEBPACK_IMPORTED_MODULE_5__["BtnAddModule"], src_app_common_module_pagination_pagination_module__WEBPACK_IMPORTED_MODULE_8__["PaginationModule"], src_app_common_module_table_list_table_list_module__WEBPACK_IMPORTED_MODULE_9__["TableListModule"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterModule"].forChild(routes)],
       providers: [src_app_service_unload_service__WEBPACK_IMPORTED_MODULE_7__["UnloadService"]]
     })], UnloadModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/service/order.service.ts":
+  /*!******************************************!*\
+    !*** ./src/app/service/order.service.ts ***!
+    \******************************************/
+
+  /*! exports provided: OrderService */
+
+  /***/
+  function srcAppServiceOrderServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "OrderService", function () {
+      return OrderService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/environments/environment */
+    "./src/environments/environment.ts");
+
+    var OrderService =
+    /*#__PURE__*/
+    function () {
+      function OrderService(http) {
+        _classCallCheck(this, OrderService);
+
+        this.http = http;
+        this.API_URL = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].APIEndpoint;
+      }
+
+      _createClass(OrderService, [{
+        key: "getOrderList",
+        value: function getOrderList(param) {
+          return this.http.get("".concat(this.API_URL, "/po"), {
+            params: param
+          });
+        }
+      }, {
+        key: "addOrder",
+        value: function addOrder(data) {
+          return this.http.post("".concat(this.API_URL, "/po"), data);
+        }
+      }, {
+        key: "editOrder",
+        value: function editOrder(id, data) {
+          return this.http.put("".concat(this.API_URL, "/po/").concat(id), data);
+        }
+      }, {
+        key: "getOrderById",
+        value: function getOrderById(id) {
+          var param = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+          return this.http.get("".concat(this.API_URL, "/po/").concat(id), {
+            params: param
+          });
+        }
+      }, {
+        key: "getOrderViewById",
+        value: function getOrderViewById(id) {
+          return this.http.get("".concat(this.API_URL, "/po/").concat(id, "/view"));
+        }
+      }, {
+        key: "getOrderMasterData",
+        value: function getOrderMasterData() {
+          return this.http.get("".concat(this.API_URL, "/po/master-data"));
+        }
+      }, {
+        key: "getOrderfilterData",
+        value: function getOrderfilterData() {
+          return this.http.get("".concat(this.API_URL, "/po/filter-drop-down"));
+        }
+      }, {
+        key: "deleteOrder",
+        value: function deleteOrder(id) {
+          return this.http.delete("".concat(this.API_URL, "/po/").concat(id));
+        } // Product
+
+      }, {
+        key: "getOrderProductList",
+        value: function getOrderProductList() {
+          var param = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+          return this.http.get("".concat(this.API_URL, "/po-detail"), {
+            params: param
+          });
+        }
+      }, {
+        key: "getOrderProductMasterData",
+        value: function getOrderProductMasterData() {
+          var param = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+          return this.http.get("".concat(this.API_URL, "/po-detail/master-data"), {
+            params: param
+          });
+        }
+      }, {
+        key: "editOrderProduct",
+        value: function editOrderProduct(id, data) {
+          return this.http.put("".concat(this.API_URL, "/po-detail/").concat(id), data);
+        }
+      }, {
+        key: "addOrderProduct",
+        value: function addOrderProduct(data) {
+          return this.http.post("".concat(this.API_URL, "/po-detail"), data);
+        }
+      }, {
+        key: "deleteOrderProduct",
+        value: function deleteOrderProduct(id) {
+          return this.http.delete("".concat(this.API_URL, "/po-detail/").concat(id));
+        }
+      }]);
+
+      return OrderService;
+    }();
+
+    OrderService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+      }];
+    };
+
+    OrderService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()], OrderService);
     /***/
   },
 

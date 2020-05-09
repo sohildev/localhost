@@ -119,15 +119,15 @@ const routes = [
     },
     {
         path: 'registeration',
-        loadChildren: () => __webpack_require__.e(/*! import() | registeration-registeration-module */ "registeration-registeration-module").then(__webpack_require__.bind(null, /*! ./registeration/registeration.module */ "./src/app/pages/inbound/registeration/registeration.module.ts")).then(m => m.RegisterationModule)
+        loadChildren: () => Promise.all(/*! import() | registeration-registeration-module */[__webpack_require__.e("common"), __webpack_require__.e("registeration-registeration-module")]).then(__webpack_require__.bind(null, /*! ./registeration/registeration.module */ "./src/app/pages/inbound/registeration/registeration.module.ts")).then(m => m.RegisterationModule)
     },
     {
         path: 'product-config',
-        loadChildren: () => __webpack_require__.e(/*! import() | product-config-product-config-list-product-config-list-module */ "product-config-product-config-list-product-config-list-module").then(__webpack_require__.bind(null, /*! ./product-config/product-config-list/product-config-list.module */ "./src/app/pages/inbound/product-config/product-config-list/product-config-list.module.ts")).then(m => m.ProductConfigListModule)
+        loadChildren: () => Promise.all(/*! import() | product-config-product-config-list-product-config-list-module */[__webpack_require__.e("common"), __webpack_require__.e("product-config-product-config-list-product-config-list-module")]).then(__webpack_require__.bind(null, /*! ./product-config/product-config-list/product-config-list.module */ "./src/app/pages/inbound/product-config/product-config-list/product-config-list.module.ts")).then(m => m.ProductConfigListModule)
     },
     {
         path: 'put-away',
-        loadChildren: () => __webpack_require__.e(/*! import() | put-away-put-away-module */ "put-away-put-away-module").then(__webpack_require__.bind(null, /*! ./put-away/put-away.module */ "./src/app/pages/inbound/put-away/put-away.module.ts")).then(m => m.PutAwayModule)
+        loadChildren: () => Promise.all(/*! import() | put-away-put-away-module */[__webpack_require__.e("common"), __webpack_require__.e("put-away-put-away-module")]).then(__webpack_require__.bind(null, /*! ./put-away/put-away.module */ "./src/app/pages/inbound/put-away/put-away.module.ts")).then(m => m.PutAwayModule)
     }
 ];
 let InboundRoutingModule = class InboundRoutingModule {
@@ -210,12 +210,12 @@ const routes = [
     },
     {
         path: 'add',
-        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
+        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
         data: { title: 'add_order' },
     },
     {
         path: 'edit/:id',
-        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("default~add-order-add-order-module~add-sales-order-add-sales-order-module"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
+        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
         data: { title: 'edit_order' },
     },
     {
@@ -1272,7 +1272,7 @@ const routes = [
     },
     {
         path: 'generate-unloading',
-        loadChildren: () => __webpack_require__.e(/*! import() | generate-unloading-generate-unloading-module */ "generate-unloading-generate-unloading-module").then(__webpack_require__.bind(null, /*! ./generate-unloading/generate-unloading.module */ "./src/app/pages/inbound/unload/generate-unloading/generate-unloading.module.ts")).then(m => m.GenerateUnloadingModule),
+        loadChildren: () => Promise.all(/*! import() | generate-unloading-generate-unloading-module */[__webpack_require__.e("common"), __webpack_require__.e("generate-unloading-generate-unloading-module")]).then(__webpack_require__.bind(null, /*! ./generate-unloading/generate-unloading.module */ "./src/app/pages/inbound/unload/generate-unloading/generate-unloading.module.ts")).then(m => m.GenerateUnloadingModule),
         data: { title: 'add_unload' },
     },
 ];
@@ -1291,6 +1291,81 @@ UnloadModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         ], providers: [src_app_service_unload_service__WEBPACK_IMPORTED_MODULE_7__["UnloadService"]]
     })
 ], UnloadModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/order.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/service/order.service.ts ***!
+  \******************************************/
+/*! exports provided: OrderService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderService", function() { return OrderService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+let OrderService = class OrderService {
+    constructor(http) {
+        this.http = http;
+        this.API_URL = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].APIEndpoint;
+    }
+    getOrderList(param) {
+        return this.http.get(`${this.API_URL}/po`, { params: param });
+    }
+    addOrder(data) {
+        return this.http.post(`${this.API_URL}/po`, data);
+    }
+    editOrder(id, data) {
+        return this.http.put(`${this.API_URL}/po/${id}`, data);
+    }
+    getOrderById(id, param = null) {
+        return this.http.get(`${this.API_URL}/po/${id}`, { params: param });
+    }
+    getOrderViewById(id) {
+        return this.http.get(`${this.API_URL}/po/${id}/view`);
+    }
+    getOrderMasterData() {
+        return this.http.get(`${this.API_URL}/po/master-data`);
+    }
+    getOrderfilterData() {
+        return this.http.get(`${this.API_URL}/po/filter-drop-down`);
+    }
+    deleteOrder(id) {
+        return this.http.delete(`${this.API_URL}/po/${id}`);
+    }
+    // Product
+    getOrderProductList(param = null) {
+        return this.http.get(`${this.API_URL}/po-detail`, { params: param });
+    }
+    getOrderProductMasterData(param = null) {
+        return this.http.get(`${this.API_URL}/po-detail/master-data`, { params: param });
+    }
+    editOrderProduct(id, data) {
+        return this.http.put(`${this.API_URL}/po-detail/${id}`, data);
+    }
+    addOrderProduct(data) {
+        return this.http.post(`${this.API_URL}/po-detail`, data);
+    }
+    deleteOrderProduct(id) {
+        return this.http.delete(`${this.API_URL}/po-detail/${id}`);
+    }
+};
+OrderService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+];
+OrderService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()
+], OrderService);
 
 
 

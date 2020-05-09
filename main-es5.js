@@ -2139,6 +2139,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return finaldate;
     };
 
+    CommonFunction.changedateTimeFormate = function (date) {
+      var today;
+
+      if (date) {
+        today = date;
+      } else {
+        today = new Date();
+      }
+
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+
+      var yyyy = today.getFullYear();
+      var hour = today.getHours();
+      var minit = today.getMinutes();
+      var second = today.getSeconds(); // 2020-02-04 12:15:60
+
+      var finaldate = "".concat(yyyy, "-").concat(mm, "-").concat(dd, " ").concat(hour, ":").concat(minit, ":").concat(second);
+      return finaldate;
+    };
+
     CommonFunction.formatDate = function (date) {
       var d = new Date(date);
       var month = '' + (d.getMonth() + 1);
@@ -2498,7 +2519,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var TIMEFORMAT = 'h:i K';
     var DATE_TIME_FORMAT = {
       dateFormat: DATEFORMAT + ' ' + TIMEFORMAT,
-      enableTime: true
+      enableTime: true,
+      defaultDate: new Date() // minDate: null
+
     };
     var DATE_FORMAT = {
       dateFormat: DATEFORMAT,

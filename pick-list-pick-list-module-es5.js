@@ -360,7 +360,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | generate-pick-list-generate-pick-list-module */
-        [__webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("generate-pick-list-generate-pick-list-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("common"), __webpack_require__.e("generate-pick-list-generate-pick-list-module")]).then(__webpack_require__.bind(null,
         /*! ./generate-pick-list/generate-pick-list.module */
         "./src/app/pages/outbound/pick-list/generate-pick-list/generate-pick-list.module.ts")).then(function (m) {
           return m.GeneratePickListModule;

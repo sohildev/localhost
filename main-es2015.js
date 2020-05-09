@@ -1137,6 +1137,24 @@ CommonFunction.changedateFormate = (date) => {
     let finaldate = `${yyyy}-${mm}-${dd} 00:00:00`;
     return finaldate;
 };
+CommonFunction.changedateTimeFormate = (date) => {
+    let today;
+    if (date) {
+        today = date;
+    }
+    else {
+        today = new Date();
+    }
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    var hour = today.getHours();
+    var minit = today.getMinutes();
+    var second = today.getSeconds();
+    // 2020-02-04 12:15:60
+    let finaldate = `${yyyy}-${mm}-${dd} ${hour}:${minit}:${second}`;
+    return finaldate;
+};
 CommonFunction.formatDate = (date) => {
     const d = new Date(date);
     let month = '' + (d.getMonth() + 1);
@@ -1391,6 +1409,8 @@ const TIMEFORMAT = 'h:i K';
 const DATE_TIME_FORMAT = {
     dateFormat: DATEFORMAT + ' ' + TIMEFORMAT,
     enableTime: true,
+    defaultDate: new Date()
+    // minDate: null
 };
 const DATE_FORMAT = {
     dateFormat: DATEFORMAT,
