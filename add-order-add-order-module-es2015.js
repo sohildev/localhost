@@ -175,8 +175,10 @@ let AddProductComponent = class AddProductComponent {
                 if (this.orderNo) {
                     data.index = this.index;
                     this.onProductSubmit.emit(data);
-                    this.showLoader = false;
                     $('#AddOrderProduct').modal('hide');
+                    setTimeout(() => {
+                        this.showLoader = false;
+                    }, 500);
                 }
             }
         }

@@ -108,7 +108,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.PageTitle = "Genrate PickList ";
         this.exampleOptions = {
           defaultDate: new Date(),
-          dateFormat: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["DATEFORMAT"],
+          dateFormat: src_app_messages__WEBPACK_IMPORTED_MODULE_7__["DATEFORMAT"] + ' ' + src_app_messages__WEBPACK_IMPORTED_MODULE_7__["TIMEFORMAT"],
           noCalendar: true
         };
         this.orderDetails = {};

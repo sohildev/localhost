@@ -251,8 +251,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               if (this.orderNo) {
                 data.index = this.index;
                 this.onProductSubmit.emit(data);
-                this.showLoader = false;
                 $('#AddOrderProduct').modal('hide');
+                setTimeout(function () {
+                  _this2.showLoader = false;
+                }, 500);
               }
             }
           }

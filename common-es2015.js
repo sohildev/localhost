@@ -410,6 +410,81 @@ CompanyService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 /***/ }),
 
+/***/ "./src/app/service/order.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/service/order.service.ts ***!
+  \******************************************/
+/*! exports provided: OrderService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderService", function() { return OrderService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+let OrderService = class OrderService {
+    constructor(http) {
+        this.http = http;
+        this.API_URL = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].APIEndpoint;
+    }
+    getOrderList(param) {
+        return this.http.get(`${this.API_URL}/po`, { params: param });
+    }
+    addOrder(data) {
+        return this.http.post(`${this.API_URL}/po`, data);
+    }
+    editOrder(id, data) {
+        return this.http.put(`${this.API_URL}/po/${id}`, data);
+    }
+    getOrderById(id, param = null) {
+        return this.http.get(`${this.API_URL}/po/${id}`, { params: param });
+    }
+    getOrderViewById(id) {
+        return this.http.get(`${this.API_URL}/po/${id}/view`);
+    }
+    getOrderMasterData() {
+        return this.http.get(`${this.API_URL}/po/master-data`);
+    }
+    getOrderfilterData() {
+        return this.http.get(`${this.API_URL}/po/filter-drop-down`);
+    }
+    deleteOrder(id) {
+        return this.http.delete(`${this.API_URL}/po/${id}`);
+    }
+    // Product
+    getOrderProductList(param = null) {
+        return this.http.get(`${this.API_URL}/po-detail`, { params: param });
+    }
+    getOrderProductMasterData(param = null) {
+        return this.http.get(`${this.API_URL}/po-detail/master-data`, { params: param });
+    }
+    editOrderProduct(id, data) {
+        return this.http.put(`${this.API_URL}/po-detail/${id}`, data);
+    }
+    addOrderProduct(data) {
+        return this.http.post(`${this.API_URL}/po-detail`, data);
+    }
+    deleteOrderProduct(id) {
+        return this.http.delete(`${this.API_URL}/po-detail/${id}`);
+    }
+};
+OrderService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
+];
+OrderService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()
+], OrderService);
+
+
+
+/***/ }),
+
 /***/ "./src/app/service/pick-list.service.ts":
 /*!**********************************************!*\
   !*** ./src/app/service/pick-list.service.ts ***!

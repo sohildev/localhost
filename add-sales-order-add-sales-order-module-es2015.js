@@ -252,12 +252,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _add_sales_product_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./add-sales-product.component */ "./src/app/common-module/add-sales-product/add-sales-product.component.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
-/* harmony import */ var src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/shared/shared.module */ "./src/app/shared/shared.module.ts");
-/* harmony import */ var _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ng-select/ng-select */ "./node_modules/@ng-select/ng-select/__ivy_ngcc__/fesm2015/ng-select-ng-select.js");
-/* harmony import */ var src_app_shared_form_validation_form_validation_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/shared/form-validation/form-validation.module */ "./src/app/shared/form-validation/form-validation.module.ts");
-/* harmony import */ var src_app_service_sales_order_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/service/sales-order.service */ "./src/app/service/sales-order.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/shared.module */ "./src/app/shared/shared.module.ts");
+/* harmony import */ var _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ng-select/ng-select */ "./node_modules/@ng-select/ng-select/__ivy_ngcc__/fesm2015/ng-select-ng-select.js");
+/* harmony import */ var src_app_shared_form_validation_form_validation_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/shared/form-validation/form-validation.module */ "./src/app/shared/form-validation/form-validation.module.ts");
+/* harmony import */ var src_app_service_order_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/service/order.service */ "./src/app/service/order.service.ts");
+/* harmony import */ var _add_sales_product_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./add-sales-product.component */ "./src/app/common-module/add-sales-product/add-sales-product.component.ts");
 
 
 
@@ -271,15 +271,15 @@ let AddSalesProductModule = class AddSalesProductModule {
 };
 AddSalesProductModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_add_sales_product_component__WEBPACK_IMPORTED_MODULE_3__["AddSalesProductComponent"]],
+        declarations: [_add_sales_product_component__WEBPACK_IMPORTED_MODULE_8__["AddSalesProductComponent"]],
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
-            src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"],
-            _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_6__["NgSelectModule"],
-            src_app_shared_form_validation_form_validation_module__WEBPACK_IMPORTED_MODULE_7__["FormValidationModule"],
-        ], exports: [_add_sales_product_component__WEBPACK_IMPORTED_MODULE_3__["AddSalesProductComponent"]], providers: [src_app_service_sales_order_service__WEBPACK_IMPORTED_MODULE_8__["SalesOrderService"]]
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
+            src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__["SharedModule"],
+            _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_5__["NgSelectModule"],
+            src_app_shared_form_validation_form_validation_module__WEBPACK_IMPORTED_MODULE_6__["FormValidationModule"],
+        ], exports: [_add_sales_product_component__WEBPACK_IMPORTED_MODULE_8__["AddSalesProductComponent"]], providers: [src_app_service_order_service__WEBPACK_IMPORTED_MODULE_7__["OrderService"]]
     })
 ], AddSalesProductModule);
 
