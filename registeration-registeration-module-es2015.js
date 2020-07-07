@@ -85,7 +85,7 @@ let RegisterationComponent = class RegisterationComponent {
             key: "serial_no",
         }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
             label: "Tag ID",
-            key: "tag_id",
+            key: "tag.label",
         }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
             label: "Qty",
             key: "qty",
@@ -213,17 +213,17 @@ const routes = [
     // },
     {
         path: 'add',
-        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
+        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
         data: { title: 'add_product_register' },
     },
     {
         path: 'edit',
-        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
+        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
         data: { title: 'edit_product_register' },
     },
     {
         path: 'register-product',
-        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
+        loadChildren: () => Promise.all(/*! import() | add-configuration-add-configuration-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null, /*! ./add-configuration/add-configuration.module */ "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(m => m.AddConfigurationModule),
         data: { title: 'add_product_register' },
     },
 ];

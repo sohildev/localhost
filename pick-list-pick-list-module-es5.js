@@ -109,9 +109,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setHeaderData",
         value: function setHeaderData() {
-          this.headerData.push(new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
+          this.headerData.push(new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextViewUrlField"]({
             label: "Order No",
-            key: "sales_order.sales_order_no"
+            key: "sales_order.sales_order_no",
+            viewUrl: {
+              path: '/outbound/pick-list/view/',
+              id: 'pick_list_id'
+            }
           }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
             label: "Client Name",
             key: "client.label"
@@ -318,7 +322,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | generate-generate-module */
-        [__webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("common"), __webpack_require__.e("generate-generate-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("common"), __webpack_require__.e("generate-generate-module")]).then(__webpack_require__.bind(null,
         /*! ./generate/generate.module */
         "./src/app/pages/outbound/pick-list/generate/generate.module.ts")).then(function (m) {
           return m.GenerateModule;
@@ -332,7 +336,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | generate-generate-module */
-        [__webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("common"), __webpack_require__.e("generate-generate-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("common"), __webpack_require__.e("generate-generate-module")]).then(__webpack_require__.bind(null,
         /*! ./generate/generate.module */
         "./src/app/pages/outbound/pick-list/generate/generate.module.ts")).then(function (m) {
           return m.GenerateModule;
@@ -344,9 +348,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       path: 'view',
       loadChildren: function loadChildren() {
-        return __webpack_require__.e(
+        return Promise.all(
         /*! import() | pick-list-view-pick-list-view-module */
-        "pick-list-view-pick-list-view-module").then(__webpack_require__.bind(null,
+        [__webpack_require__.e("common"), __webpack_require__.e("pick-list-view-pick-list-view-module")]).then(__webpack_require__.bind(null,
         /*! ./pick-list-view/pick-list-view.module */
         "./src/app/pages/outbound/pick-list/pick-list-view/pick-list-view.module.ts")).then(function (m) {
           return m.PickListViewModule;
@@ -360,7 +364,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | generate-pick-list-generate-pick-list-module */
-        [__webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("common"), __webpack_require__.e("generate-pick-list-generate-pick-list-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("common"), __webpack_require__.e("generate-pick-list-generate-pick-list-module")]).then(__webpack_require__.bind(null,
         /*! ./generate-pick-list/generate-pick-list.module */
         "./src/app/pages/outbound/pick-list/generate-pick-list/generate-pick-list.module.ts")).then(function (m) {
           return m.GeneratePickListModule;

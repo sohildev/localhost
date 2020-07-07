@@ -19,11 +19,19 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: 'sales-order',
-        loadChildren: () => Promise.all(/*! import() | sales-order-sales-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("common"), __webpack_require__.e("sales-order-sales-order-module")]).then(__webpack_require__.bind(null, /*! ./sales-order/sales-order.module */ "./src/app/pages/outbound/sales-order/sales-order.module.ts")).then(m => m.SalesOrderModule),
+        loadChildren: () => Promise.all(/*! import() | sales-order-sales-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~480f1082"), __webpack_require__.e("common"), __webpack_require__.e("sales-order-sales-order-module")]).then(__webpack_require__.bind(null, /*! ./sales-order/sales-order.module */ "./src/app/pages/outbound/sales-order/sales-order.module.ts")).then(m => m.SalesOrderModule),
     },
     {
         path: 'pick-list',
-        loadChildren: () => Promise.all(/*! import() | pick-list-pick-list-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("common"), __webpack_require__.e("pick-list-pick-list-module")]).then(__webpack_require__.bind(null, /*! ./pick-list/pick-list.module */ "./src/app/pages/outbound/pick-list/pick-list.module.ts")).then(m => m.PickListModule),
+        loadChildren: () => Promise.all(/*! import() | pick-list-pick-list-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~480f1082"), __webpack_require__.e("common"), __webpack_require__.e("pick-list-pick-list-module")]).then(__webpack_require__.bind(null, /*! ./pick-list/pick-list.module */ "./src/app/pages/outbound/pick-list/pick-list.module.ts")).then(m => m.PickListModule),
+    },
+    {
+        path: 'packing',
+        loadChildren: () => Promise.all(/*! import() | packing-packing-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("packing-packing-module")]).then(__webpack_require__.bind(null, /*! ./packing/packing.module */ "./src/app/pages/outbound/packing/packing.module.ts")).then(m => m.PackingModule)
+    },
+    {
+        path: 'pick-list-new',
+        loadChildren: () => Promise.all(/*! import() | pick-list-new-pick-list-new-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~480f1082"), __webpack_require__.e("common"), __webpack_require__.e("pick-list-new-pick-list-new-module")]).then(__webpack_require__.bind(null, /*! ./pick-list-new/pick-list-new.module */ "./src/app/pages/outbound/pick-list-new/pick-list-new.module.ts")).then(m => m.PickListNewModule)
     }
 ];
 let OutboundRoutingModule = class OutboundRoutingModule {

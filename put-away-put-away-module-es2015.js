@@ -185,12 +185,12 @@ const routes = [
     },
     {
         path: 'add',
-        loadChildren: () => Promise.all(/*! import() | add-put-away-add-put-away-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-put-away-add-put-away-module")]).then(__webpack_require__.bind(null, /*! ./add-put-away/add-put-away.module */ "./src/app/pages/inbound/put-away/add-put-away/add-put-away.module.ts")).then(m => m.AddPutAwayModule),
+        loadChildren: () => Promise.all(/*! import() | add-put-away-add-put-away-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-put-away-add-put-away-module")]).then(__webpack_require__.bind(null, /*! ./add-put-away/add-put-away.module */ "./src/app/pages/inbound/put-away/add-put-away/add-put-away.module.ts")).then(m => m.AddPutAwayModule),
         data: { title: 'add_product_register' },
     },
     {
         path: 'edit',
-        loadChildren: () => Promise.all(/*! import() | add-put-away-add-put-away-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-put-away-add-put-away-module")]).then(__webpack_require__.bind(null, /*! ./add-put-away/add-put-away.module */ "./src/app/pages/inbound/put-away/add-put-away/add-put-away.module.ts")).then(m => m.AddPutAwayModule),
+        loadChildren: () => Promise.all(/*! import() | add-put-away-add-put-away-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-put-away-add-put-away-module")]).then(__webpack_require__.bind(null, /*! ./add-put-away/add-put-away.module */ "./src/app/pages/inbound/put-away/add-put-away/add-put-away.module.ts")).then(m => m.AddPutAwayModule),
         data: { title: 'edit_product_register' },
     }
 ];

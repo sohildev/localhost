@@ -320,7 +320,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-sales-order-add-sales-order-module */
-        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("common"), __webpack_require__.e("add-sales-order-add-sales-order-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("common"), __webpack_require__.e("add-sales-order-add-sales-order-module")]).then(__webpack_require__.bind(null,
         /*! ./add-sales-order/add-sales-order.module */
         "./src/app/pages/outbound/sales-order/add-sales-order/add-sales-order.module.ts")).then(function (m) {
           return m.AddSalesOrderModule;
@@ -334,7 +334,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-sales-order-add-sales-order-module */
-        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("common"), __webpack_require__.e("add-sales-order-add-sales-order-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("common"), __webpack_require__.e("add-sales-order-add-sales-order-module")]).then(__webpack_require__.bind(null,
         /*! ./add-sales-order/add-sales-order.module */
         "./src/app/pages/outbound/sales-order/add-sales-order/add-sales-order.module.ts")).then(function (m) {
           return m.AddSalesOrderModule;
@@ -454,6 +454,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "getSalesOrderViewById",
         value: function getSalesOrderViewById(id) {
           return this.http.get("".concat(this.API_URL, "/sales-order/").concat(id, "/view"));
+        }
+      }, {
+        key: "getShippingAddressData",
+        value: function getShippingAddressData(id) {
+          return this.http.get("".concat(this.API_URL, "/sales-order/shipping-address/").concat(id));
         }
       }, {
         key: "getSalesOrderMasterData",

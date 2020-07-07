@@ -205,17 +205,17 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        loadChildren: () => Promise.all(/*! import() | order-list-order-list-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("order-list-order-list-module")]).then(__webpack_require__.bind(null, /*! ./order-list/order-list.module */ "./src/app/pages/inbound/order/order-list/order-list.module.ts")).then(m => m.OrderListModule),
+        loadChildren: () => Promise.all(/*! import() | order-list-order-list-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("order-list-order-list-module")]).then(__webpack_require__.bind(null, /*! ./order-list/order-list.module */ "./src/app/pages/inbound/order/order-list/order-list.module.ts")).then(m => m.OrderListModule),
         data: { title: 'order_list' },
     },
     {
         path: 'add',
-        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
+        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
         data: { title: 'add_order' },
     },
     {
         path: 'edit/:id',
-        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
+        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
         data: { title: 'edit_order' },
     },
     {
@@ -535,11 +535,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var src_app_service_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/service/data.service */ "./src/app/service/data.service.ts");
-/* harmony import */ var src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/service/pagination.service */ "./src/app/service/pagination.service.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-/* harmony import */ var src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/service/product-registration.service */ "./src/app/service/product-registration.service.ts");
-
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/service/product-registration.service */ "./src/app/service/product-registration.service.ts");
 
 
 
@@ -547,9 +545,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let OrderSortingComponent = class OrderSortingComponent {
-    constructor(dataService, paginationService, ProductRegistrationService, location, activatedRoute) {
+    constructor(dataService, ProductRegistrationService, location, activatedRoute) {
         this.dataService = dataService;
-        this.paginationService = paginationService;
         this.ProductRegistrationService = ProductRegistrationService;
         this.location = location;
         this.activatedRoute = activatedRoute;
@@ -647,10 +644,9 @@ let OrderSortingComponent = class OrderSortingComponent {
 };
 OrderSortingComponent.ctorParameters = () => [
     { type: src_app_service_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"] },
-    { type: src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_3__["PaginationService"] },
-    { type: src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_6__["ProductRegistrationService"] },
-    { type: _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] }
+    { type: src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_5__["ProductRegistrationService"] },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] }
 ];
 OrderSortingComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1262,7 +1258,7 @@ const routes = [
     },
     {
         path: 'generate',
-        loadChildren: () => Promise.all(/*! import() | generate-generate-module */[__webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("common"), __webpack_require__.e("generate-generate-module")]).then(__webpack_require__.bind(null, /*! ./generate/generate.module */ "./src/app/pages/inbound/unload/generate/generate.module.ts")).then(m => m.GenerateModule),
+        loadChildren: () => Promise.all(/*! import() | generate-generate-module */[__webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("common"), __webpack_require__.e("generate-generate-module")]).then(__webpack_require__.bind(null, /*! ./generate/generate.module */ "./src/app/pages/inbound/unload/generate/generate.module.ts")).then(m => m.GenerateModule),
         data: { title: 'add_unload' },
     },
     {

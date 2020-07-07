@@ -362,7 +362,7 @@ const routes = [
     },
     {
         path: 'login',
-        loadChildren: () => Promise.all(/*! import() | auth-login-login-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("common"), __webpack_require__.e("auth-login-login-module")]).then(__webpack_require__.bind(null, /*! ./auth/login/login.module */ "./src/app/auth/login/login.module.ts")).then(m => m.LoginModule),
+        loadChildren: () => Promise.all(/*! import() | auth-login-login-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("common"), __webpack_require__.e("auth-login-login-module")]).then(__webpack_require__.bind(null, /*! ./auth/login/login.module */ "./src/app/auth/login/login.module.ts")).then(m => m.LoginModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["LoginRedirect"]],
         data: { title: 'login' },
     },
@@ -374,13 +374,13 @@ const routes = [
     // },
     {
         path: 'forgot-password',
-        loadChildren: () => Promise.all(/*! import() | auth-forgot-password-forgot-password-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("common"), __webpack_require__.e("auth-forgot-password-forgot-password-module")]).then(__webpack_require__.bind(null, /*! ./auth/forgot-password/forgot-password.module */ "./src/app/auth/forgot-password/forgot-password.module.ts")).then(m => m.ForgotPasswordModule),
+        loadChildren: () => Promise.all(/*! import() | auth-forgot-password-forgot-password-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("common"), __webpack_require__.e("auth-forgot-password-forgot-password-module")]).then(__webpack_require__.bind(null, /*! ./auth/forgot-password/forgot-password.module */ "./src/app/auth/forgot-password/forgot-password.module.ts")).then(m => m.ForgotPasswordModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["LoginRedirect"]],
         data: { title: 'forgot_password' },
     },
     {
         path: 'reset-password/:token',
-        loadChildren: () => Promise.all(/*! import() | auth-reset-password-reset-password-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("common"), __webpack_require__.e("auth-reset-password-reset-password-module")]).then(__webpack_require__.bind(null, /*! ./auth/reset-password/reset-password.module */ "./src/app/auth/reset-password/reset-password.module.ts")).then(m => m.ResetPasswordModule),
+        loadChildren: () => Promise.all(/*! import() | auth-reset-password-reset-password-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("common"), __webpack_require__.e("auth-reset-password-reset-password-module")]).then(__webpack_require__.bind(null, /*! ./auth/reset-password/reset-password.module */ "./src/app/auth/reset-password/reset-password.module.ts")).then(m => m.ResetPasswordModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["LoginRedirect"]],
         data: { title: 'reset_password' },
     },
@@ -398,23 +398,23 @@ const routes = [
     },
     {
         path: 'company',
-        loadChildren: () => Promise.all(/*! import() | pages-company-company-list-company-list-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("common"), __webpack_require__.e("pages-company-company-list-company-list-module")]).then(__webpack_require__.bind(null, /*! ./pages/company/company-list/company-list.module */ "./src/app/pages/company/company-list/company-list.module.ts")).then(m => m.CompanyListModule),
+        loadChildren: () => Promise.all(/*! import() | pages-company-company-list-company-list-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~480f1082"), __webpack_require__.e("common"), __webpack_require__.e("pages-company-company-list-company-list-module")]).then(__webpack_require__.bind(null, /*! ./pages/company/company-list/company-list.module */ "./src/app/pages/company/company-list/company-list.module.ts")).then(m => m.CompanyListModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["EnsureAuthenticated"], _service_guards__WEBPACK_IMPORTED_MODULE_3__["CompanyRedirectService"]],
         data: { title: 'company_list', module: 'company', action: 'list' },
     },
     {
         path: 'manage',
-        loadChildren: () => Promise.all(/*! import() | pages-master-master-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("common"), __webpack_require__.e("pages-master-master-module")]).then(__webpack_require__.bind(null, /*! ./pages/master/master.module */ "./src/app/pages/master/master.module.ts")).then(m => m.MasterModule),
+        loadChildren: () => Promise.all(/*! import() | pages-master-master-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~480f1082"), __webpack_require__.e("common"), __webpack_require__.e("pages-master-master-module")]).then(__webpack_require__.bind(null, /*! ./pages/master/master.module */ "./src/app/pages/master/master.module.ts")).then(m => m.MasterModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["EnsureAuthenticated"], _service_guards__WEBPACK_IMPORTED_MODULE_3__["IsCompanySelected"]],
     },
     {
         path: 'inbound',
-        loadChildren: () => Promise.all(/*! import() | pages-inbound-inbound-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~9cad3811"), __webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("common"), __webpack_require__.e("pages-inbound-inbound-module")]).then(__webpack_require__.bind(null, /*! ./pages/inbound/inbound.module */ "./src/app/pages/inbound/inbound.module.ts")).then(m => m.InboundModule),
+        loadChildren: () => Promise.all(/*! import() | pages-inbound-inbound-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~480f1082"), __webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("common"), __webpack_require__.e("pages-inbound-inbound-module")]).then(__webpack_require__.bind(null, /*! ./pages/inbound/inbound.module */ "./src/app/pages/inbound/inbound.module.ts")).then(m => m.InboundModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["EnsureAuthenticated"], _service_guards__WEBPACK_IMPORTED_MODULE_3__["IsCompanySelected"]],
     },
     {
         path: 'profile',
-        loadChildren: () => Promise.all(/*! import() | pages-profile-profile-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("common"), __webpack_require__.e("pages-profile-profile-module")]).then(__webpack_require__.bind(null, /*! ./pages/profile/profile.module */ "./src/app/pages/profile/profile.module.ts")).then(m => m.ProfileModule),
+        loadChildren: () => Promise.all(/*! import() | pages-profile-profile-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("common"), __webpack_require__.e("pages-profile-profile-module")]).then(__webpack_require__.bind(null, /*! ./pages/profile/profile.module */ "./src/app/pages/profile/profile.module.ts")).then(m => m.ProfileModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["EnsureAuthenticated"]],
     },
     {
@@ -443,19 +443,6 @@ AppRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 ], AppRoutingModule);
 
 
-
-/***/ }),
-
-/***/ "./src/app/app.component.css":
-/*!***********************************!*\
-  !*** ./src/app/app.component.css ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */");
 
 /***/ }),
 
@@ -606,7 +593,6 @@ AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-root',
         template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html")).default,
-        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")).default]
     })
 ], AppComponent);
 
@@ -1155,6 +1141,18 @@ CommonFunction.changedateTimeFormate = (date) => {
     let finaldate = `${yyyy}-${mm}-${dd} ${hour}:${minit}:${second}`;
     return finaldate;
 };
+CommonFunction.currentTimeFormate = () => {
+    let today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    var hour = today.getHours();
+    var minit = today.getMinutes();
+    var second = today.getSeconds();
+    // 2020-02-04 12:15:60
+    let finaldate = `${yyyy}-${mm}-${dd} ${hour}:${minit}:${second}`;
+    return finaldate;
+};
 CommonFunction.formatDate = (date) => {
     const d = new Date(date);
     let month = '' + (d.getMonth() + 1);
@@ -1332,8 +1330,16 @@ let HeaderComponent = class HeaderComponent {
                                 navUrl: '/outbound/sales-order'
                             },
                             {
-                                navLink: 'Picking Products',
+                                navLink: 'Picking',
                                 navUrl: '/outbound/pick-list'
+                            },
+                            {
+                                navLink: 'Picking New',
+                                navUrl: '/outbound/pick-list-new'
+                            },
+                            {
+                                navLink: 'Packing',
+                                navUrl: '/outbound/packing'
                             },
                             {
                                 navLink: 'Packing Products',
@@ -1512,12 +1518,13 @@ const pageTitles = {
     add_product_config: `Add Aroduct Config | ${APP_NAME}`,
     edit_product_config: `Edit Product Config | ${APP_NAME}`,
     product_stock_list: `Product Stock List | ${APP_NAME}`,
-    product_sammary_list: `Stock Summary List | ${APP_NAME}`,
-    bin_tranfer_add: ` Add Bin Transfer | ${APP_NAME}`,
+    product_summary_list: `Stock Summary List | ${APP_NAME}`,
+    bin_transfer_add: ` Add Bin Transfer | ${APP_NAME}`,
     sales_order_list: ` Sales Order List | ${APP_NAME}`,
     add_sales_order: `Add Sales Order | ${APP_NAME}`,
     edit_sales_order: `Edit Sales Order | ${APP_NAME}`,
     view_sales_order: `View Sales Order | ${APP_NAME}`,
+    add_damage_product: `Add Damage Product ${APP_NAME}`
 };
 const errorMessage = {
     change_password_success: 'Your password changed Successfully',
@@ -2237,7 +2244,7 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     // APIEndpoint: 'http://192.168.1.138:9005/api',
-    APIEndpoint: 'https://3e512367.ngrok.io/api'
+    APIEndpoint: 'https://cf0baf37b4fa.ngrok.io/api'
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -2286,7 +2293,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\Work -For-Home\wms\wms-angular\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! E:\Work -For-Home\bhusan-code\wms-angular\wms-angular\src\main.ts */"./src/main.ts");
 
 
 /***/ }),

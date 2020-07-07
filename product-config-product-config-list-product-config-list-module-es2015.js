@@ -179,12 +179,12 @@ const routes = [
     },
     {
         path: 'add',
-        loadChildren: () => Promise.all(/*! import() | product-config-add-product-config-add-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("product-config-add-product-config-add-module")]).then(__webpack_require__.bind(null, /*! ../product-config-add/product-config-add.module */ "./src/app/pages/inbound/product-config/product-config-add/product-config-add.module.ts")).then(m => m.ProductConfigAddModule),
+        loadChildren: () => Promise.all(/*! import() | product-config-add-product-config-add-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("product-config-add-product-config-add-module")]).then(__webpack_require__.bind(null, /*! ../product-config-add/product-config-add.module */ "./src/app/pages/inbound/product-config/product-config-add/product-config-add.module.ts")).then(m => m.ProductConfigAddModule),
         data: { title: 'add_product_config' },
     },
     {
         path: 'edit/:id',
-        loadChildren: () => Promise.all(/*! import() | product-config-add-product-config-add-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("product-config-add-product-config-add-module")]).then(__webpack_require__.bind(null, /*! ../product-config-add/product-config-add.module */ "./src/app/pages/inbound/product-config/product-config-add/product-config-add.module.ts")).then(m => m.ProductConfigAddModule),
+        loadChildren: () => Promise.all(/*! import() | product-config-add-product-config-add-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("product-config-add-product-config-add-module")]).then(__webpack_require__.bind(null, /*! ../product-config-add/product-config-add.module */ "./src/app/pages/inbound/product-config/product-config-add/product-config-add.module.ts")).then(m => m.ProductConfigAddModule),
         data: { title: 'edit_product_config' },
     }
 ];
@@ -245,7 +245,6 @@ let ProductConfigService = class ProductConfigService {
         return this.http.get(`${this.API_URL}/product-config/${id}`, { params: param });
     }
     getProductConfigMasterData(param) {
-        console.log(param);
         return this.http.get(`${this.API_URL}/product-config/drop-down`, { params: param });
     }
 };

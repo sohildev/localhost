@@ -95,7 +95,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.orderDetails = {};
         this.productList = [];
         this.date_format = "M/d/yy";
-        this.a = "2020-04-13T07:00:46.213000";
 
         if (this.activatedRoute.snapshot.paramMap.get('id')) {
           this.viewId = this.activatedRoute.snapshot.paramMap.get('id');

@@ -847,6 +847,129 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
+  "./src/app/service/pick-list-new.service.ts":
+  /*!**************************************************!*\
+    !*** ./src/app/service/pick-list-new.service.ts ***!
+    \**************************************************/
+
+  /*! exports provided: PickListNewService */
+
+  /***/
+  function srcAppServicePickListNewServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PickListNewService", function () {
+      return PickListNewService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/environments/environment */
+    "./src/environments/environment.ts");
+
+    var PickListNewService =
+    /*#__PURE__*/
+    function () {
+      function PickListNewService(http) {
+        _classCallCheck(this, PickListNewService);
+
+        this.http = http;
+        this.API_URL = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].APIEndpoint;
+      }
+
+      _createClass(PickListNewService, [{
+        key: "getPickListNewList",
+        value: function getPickListNewList(param) {
+          return this.http.get("".concat(this.API_URL, "/picking/sales-order-list"), {
+            params: param
+          });
+        }
+      }, {
+        key: "getListFilterData",
+        value: function getListFilterData() {
+          var param = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+          return this.http.get("".concat(this.API_URL, "/picking/list-filter-drp"), {
+            params: param
+          });
+        }
+      }, {
+        key: "getMasterData",
+        value: function getMasterData() {
+          var param = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+          return this.http.get("".concat(this.API_URL, "/picking/master-data"), {
+            params: param
+          });
+        }
+      }, {
+        key: "getSalesOrderDetail",
+        value: function getSalesOrderDetail(id) {
+          return this.http.get("".concat(this.API_URL, "/picking/sales-order-detail/").concat(id));
+        }
+      }, {
+        key: "addPickListNew",
+        value: function addPickListNew(data) {
+          return this.http.post("".concat(this.API_URL, "/picking/generate"), data);
+        }
+      }, {
+        key: "editPickListNew",
+        value: function editPickListNew(id, data) {
+          return this.http.put("".concat(this.API_URL, "/PickListNew/").concat(id), data);
+        }
+      }, {
+        key: "getPickListNewById",
+        value: function getPickListNewById(id) {
+          var param = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+          return this.http.get("".concat(this.API_URL, "/picking/sales-order-view-pick-list/").concat(id), {
+            params: param
+          });
+        }
+      }, {
+        key: "getPickListNewviewProductById",
+        value: function getPickListNewviewProductById(id) {
+          var param = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+          return this.http.get("".concat(this.API_URL, "/picking/sales-order-pick-view-product-list/").concat(id), {
+            params: param
+          });
+        }
+      }]);
+
+      return PickListNewService;
+    }();
+
+    PickListNewService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+      }];
+    };
+
+    PickListNewService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])()], PickListNewService);
+    /***/
+  },
+
+  /***/
   "./src/app/service/pick-list.service.ts":
   /*!**********************************************!*\
     !*** ./src/app/service/pick-list.service.ts ***!

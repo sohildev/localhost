@@ -143,7 +143,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             key: "serial_no"
           }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
             label: "Tag ID",
-            key: "tag_id"
+            key: "tag.label"
           }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
             label: "Qty",
             key: "qty"
@@ -356,7 +356,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-configuration-add-configuration-module */
-        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null,
         /*! ./add-configuration/add-configuration.module */
         "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(function (m) {
           return m.AddConfigurationModule;
@@ -370,7 +370,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-configuration-add-configuration-module */
-        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null,
         /*! ./add-configuration/add-configuration.module */
         "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(function (m) {
           return m.AddConfigurationModule;
@@ -384,7 +384,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-configuration-add-configuration-module */
-        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-configuration-add-configuration-module")]).then(__webpack_require__.bind(null,
         /*! ./add-configuration/add-configuration.module */
         "./src/app/pages/inbound/registeration/add-configuration/add-configuration.module.ts")).then(function (m) {
           return m.AddConfigurationModule;

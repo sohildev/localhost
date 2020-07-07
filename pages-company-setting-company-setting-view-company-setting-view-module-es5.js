@@ -344,7 +344,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | company-setting-edit-company-setting-edit-module */
-        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("company-setting-edit-company-setting-edit-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("company-setting-edit-company-setting-edit-module")]).then(__webpack_require__.bind(null,
         /*! ../company-setting-edit/company-setting-edit.module */
         "./src/app/pages/company-setting/company-setting-edit/company-setting-edit.module.ts")).then(function (m) {
           return m.CompanySettingEditModule;

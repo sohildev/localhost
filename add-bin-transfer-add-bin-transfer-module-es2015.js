@@ -185,7 +185,7 @@ const routes = [
     {
         path: '',
         component: _add_bin_transfer_component__WEBPACK_IMPORTED_MODULE_4__["AddBinTransferComponent"],
-        data: { title: 'bin_tranfer_add' },
+        data: { title: 'bin_transfer_add' },
     }
 ];
 let AddBinTransferModule = class AddBinTransferModule {

@@ -65,6 +65,9 @@ body{
 .border-top {
     border-top: 1px solid #f4f9fd !important;
 }
+.border-bottom {
+    border-bottom: 1px solid #f4f9fd !important;
+}
 .dropdown .dropdown-menu{-webkit-animation-name:slideUpIn;animation-name:slideUpIn;
     -webkit-animation-duration:.3s;animation-duration:.3s;
     -webkit-animation-fill-mode:both;

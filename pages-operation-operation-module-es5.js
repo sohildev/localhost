@@ -44,7 +44,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | product-stock-product-stock-module */
-        [__webpack_require__.e("common"), __webpack_require__.e("product-stock-product-stock-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("product-stock-product-stock-module")]).then(__webpack_require__.bind(null,
         /*! ./product-stock/product-stock.module */
         "./src/app/pages/operation/product-stock/product-stock.module.ts")).then(function (m) {
           return m.ProductStockModule;
@@ -55,7 +55,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-bin-transfer-add-bin-transfer-module */
-        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~135b230d"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-bin-transfer-add-bin-transfer-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-bin-transfer-add-bin-transfer-module")]).then(__webpack_require__.bind(null,
         /*! ./add-bin-transfer/add-bin-transfer.module */
         "./src/app/pages/operation/add-bin-transfer/add-bin-transfer.module.ts")).then(function (m) {
           return m.AddBinTransferModule;

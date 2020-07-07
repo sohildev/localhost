@@ -21,7 +21,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<!-- Modal -->\n<div class=\"modal fade\" id=\"AddSalesOrderProduct\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\n    aria-hidden=\"true\">\n    <div class=\"modal-dialog\" role=\"document\">\n        <div class=\"modal-content\">\n            <form [formGroup]=\"productAddForm\" (ngSubmit)=\"submitForm(productAddForm)\" class=\"form-horizontal\"\n                role=\"form\">\n\n                <div class=\"modal-header\">\n                    <h5 class=\"modal-title\" id=\"exampleModalLabel\">Add Product Sales</h5>\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">&times;</span>\n                    </button>\n                </div>\n                <div class=\"modal-body\">\n                    <div class=\"form-group\">\n                        <label class=\"control-label text-md-right\">Order No. <em>*</em></label>\n                        <div class=\"\">\n                            <input [formControl]=\"productAddForm.controls['order_no']\" type=\"text\" class=\"form-control\"\n                                disabled>\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        <label class=\"control-label text-md-right\">Brand <em>*</em></label>\n                        <ng-select [formControl]=\"productAddForm.controls['brand_id']\" (change)=\"getMasterData()\"\n                            [items]=\"brandListArray\" bindLabel=\"label\" bindValue=\"value\" placeholder=\"Select Brand\">\n                        </ng-select>\n\n                    </div>\n                    <div class=\"form-group\">\n                        <label class=\"control-label text-md-right\">Product <em>*</em></label>\n                        <ng-select [formControl]=\"productAddForm.controls['product_id']\" [items]=\"productListArray\"\n                            bindLabel=\"label\" bindValue=\"value\" placeholder=\"Select Product\"\n                            (change)=checkProductAddedd($event)>\n                        </ng-select>\n                        <span *ngIf=\"formErrors.product_id\" class=\"help-block\"\n                            [innerHTML]=\"formErrors.product_id\"></span>\n\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-6\">\n                            <div class=\"form-group\">\n                                <label class=\"control-label text-md-right\">Available Quantity </label>\n                                <div class=\"\">\n                                    <input [formControl]=\"productAddForm.controls['available_qty']\" type=\"text\"\n                                        class=\"form-control\" placeholder=\"\" readonly>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"col-6\">\n                            <div class=\"form-group\">\n                                <label class=\"control-label text-md-right\">Order Quantity <em>*</em></label>\n                                <div [ngClass]=\"{'has-error': formErrors.qty}\">\n                                    <input number (input)=\"qunatitycheck()\" [formControl]=\"productAddForm.controls['qty']\" type=\"text\"\n                                        class=\"form-control\" placeholder=\"\">\n                                    <span *ngIf=\"formErrors.qty\" class=\"help-block\"  [innerHTML]=\"formErrors.qty\"></span>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-6\">\n                            <div class=\"form-group\">\n                                <label class=\"control-label text-md-right\">Price <em>*</em></label>\n                                <div class=\"\">\n                                    <input number [formControl]=\"productAddForm.controls['price']\" type=\"text\"\n                                        class=\"form-control\" placeholder=\"\">\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-light\" data-dismiss=\"modal\">Cancel</button>\n                    <button type=\"submit\" [disabled]=\"showLoader\" class=\"btn btn-secondary\">Submit</button>\n                </div>\n            </form>\n        </div>\n    </div>\n</div>";
+    __webpack_exports__["default"] = "<!-- Modal -->\n<div class=\"modal fade\" id=\"AddSalesOrderProduct\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\n    aria-hidden=\"true\">\n    <div class=\"modal-dialog\" role=\"document\">\n        <div class=\"modal-content\">\n            <form [formGroup]=\"productAddForm\" (ngSubmit)=\"submitForm(productAddForm)\" class=\"form-horizontal\"\n                role=\"form\">\n\n                <div class=\"modal-header\">\n                    <h5 class=\"modal-title\" id=\"exampleModalLabel\">Add Product Sales</h5>\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">&times;</span>\n                    </button>\n                </div>\n                <div class=\"modal-body\">\n                    <div class=\"form-group\">\n                        <label class=\"control-label text-md-right\">Order No. <em>*</em></label>\n                        <div class=\"\">\n                            <input [formControl]=\"productAddForm.controls['order_no']\" type=\"text\" class=\"form-control\"\n                                disabled>\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        <label class=\"control-label text-md-right\">Brand <em>*</em></label>\n                        <ng-select [formControl]=\"productAddForm.controls['brand_id']\" (change)=\"getMasterData()\"\n                            [items]=\"brandListArray\" bindLabel=\"label\" bindValue=\"value\" placeholder=\"Select Brand\">\n                        </ng-select>\n\n                    </div>\n                    <div class=\"form-group\">\n                        <label class=\"control-label text-md-right\">Product <em>*</em></label>\n                        <ng-select [formControl]=\"productAddForm.controls['product_id']\" [items]=\"productListArray\"\n                            bindLabel=\"label\" bindValue=\"value\" placeholder=\"Select Product\"\n                            (change)=checkProductAddedd($event)>\n                        </ng-select>\n                        <span *ngIf=\"formErrors.product_id\" class=\"help-block\"\n                            [innerHTML]=\"formErrors.product_id\"></span>\n\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-6\">\n                            <div class=\"form-group\">\n                                <label class=\"control-label text-md-right\">Available Quantity </label>\n                                <div class=\"\">\n                                    <input [formControl]=\"productAddForm.controls['available_qty']\" type=\"text\"\n                                        class=\"form-control\" placeholder=\"\" readonly>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"col-6\">\n                            <div class=\"form-group\">\n                                <label class=\"control-label text-md-right\">Order Quantity <em>*</em></label>\n                                <div [ngClass]=\"{'has-error': formErrors.qty}\">\n                                    <input number (input)=\"qunatitycheck()\"\n                                        [formControl]=\"productAddForm.controls['qty']\" type=\"text\" class=\"form-control\"\n                                        placeholder=\"\">\n                                    <span *ngIf=\"formErrors.qty\" class=\"help-block\" [innerHTML]=\"formErrors.qty\"></span>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"row\">\n                        <div class=\"col-6\">\n                            <div class=\"form-group\">\n                                <label class=\"control-label text-md-right\">Amount </label>\n                                <div class=\"\">\n                                    <input number [formControl]=\"productAddForm.controls['amount']\" type=\"text\"\n                                        class=\"form-control\" placeholder=\"\" readonly>\n                                </div>\n                            </div>\n                        </div>\n                        <div class=\"col-6\">\n                            <div class=\"form-group\">\n                                <label class=\"control-label text-md-right\">Price <em>*</em></label>\n                                <div class=\"\">\n                                    <input number [formControl]=\"productAddForm.controls['price']\" type=\"text\"\n                                        class=\"form-control\" placeholder=\"\">\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn btn-light\" data-dismiss=\"modal\">Cancel</button>\n                    <button type=\"submit\" [disabled]=\"showLoader\" class=\"btn btn-secondary\">Submit</button>\n                </div>\n            </form>\n        </div>\n    </div>\n</div>";
     /***/
   },
 
@@ -41,7 +41,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n  <div class=\"page-header\">\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <h2 class=\"mr-auto\">{{ isEditing ? 'Update' : 'Create' }} {{PageTitle}} </h2>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"card\">\r\n    <form [formGroup]=\"addForm\" (ngSubmit)=\"submitForm(addForm)\" class=\"form-horizontal\" role=\"form\">\r\n      <div class=\"card-body\">\r\n        <div class=\"row\">\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\" [ngClass]=\"{'has-error': formErrors.order_no}\">\r\n              <label class=\"control-label text-md-right\">Order No. <em>*</em></label>\r\n              <div class=\"\">\r\n                <input [formControl]=\"addForm.controls['sales_order_no']\" (change)=\"removeError()\" type=\"text\"\r\n                  class=\"form-control\" placeholder=\"\">\r\n                <span *ngIf=\"formErrors.order_no\" class=\"help-block\" [innerHTML]=\"formErrors.order_no\"></span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Order Date <em>*</em></label>\r\n              <div class=\"date-picker\">\r\n                <ng2-flatpickr [setDate]=\"orderDate\" [formControl]=\"addForm.controls['sales_order_date']\"\r\n                  [config]=\"exampleOptions\">\r\n                </ng2-flatpickr>\r\n                <span class=\"date-picker-icon\">\r\n                  <span class=\"fa fa-calendar\"></span>\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Client <em>*</em></label>\r\n              <ng-select [formControl]=\"addForm.controls['client_id']\" [items]=\"clientListArray\" bindLabel=\"label\"\r\n                bindValue=\"value\" placeholder=\"Select Client\">\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Supplier <em>*</em></label>\r\n              <ng-select [formControl]=\"addForm.controls['supplier_id']\" [items]=\"supplierListArray\" bindLabel=\"label\"\r\n                bindValue=\"value\" placeholder=\"Select Supplier\">\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n          <!-- <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Deliver Address <em>*</em></label>\r\n              <textarea [formControl]=\"addForm.controls['deliver_address']\" class=\"form-control\" rows=\"2\"></textarea>\r\n            </div>\r\n          </div>\r\n      </div>-->\r\n\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Country <em>*</em></label>\r\n              <div class=\"\">\r\n                <ng-select [formControl]=\"addForm.controls['country_id']\" (change)=\"getCountryName($event)\"\r\n                  [items]=\"countryListArray\" bindLabel=\"label\" bindValue=\"value\" placeholder=\"Select Country\">\r\n                </ng-select>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">State <em>*</em></label>\r\n              <div class=\"\">\r\n                <input [formControl]=\"addForm.controls['state']\" type=\"text\" class=\"form-control\" placeholder=\"\">\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">City <em>*</em></label>\r\n              <div class=\"\">\r\n                <input [formControl]=\"addForm.controls['city']\" type=\"text\" class=\"form-control\" placeholder=\"\">\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Street Address <em>*</em></label>\r\n              <div class=\"\">\r\n                <input [formControl]=\"addForm.controls['street_address']\" type=\"text\" class=\"form-control\"\r\n                  placeholder=\"\">\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Invoice No. </label>\r\n              <input [formControl]=\"addForm.controls['invoice_no']\"  type=\"text\"\r\n              class=\"form-control\" placeholder=\"\">\r\n            </div>\r\n          </div>\r\n\r\n\r\n        </div>\r\n        <div class=\"row mt-5\">\r\n          <div class=\"col-7 d-flex align-items-center\">\r\n            <h5>Product</h5>\r\n          </div>\r\n          <div class=\"col-5 text-right\">\r\n            <button type=\"button\" class=\"btn btn-light\" (click)=\"addform()\">\r\n              <i class=\"la la-plus\"></i>\r\n              Add Product\r\n            </button><br>\r\n            <span *ngIf=\"formErrors.product\" class=\"help-block\" [innerHTML]=\"formErrors.product\"></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"row mt-3\">\r\n          <div class=\"col\">\r\n            <div class=\"table-responsive-md\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th>No.</th>\r\n                    <th>Product</th>\r\n                    <th>Sku No</th>\r\n                    <th>Order Quantity</th>\r\n                    <th>Price</th>\r\n                    <th>Total Price</th>\r\n                    <th class=\"text-right\" width=\"80\">Action</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody>\r\n                  <tr *ngFor=\"let item of objectArray; let i=index\">\r\n                    <td>{{i+1}}</td>\r\n                    <td>{{item?.product_name}}</td>\r\n                    <td>{{item?.sku_no}}</td>\r\n                    <td>{{item?.qty}}</td>\r\n                    <td>{{currentCompany?.currency?.label }} {{item?.price}}</td>\r\n                    <td>{{currentCompany?.currency?.label }} {{(item?.qty) * (item?.price) | number}}</td>\r\n                    <td>\r\n                      <div class=\"action-drop dropdown text-right\">\r\n                        <a href=\"#\" data-toggle=\"dropdown\" class=\"btn shadow-none btn-default btn-sm btn-icon-only\"\r\n                          title=\"\">\r\n                          <i class=\"fa fa-ellipsis-h\"></i>\r\n                        </a>\r\n                        <div class=\"dropdown-menu dropdown-icon-menu drop-menu-right\" style=\"width: 100px;\">\r\n                          <a *ngIf=\"isEditing\" class=\"dropdown-item\" (click)=\"editform(item?.sales_order_detail_id,i,item)\"><i\r\n                              class=\"fa fa-edit fa-fw text-primary\">\r\n                            </i> Edit</a>\r\n                          <a class=\"dropdown-item\" (click)=\"deleteObject(item,i)\">\r\n                            <i class=\"fa fa-trash fa-fw text-primary\"></i>\r\n                            Delete\r\n                          </a>\r\n                        </div>\r\n                      </div>\r\n                    </td>\r\n                  </tr>\r\n                  <tr *ngIf=\"!loadingState && objectArray.length === 0\">\r\n                    <td colspan=\"7\">No records found</td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n            <pagination [paginationList]=\"pagination\" [currentPage]=\"currentPage\" (onPageChange)=\"getPage($event)\">\r\n            </pagination>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-5\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Notes</label>\r\n              <textarea [formControl]=\"addForm.controls['notes']\" class=\"form-control\" rows=\"2\"></textarea>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"text-right border-top py-4 mt-5 card-footer\">\r\n        <button type=\"button\" class=\"btn btn-light\" routerLink=\"/outbound/sales-order\">Cancel</button>\r\n        <button type=\"submit\" class=\"btn btn-secondary ml-2\">Submit</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n<app-add-sales-product (onRelodeEvent)=\"onRelodeEvent($event)\" [ProductList]=\"objectArray\"\r\n  [orderNo]=\"addForm.value.sales_order_no\" (onProductSubmit)=\"onProductSubmit($event)\"></app-add-sales-product>\r\n";
+    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n  <div class=\"page-header\">\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <h2 class=\"mr-auto\">{{ isEditing ? 'Update' : 'Create' }} {{PageTitle}} </h2>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"card\">\r\n    <form [formGroup]=\"addForm\" (ngSubmit)=\"submitForm(addForm)\" class=\"form-horizontal\" role=\"form\">\r\n      <div class=\"card-body\">\r\n        <div class=\"row\">\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\" [ngClass]=\"{'has-error': formErrors.order_no}\">\r\n              <label class=\"control-label text-md-right\">Order No. <em>*</em></label>\r\n              <div class=\"\">\r\n                <input [formControl]=\"addForm.controls['sales_order_no']\" (change)=\"removeError()\" type=\"text\"\r\n                  class=\"form-control\" placeholder=\"\">\r\n                <span *ngIf=\"formErrors.order_no\" class=\"help-block\" [innerHTML]=\"formErrors.order_no\"></span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Order Date <em>*</em></label>\r\n              <div class=\"date-picker\">\r\n                <ng2-flatpickr [setDate]=\"orderDate\" [formControl]=\"addForm.controls['sales_order_date']\"\r\n                  [config]=\"exampleOptions\">\r\n                </ng2-flatpickr>\r\n                <span class=\"date-picker-icon\">\r\n                  <span class=\"fa fa-calendar\"></span>\r\n                </span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Client <em>*</em></label>\r\n              <ng-select [formControl]=\"addForm.controls['client_id']\" [items]=\"clientListArray\" bindLabel=\"label\"\r\n                bindValue=\"value\" placeholder=\"Select Client\" (change)=\"getShippingAddressData(true)\">\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n          <div class=\"col-4\" *ngIf=\"addForm.controls['client_id'].valid\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Shipping Address <em>*</em></label>\r\n              <ng-select [formControl]=\"addForm.controls['shipping_address_id']\" [items]=\"shippingListArray\"\r\n                bindLabel=\"label\" [multiple]=\"true\" bindValue=\"value\" placeholder=\"Select Shipping Address\">\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"col-4\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Invoice No. </label>\r\n              <input [formControl]=\"addForm.controls['invoice_no']\" type=\"text\" class=\"form-control\" placeholder=\"\">\r\n            </div>\r\n          </div>\r\n\r\n\r\n        </div>\r\n        <div class=\"row mt-5\">\r\n          <div class=\"col-7 d-flex align-items-center\">\r\n            <h5>Product</h5>\r\n          </div>\r\n          <div class=\"col-5 text-right\">\r\n            <button type=\"button\" class=\"btn btn-light\" (click)=\"addform()\">\r\n              <i class=\"la la-plus\"></i>\r\n              Add Product\r\n            </button><br>\r\n            <span *ngIf=\"formErrors.product\" class=\"help-block\" [innerHTML]=\"formErrors.product\"></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"row mt-3\">\r\n          <div class=\"col\">\r\n            <div class=\"table-responsive-md\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th>No.</th>\r\n                    <th>Product</th>\r\n                    <th>Sku No</th>\r\n                    <th>Order Quantity</th>\r\n                    <th>Price</th>\r\n                    <th>Total Price</th>\r\n                    <th class=\"text-right\" width=\"80\">Action</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody>\r\n                  <tr *ngFor=\"let item of objectArray; let i=index\">\r\n                    <td>{{i+1}}</td>\r\n                    <td>{{item?.product_name}}</td>\r\n                    <td>{{item?.sku_no}}</td>\r\n                    <td>{{item?.qty}}</td>\r\n                    <td>{{currentCompany?.currency?.label }} {{item?.price}}</td>\r\n                    <td>{{currentCompany?.currency?.label }} {{(item?.qty) * (item?.price) | number}}</td>\r\n                    <td>\r\n                      <div class=\"action-drop dropdown text-right\">\r\n                        <a href=\"#\" data-toggle=\"dropdown\" class=\"btn shadow-none btn-default btn-sm btn-icon-only\"\r\n                          title=\"\">\r\n                          <i class=\"fa fa-ellipsis-h\"></i>\r\n                        </a>\r\n                        <div class=\"dropdown-menu dropdown-icon-menu drop-menu-right\" style=\"width: 100px;\">\r\n                          <a *ngIf=\"isEditing\" class=\"dropdown-item\"\r\n                            (click)=\"editform(item?.sales_order_detail_id,i,item)\"><i\r\n                              class=\"fa fa-edit fa-fw text-primary\">\r\n                            </i> Edit</a>\r\n                          <a class=\"dropdown-item\" (click)=\"deleteObject(item,i)\">\r\n                            <i class=\"fa fa-trash fa-fw text-primary\"></i>\r\n                            Delete\r\n                          </a>\r\n                        </div>\r\n                      </div>\r\n                    </td>\r\n                  </tr>\r\n                  <tr *ngIf=\"!loadingState && objectArray.length === 0\">\r\n                    <td colspan=\"7\">No records found</td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n            <pagination [paginationList]=\"pagination\" [currentPage]=\"currentPage\" (onPageChange)=\"getPage($event)\">\r\n            </pagination>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-5\">\r\n            <div class=\"form-group\">\r\n              <label class=\"control-label text-md-right\">Notes</label>\r\n              <textarea [formControl]=\"addForm.controls['notes']\" class=\"form-control\" rows=\"2\"></textarea>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"text-right border-top py-4 mt-5 card-footer\">\r\n        <button type=\"button\" class=\"btn btn-light\" routerLink=\"/outbound/sales-order\">Cancel</button>\r\n        <button type=\"submit\" class=\"btn btn-secondary ml-2\">Submit</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n<app-add-sales-product (onRelodeEvent)=\"onRelodeEvent($event)\" [ProductList]=\"objectArray\"\r\n  [orderNo]=\"addForm.value.sales_order_no\" (onProductSubmit)=\"onProductSubmit($event)\"></app-add-sales-product>";
     /***/
   },
 
@@ -206,8 +206,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var selected_product_id = this.productAddForm.value.product_id;
           var already_added = false;
           this.ProductList.filter(function (obj) {
-            console.log(selected_product_id, obj.product_id);
-
             if (selected_product_id == obj.product_id) {
               already_added = true;
             }
@@ -220,7 +218,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             this.formErrors.product_id = null;
             this.productAddForm.patchValue({
               sku_no: event.sku_no,
-              available_qty: event.qty
+              available_qty: event.qty,
+              amount: event.amount
             });
             this.showLoader = false;
           }
@@ -512,7 +511,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           dateFormat: src_app_messages__WEBPACK_IMPORTED_MODULE_6__["DATEFORMAT"] //enableTime: true
 
         };
-        this.supplierListArray = [];
+        this.shippingListArray = [];
         this.countryListArray = [];
         this.objectArray = [];
         this.clientListArray = [];
@@ -536,16 +535,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.addForm = this.fb.group({
           sales_order_no: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
           sales_order_date: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
-          supplier_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
+          shipping_address_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
           client_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
           notes: [null],
-          address: [null],
-          invoice_no: [""],
-          country_name: [null],
-          country_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
-          state: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
-          city: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
-          street_address: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])]
+          invoice_no: [""]
         });
       }
 
@@ -593,59 +586,72 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.salesOrderService.getSalesOrderMasterData().subscribe(function (response) {
             if (response.success) {
-              _this5.supplierListArray = response.data.supplier;
               _this5.clientListArray = response.data.client;
+            }
+          });
+        }
+      }, {
+        key: "getShippingAddressData",
+        value: function getShippingAddressData(temp) {
+          var _this6 = this;
+
+          if (temp) {
+            this.addForm.patchValue({
+              shipping_address_id: ''
+            });
+          }
+
+          this.salesOrderService.getShippingAddressData(this.addForm.value.client_id).subscribe(function (response) {
+            if (response.success) {
+              _this6.shippingListArray = response.data.shipping_address;
             }
           });
         }
       }, {
         key: "getOrderProductList",
         value: function getOrderProductList() {
-          var _this6 = this;
+          var _this7 = this;
 
           var params = {
             sales_order_id: this.editId
           };
           this.salesOrderService.getSalesOrderProductList(params).subscribe(function (response) {
-            _this6.loadingState = false;
+            _this7.loadingState = false;
 
             if (response.success && response.data) {
-              _this6.objectArray = response.data.list;
-              _this6.pagination = _this6.paginationService.getPager(response.data.pagination['total_page'], _this6.currentPage);
+              _this7.objectArray = response.data.list;
+              _this7.pagination = _this7.paginationService.getPager(response.data.pagination['total_page'], _this7.currentPage);
             } else {
-              _this6.objectArray = [];
-              _this6.pagination = null;
+              _this7.objectArray = [];
+              _this7.pagination = null;
             }
           }, function (error) {
-            _this6.loadingState = false;
-            _this6.objectArray = [];
-            _this6.pagination = null;
+            _this7.loadingState = false;
+            _this7.objectArray = [];
+            _this7.pagination = null;
           });
         }
       }, {
         key: "getEditObject",
         value: function getEditObject() {
-          var _this7 = this;
+          var _this8 = this;
 
           this.salesOrderService.getSalesOrderById(this.editId).subscribe(function (response) {
             if (response.success) {
-              _this7.orderDate = response.data.sales_order_date;
+              _this8.orderDate = response.data.sales_order_date;
 
-              _this7.addForm.patchValue({
+              _this8.addForm.patchValue({
                 sales_order_no: response.data.sales_order_no,
-                supplier_id: response.data.supplier_id,
+                shipping_address_id: response.data.shipping_address_id ? response.data.shipping_address_id : [],
                 client_id: response.data.client_id,
                 sales_order_date: response.data.sales_order_date,
                 notes: response.data.notes ? response.data.notes : '',
-                country_name: response.data.address.country_name,
-                country_id: response.data.address.country_id,
-                state: response.data.address.state,
-                city: response.data.address.city,
-                invoice_no: response.data.invoice_no,
-                street_address: response.data.address.street_address ? response.data.address.street_address : ''
+                invoice_no: response.data.invoice_no
               });
+
+              _this8.getShippingAddressData(false);
             } else {
-              _this7.router.navigateByUrl('/outbound/sales-order');
+              _this8.router.navigateByUrl('/outbound/sales-order');
             }
           });
         }
@@ -676,7 +682,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "submitForm",
         value: function submitForm(formData) {
-          var _this8 = this;
+          var _this9 = this;
 
           if (formData.valid) {
             if (this.objectArray && this.objectArray.length > 0) {
@@ -685,76 +691,72 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               var data = new FormData();
               data.append('sales_order_no', formData.value.sales_order_no);
               data.append('sales_order_date', src_app_common__WEBPACK_IMPORTED_MODULE_4__["CommonFunction"].changedateFormate(formData.value.sales_order_date[0]));
-              data.append('supplier_id', formData.value.supplier_id);
+
+              if (this.addForm.value.shipping_address_id.length > 0) {
+                data.append('shipping_address_id', JSON.stringify(this.addForm.value.shipping_address_id));
+              }
+
               data.append('client_id', formData.value.client_id);
               data.append('invoice_no', formData.value.invoice_no);
               data.append('notes', formData.value.notes ? formData.value.notes : '');
-              var address = {
-                country_id: formData.value.country_id,
-                country_name: formData.value.country_name,
-                state: formData.value.state,
-                city: formData.value.city,
-                street_address: formData.value.street_address
-              };
-              data.append('address', JSON.stringify(address));
 
               if (this.isEditing) {
                 this.salesOrderService.editSalesOrder(this.editId, data).subscribe(function (response) {
-                  _this8.showLoader = false;
+                  _this9.showLoader = false;
 
                   if (response.success) {
-                    if (_this8.objectArray && _this8.objectArray.length > 0) {
+                    if (_this9.objectArray && _this9.objectArray.length > 0) {
                       var EditobjectArray = [];
 
-                      _this8.objectArray.filter(function (item) {
+                      _this9.objectArray.filter(function (item) {
                         if (!item.sales_order_detail_id) {
                           EditobjectArray.push(item);
                         }
                       });
 
                       EditobjectArray.filter(function (item) {
-                        item.sales_order_id = _this8.editId;
+                        item.sales_order_id = _this9.editId;
                       });
 
-                      _this8.salesOrderService.addSalesOrderProduct(EditobjectArray).subscribe(function (res) {
-                        _this8.showLoader = false;
+                      _this9.salesOrderService.addSalesOrderProduct(EditobjectArray).subscribe(function (res) {
+                        _this9.showLoader = false;
 
                         if (res.success) {}
                       }, function (error) {
-                        _this8.showLoader = false;
+                        _this9.showLoader = false;
                       });
                     }
 
-                    _this8.router.navigateByUrl('/outbound/sales-order');
+                    _this9.router.navigateByUrl('/outbound/sales-order');
                   }
                 }, function (error) {
-                  _this8.showLoader = false;
+                  _this9.showLoader = false;
                 });
               } else {
                 this.salesOrderService.addSalesOrder(data).subscribe(function (response) {
-                  _this8.showLoader = false;
+                  _this9.showLoader = false;
 
                   if (response.success) {
                     var sales_order_id = response.data.sales_order_id;
 
-                    if (_this8.objectArray && _this8.objectArray.length > 0) {
-                      _this8.objectArray.filter(function (item) {
+                    if (_this9.objectArray && _this9.objectArray.length > 0) {
+                      _this9.objectArray.filter(function (item) {
                         item.sales_order_id = sales_order_id;
                       });
 
-                      _this8.salesOrderService.addSalesOrderProduct(_this8.objectArray).subscribe(function (res) {
-                        _this8.showLoader = false;
+                      _this9.salesOrderService.addSalesOrderProduct(_this9.objectArray).subscribe(function (res) {
+                        _this9.showLoader = false;
 
                         if (res.success) {}
                       }, function (error) {
-                        _this8.showLoader = false;
+                        _this9.showLoader = false;
                       });
                     }
 
-                    _this8.router.navigateByUrl('/outbound/sales-order');
+                    _this9.router.navigateByUrl('/outbound/sales-order');
                   }
                 }, function (error) {
-                  _this8.showLoader = false;
+                  _this9.showLoader = false;
                 });
               }
             } else {
@@ -765,13 +767,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "addform",
         value: function addform() {
-          var _this9 = this;
+          var _this10 = this;
 
           if (this.addForm.value.sales_order_no) {
             setTimeout(function () {
-              _this9.productAdd.addObject();
+              _this10.productAdd.addObject();
 
-              _this9.orderDate = _this9.addForm.value.sales_order_date;
+              _this10.orderDate = _this10.addForm.value.sales_order_date;
             }, 200);
           } else {
             this.formErrors.order_no = "* Plese Enter Order Number";
@@ -780,12 +782,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "editform",
         value: function editform(id, index, data) {
-          var _this10 = this;
+          var _this11 = this;
 
           setTimeout(function () {
-            _this10.productAdd.editObject(id, index, data, _this10.editId, _this10.addForm.value.sales_order_no);
+            _this11.productAdd.editObject(id, index, data, _this11.editId, _this11.addForm.value.sales_order_no);
 
-            _this10.orderDate = _this10.addForm.value.sales_order_date;
+            _this11.orderDate = _this11.addForm.value.sales_order_date;
           }, 200);
         }
       }, {
@@ -801,7 +803,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "deleteObject",
         value: function deleteObject(object, index) {
-          var _this11 = this;
+          var _this12 = this;
 
           swal.fire({
             title: src_app_messages__WEBPACK_IMPORTED_MODULE_6__["errorMessage"].delete_header_text,
@@ -813,13 +815,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }).then(function (result) {
             if (result.value) {
               if (object.sales_order_detail_id) {
-                _this11.salesOrderService.deleteSalesOrderProduct(object.sales_order_detail_id).subscribe(function (response) {
+                _this12.salesOrderService.deleteSalesOrderProduct(object.sales_order_detail_id).subscribe(function (response) {
                   if (response.success) {
-                    _this11.getOrderProductList();
+                    _this12.getOrderProductList();
                   }
                 });
               } else {
-                _this11.objectArray.splice(index, 1);
+                _this12.objectArray.splice(index, 1);
               }
             }
           }).catch(swal.noop);

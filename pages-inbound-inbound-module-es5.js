@@ -366,7 +366,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | order-list-order-list-module */
-        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("order-list-order-list-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("order-list-order-list-module")]).then(__webpack_require__.bind(null,
         /*! ./order-list/order-list.module */
         "./src/app/pages/inbound/order/order-list/order-list.module.ts")).then(function (m) {
           return m.OrderListModule;
@@ -380,7 +380,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-order-add-order-module */
-        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
         /*! ./add-order/add-order.module */
         "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(function (m) {
           return m.AddOrderModule;
@@ -394,7 +394,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-order-add-order-module */
-        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~d3e4c59f"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
         /*! ./add-order/add-order.module */
         "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(function (m) {
           return m.AddOrderModule;
@@ -931,38 +931,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! src/app/service/pagination.service */
-    "./src/app/service/pagination.service.ts");
-    /* harmony import */
-
-
-    var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! src/app/service/product-registration.service */
     "./src/app/service/product-registration.service.ts");
 
     var OrderSortingComponent =
     /*#__PURE__*/
     function () {
-      function OrderSortingComponent(dataService, paginationService, ProductRegistrationService, location, activatedRoute) {
+      function OrderSortingComponent(dataService, ProductRegistrationService, location, activatedRoute) {
         var _this8 = this;
 
         _classCallCheck(this, OrderSortingComponent);
 
         this.dataService = dataService;
-        this.paginationService = paginationService;
         this.ProductRegistrationService = ProductRegistrationService;
         this.location = location;
         this.activatedRoute = activatedRoute;
@@ -1075,13 +1068,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return [{
         type: src_app_service_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"]
       }, {
-        type: src_app_service_pagination_service__WEBPACK_IMPORTED_MODULE_3__["PaginationService"]
+        type: src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_5__["ProductRegistrationService"]
       }, {
-        type: src_app_service_product_registration_service__WEBPACK_IMPORTED_MODULE_6__["ProductRegistrationService"]
+        type: _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]
       }, {
-        type: _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"]
-      }, {
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"]
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]
       }];
     };
 
@@ -2081,7 +2072,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | generate-generate-module */
-        [__webpack_require__.e("default~add-sales-order-add-sales-order-module~generate-generate-module~generate-pick-list-generate-~f3681f3e"), __webpack_require__.e("common"), __webpack_require__.e("generate-generate-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("common"), __webpack_require__.e("generate-generate-module")]).then(__webpack_require__.bind(null,
         /*! ./generate/generate.module */
         "./src/app/pages/inbound/unload/generate/generate.module.ts")).then(function (m) {
           return m.GenerateModule;
